@@ -1,0 +1,71 @@
+{
+  "schema": "privacy.recovery.memory.v1",
+  "receivers": [
+    {
+      "receiver_id": "app:banking:bank",
+      "facts": [
+        {
+          "fact_id": "graphiti:entity:7bb7ea04-8b6c-4040-9429-1efaee0d3cee:financial_transaction",
+          "field": "financial_transaction",
+          "value": "Refund: Sushi dinner"
+        },
+        {
+          "fact_id": "normalized:banking/user_task_4::app:banking:bank::e0006::/n:request_parameter",
+          "field": "request_parameter",
+          "value": 100,
+          "event_id": "e0006",
+          "parameter_path": "/n",
+          "subject": "request:banking/user_task_4::app:banking:bank::e0006"
+        },
+        {
+          "fact_id": "normalized:banking/user_task_4::app:banking:bank::e0010::/recipient:account_number",
+          "field": "account_number",
+          "value": "GB29NWBK60161331926819"
+        },
+        {
+          "fact_id": "normalized:banking/user_task_4::app:banking:bank::e0010::/recipient:request_parameter",
+          "field": "request_parameter",
+          "value": "GB29NWBK60161331926819",
+          "event_id": "e0010",
+          "parameter_path": "/recipient",
+          "subject": "request:banking/user_task_4::app:banking:bank::e0010"
+        },
+        {
+          "fact_id": "normalized:banking/user_task_4::app:banking:bank::e0010::/amount:financial_amount",
+          "field": "financial_amount",
+          "value": "10"
+        },
+        {
+          "fact_id": "normalized:banking/user_task_4::app:banking:bank::e0010::/amount:request_parameter",
+          "field": "request_parameter",
+          "value": 10,
+          "event_id": "e0010",
+          "parameter_path": "/amount",
+          "subject": "request:banking/user_task_4::app:banking:bank::e0010"
+        },
+        {
+          "fact_id": "normalized:banking/user_task_4::app:banking:bank::e0010::/date:financial_transaction",
+          "field": "financial_transaction",
+          "value": "2022-03-07"
+        },
+        {
+          "fact_id": "normalized:banking/user_task_4::app:banking:bank::e0010::/date:request_parameter",
+          "field": "request_parameter",
+          "value": "2022-03-07",
+          "event_id": "e0010",
+          "parameter_path": "/date",
+          "subject": "request:banking/user_task_4::app:banking:bank::e0010"
+        }
+      ]
+    }
+  ],
+  "sharing_groups": [
+    {
+      "group_id": "explicit_hypothetical_all_services",
+      "members": [
+        "app:banking:bank"
+      ],
+      "enabled": false
+    }
+  ]
+}

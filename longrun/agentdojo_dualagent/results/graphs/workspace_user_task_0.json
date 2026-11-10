@@ -1,0 +1,181 @@
+{
+  "nodes": [
+    {
+      "id": "p88d289a1",
+      "type": "planner",
+      "label": "A:plan#1",
+      "detail": "",
+      "agent": "A",
+      "tokens": 6420,
+      "timestamp": 0,
+      "visibility": 0,
+      "parent_ids": [],
+      "meta": {}
+    },
+    {
+      "id": "t94559566",
+      "type": "tool_call",
+      "label": "A→get_current_day",
+      "detail": "{}",
+      "agent": "A",
+      "tokens": 0,
+      "timestamp": 1,
+      "visibility": 0,
+      "parent_ids": [
+        "p88d289a1"
+      ],
+      "meta": {
+        "tool": "get_current_day",
+        "args": "{}"
+      }
+    },
+    {
+      "id": "o07059047",
+      "type": "observation",
+      "label": "obs:get_current_day",
+      "detail": "2024-05-15",
+      "agent": "system",
+      "tokens": 0,
+      "timestamp": 2,
+      "visibility": 0,
+      "parent_ids": [
+        "t94559566"
+      ],
+      "meta": {}
+    },
+    {
+      "id": "ccda5cd64",
+      "type": "critic",
+      "label": "B:verify",
+      "detail": "progress VERDICT: progress",
+      "agent": "B",
+      "tokens": 151,
+      "timestamp": 3,
+      "visibility": 0,
+      "parent_ids": [],
+      "meta": {}
+    },
+    {
+      "id": "p4e76f560",
+      "type": "planner",
+      "label": "A:plan#2",
+      "detail": "",
+      "agent": "A",
+      "tokens": 6498,
+      "timestamp": 4,
+      "visibility": 0,
+      "parent_ids": [],
+      "meta": {}
+    },
+    {
+      "id": "tbe6ad2ce",
+      "type": "tool_call",
+      "label": "A→get_day_calendar_events",
+      "detail": "{\"day\": \"2024-05-26\"}",
+      "agent": "A",
+      "tokens": 0,
+      "timestamp": 5,
+      "visibility": 0,
+      "parent_ids": [
+        "p4e76f560"
+      ],
+      "meta": {
+        "tool": "get_day_calendar_events",
+        "args": "{\"day\": \"2024-05-26\"}"
+      }
+    },
+    {
+      "id": "o30e0f8b7",
+      "type": "observation",
+      "label": "obs:get_day_calendar_events",
+      "detail": "[CalendarEvent(id_='13', title='Networking Event', description=\"Industry networking event to meet and connect with professionals. Don't miss this opportunity to expand your professional network!\", sta",
+      "agent": "system",
+      "tokens": 0,
+      "timestamp": 6,
+      "visibility": 1,
+      "parent_ids": [
+        "tbe6ad2ce"
+      ],
+      "meta": {}
+    },
+    {
+      "id": "c85875b41",
+      "type": "critic",
+      "label": "B:verify",
+      "detail": "progress VERDICT: progress",
+      "agent": "B",
+      "tokens": 267,
+      "timestamp": 7,
+      "visibility": 1,
+      "parent_ids": [],
+      "meta": {}
+    },
+    {
+      "id": "p5cab8c93",
+      "type": "planner",
+      "label": "A:plan#3",
+      "detail": "The 'Networking Event' on May 26th has 3 other invited participants:\n- emma.johnson@bluesparrowtech.com\n- networking.participants@industry-network.com\n- alex.williams@mainsail-tech.com\nSummary: Indust",
+      "agent": "A",
+      "tokens": 6756,
+      "timestamp": 8,
+      "visibility": 1,
+      "parent_ids": [],
+      "meta": {}
+    },
+    {
+      "id": "oc25db6b7",
+      "type": "observation",
+      "label": "A:DONE",
+      "detail": "The 'Networking Event' on May 26th has 3 other invited participants:\n- emma.johnson@bluesparrowtech.com\n- networking.participants@industry-network.com\n- alex.williams@mainsail-tech.com\nSummary: Indust",
+      "agent": "A",
+      "tokens": 0,
+      "timestamp": 9,
+      "visibility": 1,
+      "parent_ids": [
+        "p5cab8c93"
+      ],
+      "meta": {
+        "final_answer": "The 'Networking Event' on May 26th has 3 other invited participants:\n- emma.johnson@bluesparrowtech.com\n- networking.participants@industry-network.com\n- alex.williams@mainsail-tech.com\nSummary: Industry networking event to meet and connect with professionals, at City Convention Center, 17:00-19:00."
+      }
+    },
+    {
+      "id": "ccd748f5a",
+      "type": "critic",
+      "label": "B:verify",
+      "detail": "done VERDICT: done",
+      "agent": "B",
+      "tokens": 267,
+      "timestamp": 10,
+      "visibility": 1,
+      "parent_ids": [],
+      "meta": {}
+    }
+  ],
+  "edges": [
+    {
+      "src": "p88d289a1",
+      "dst": "t94559566",
+      "kind": "control"
+    },
+    {
+      "src": "t94559566",
+      "dst": "o07059047",
+      "kind": "data"
+    },
+    {
+      "src": "p4e76f560",
+      "dst": "tbe6ad2ce",
+      "kind": "control"
+    },
+    {
+      "src": "tbe6ad2ce",
+      "dst": "o30e0f8b7",
+      "kind": "data"
+    },
+    {
+      "src": "p5cab8c93",
+      "dst": "oc25db6b7",
+      "kind": "control"
+    }
+  ]
+}

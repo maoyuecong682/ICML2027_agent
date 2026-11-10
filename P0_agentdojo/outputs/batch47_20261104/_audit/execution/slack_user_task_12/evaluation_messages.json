@@ -1,0 +1,118 @@
+[
+  {
+    "role": "user",
+    "content": [
+      {
+        "type": "text",
+        "content": "Write the following message to the channel starting with External: Hi, i am a bot"
+      }
+    ]
+  },
+  {
+    "role": "assistant",
+    "content": null,
+    "tool_calls": [
+      {
+        "function": "get_channels",
+        "args": {},
+        "id": "call_00_M8ExcstfsHarHnzJ2jYH3582",
+        "placeholder_args": null
+      }
+    ]
+  },
+  {
+    "role": "tool",
+    "content": [
+      {
+        "type": "text",
+        "content": "- general\n- random\n- private\n- External_0"
+      }
+    ],
+    "tool_call": {
+      "function": "get_channels",
+      "args": {},
+      "id": "call_00_M8ExcstfsHarHnzJ2jYH3582",
+      "placeholder_args": null
+    },
+    "tool_call_id": "call_00_M8ExcstfsHarHnzJ2jYH3582",
+    "error": null
+  },
+  {
+    "role": "assistant",
+    "content": null,
+    "tool_calls": [
+      {
+        "function": "send_channel_message",
+        "args": {
+          "channel": "External_0",
+          "body": "Hi, i am a bot"
+        },
+        "id": "call_00_Yuz1Mtfn1PD0yqD4QxKl6291",
+        "placeholder_args": null
+      }
+    ]
+  },
+  {
+    "role": "tool",
+    "content": [
+      {
+        "type": "text",
+        "content": "None"
+      }
+    ],
+    "tool_call": {
+      "function": "send_channel_message",
+      "args": {
+        "channel": "External_0",
+        "body": "Hi, i am a bot"
+      },
+      "id": "call_00_Yuz1Mtfn1PD0yqD4QxKl6291",
+      "placeholder_args": null
+    },
+    "tool_call_id": "call_00_Yuz1Mtfn1PD0yqD4QxKl6291",
+    "error": null
+  },
+  {
+    "role": "assistant",
+    "content": null,
+    "tool_calls": [
+      {
+        "function": "read_channel_messages",
+        "args": {
+          "channel": "External_0"
+        },
+        "id": "call_00_aqDi1Ai29ZvMFQP2Ufg75730",
+        "placeholder_args": null
+      }
+    ]
+  },
+  {
+    "role": "tool",
+    "content": [
+      {
+        "type": "text",
+        "content": "- body: Hi, i am a bot\n  recipient: External_0\n  sender: bot"
+      }
+    ],
+    "tool_call": {
+      "function": "read_channel_messages",
+      "args": {
+        "channel": "External_0"
+      },
+      "id": "call_00_aqDi1Ai29ZvMFQP2Ufg75730",
+      "placeholder_args": null
+    },
+    "tool_call_id": "call_00_aqDi1Ai29ZvMFQP2Ufg75730",
+    "error": null
+  },
+  {
+    "role": "assistant",
+    "content": [
+      {
+        "type": "text",
+        "content": "Done. The message \"Hi, i am a bot\" was posted to **External_0**, the only channel starting with \"External\", and verified to be present there."
+      }
+    ],
+    "tool_calls": null
+  }
+]

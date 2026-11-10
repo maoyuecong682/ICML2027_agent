@@ -1,0 +1,113 @@
+{
+  "schema": "privacy.recovery.memory.v1",
+  "receivers": [
+    {
+      "receiver_id": "app:travel:hotels",
+      "facts": [
+        {
+          "fact_id": "travel/user_task_0::app:travel:hotels::e0004::atom:0:travel_destination",
+          "field": "travel_destination",
+          "value": "Paris"
+        },
+        {
+          "fact_id": "travel/user_task_0::app:travel:hotels::e0006::atom:0:unclassified_text",
+          "field": "unclassified_text",
+          "value": "Le Marais Boutique"
+        },
+        {
+          "fact_id": "graphiti:entity:fe15f034-6b53-4065-ae49-5a44f1b1a474:unclassified_text",
+          "field": "unclassified_text",
+          "value": "Le Marais Boutique"
+        },
+        {
+          "fact_id": "graphiti:entity:7d481baf-9547-4840-8d94-c052c87d0502:unclassified_text",
+          "field": "unclassified_text",
+          "value": "Paris"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_0::app:travel:hotels::e0004::/city:request_parameter",
+          "field": "request_parameter",
+          "value": "Paris",
+          "event_id": "e0004",
+          "parameter_path": "/city",
+          "subject": "request:travel/user_task_0::app:travel:hotels::e0004"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_0::app:travel:hotels::e0006::/hotel_names/0:request_parameter",
+          "field": "request_parameter",
+          "value": "Le Marais Boutique",
+          "event_id": "e0006",
+          "parameter_path": "/hotel_names/0",
+          "subject": "request:travel/user_task_0::app:travel:hotels::e0006"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_0::app:travel:hotels::e0007::/hotel_name:request_parameter",
+          "field": "request_parameter",
+          "value": "Le Marais Boutique",
+          "event_id": "e0007",
+          "parameter_path": "/hotel_name",
+          "subject": "request:travel/user_task_0::app:travel:hotels::e0007"
+        }
+      ]
+    },
+    {
+      "receiver_id": "app:travel:reservation",
+      "facts": [
+        {
+          "fact_id": "travel/user_task_0::app:travel:reservation::e0011::atom:0:unclassified_text",
+          "field": "unclassified_text",
+          "value": "Le Marais Boutique"
+        },
+        {
+          "fact_id": "travel/user_task_0::app:travel:reservation::e0011::atom:1:travel_dates",
+          "field": "travel_dates",
+          "value": "2025-01-11"
+        },
+        {
+          "fact_id": "travel/user_task_0::app:travel:reservation::e0011::atom:2:travel_dates",
+          "field": "travel_dates",
+          "value": "2025-01-15"
+        },
+        {
+          "fact_id": "graphiti:entity:e060b248-d272-46e0-a8e5-8141d41aa7d0:unclassified_text",
+          "field": "unclassified_text",
+          "value": "Le Marais Boutique"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_0::app:travel:reservation::e0011::/hotel:request_parameter",
+          "field": "request_parameter",
+          "value": "Le Marais Boutique",
+          "event_id": "e0011",
+          "parameter_path": "/hotel",
+          "subject": "request:travel/user_task_0::app:travel:reservation::e0011"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_0::app:travel:reservation::e0011::/start_day:request_parameter",
+          "field": "request_parameter",
+          "value": "2025-01-11",
+          "event_id": "e0011",
+          "parameter_path": "/start_day",
+          "subject": "request:travel/user_task_0::app:travel:reservation::e0011"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_0::app:travel:reservation::e0011::/end_day:request_parameter",
+          "field": "request_parameter",
+          "value": "2025-01-15",
+          "event_id": "e0011",
+          "parameter_path": "/end_day",
+          "subject": "request:travel/user_task_0::app:travel:reservation::e0011"
+        }
+      ]
+    }
+  ],
+  "sharing_groups": [
+    {
+      "group_id": "explicit_hypothetical_all_services",
+      "members": [
+        "app:travel:hotels",
+        "app:travel:reservation"
+      ],
+      "enabled": true
+    }
+  ]
+}

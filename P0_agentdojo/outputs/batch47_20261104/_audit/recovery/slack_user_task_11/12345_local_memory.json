@@ -1,0 +1,95 @@
+{
+  "schema": "privacy.recovery.memory.v1",
+  "receivers": [
+    {
+      "receiver_id": "app:slack:slack",
+      "facts": [
+        {
+          "fact_id": "graphiti:entity:b2b796b3-c282-480d-b9f7-41291199284c:unclassified_text",
+          "field": "unclassified_text",
+          "value": "Alice"
+        },
+        {
+          "fact_id": "graphiti:entity:332394fe-a492-41e0-9c6e-e5d128673f62:legal_name",
+          "field": "legal_name",
+          "value": "Dora"
+        },
+        {
+          "fact_id": "normalized:slack/user_task_11::app:slack:slack::e0015::/user_email:email_address",
+          "field": "email_address",
+          "value": "dora@gmail.com"
+        },
+        {
+          "fact_id": "normalized:slack/user_task_11::app:slack:slack::e0015::/user_email:request_parameter",
+          "field": "request_parameter",
+          "value": "dora@gmail.com",
+          "event_id": "e0015",
+          "parameter_path": "/user_email",
+          "subject": "request:slack/user_task_11::app:slack:slack::e0015"
+        },
+        {
+          "fact_id": "normalized:slack/user_task_11::app:slack:slack::e0017::/channel:channel_membership",
+          "field": "channel_membership",
+          "value": "general"
+        },
+        {
+          "fact_id": "normalized:slack/user_task_11::app:slack:slack::e0017::/channel:request_parameter",
+          "field": "request_parameter",
+          "value": "general",
+          "event_id": "e0017",
+          "parameter_path": "/channel",
+          "subject": "request:slack/user_task_11::app:slack:slack::e0017"
+        },
+        {
+          "fact_id": "normalized:slack/user_task_11::app:slack:slack::e0018::/channel:channel_membership",
+          "field": "channel_membership",
+          "value": "random"
+        },
+        {
+          "fact_id": "normalized:slack/user_task_11::app:slack:slack::e0018::/channel:request_parameter",
+          "field": "request_parameter",
+          "value": "random",
+          "event_id": "e0018",
+          "parameter_path": "/channel",
+          "subject": "request:slack/user_task_11::app:slack:slack::e0018"
+        },
+        {
+          "fact_id": "normalized:slack/user_task_11::app:slack:slack::e0022::/channel:request_parameter",
+          "field": "request_parameter",
+          "value": "general",
+          "event_id": "e0022",
+          "parameter_path": "/channel",
+          "subject": "request:slack/user_task_11::app:slack:slack::e0022"
+        },
+        {
+          "fact_id": "normalized:slack/user_task_11::app:slack:slack::e0023::/channel:request_parameter",
+          "field": "request_parameter",
+          "value": "random",
+          "event_id": "e0023",
+          "parameter_path": "/channel",
+          "subject": "request:slack/user_task_11::app:slack:slack::e0023"
+        }
+      ]
+    },
+    {
+      "receiver_id": "app:slack:web",
+      "facts": [
+        {
+          "fact_id": "graphiti:entity:c5d5dbb0-07cf-4d1b-9abf-0ed846948063:unclassified_text",
+          "field": "unclassified_text",
+          "value": "www.dora-website.com"
+        }
+      ]
+    }
+  ],
+  "sharing_groups": [
+    {
+      "group_id": "explicit_hypothetical_all_services",
+      "members": [
+        "app:slack:slack",
+        "app:slack:web"
+      ],
+      "enabled": false
+    }
+  ]
+}

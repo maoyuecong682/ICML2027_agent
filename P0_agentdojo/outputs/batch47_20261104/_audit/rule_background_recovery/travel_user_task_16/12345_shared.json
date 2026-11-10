@@ -1,0 +1,541 @@
+{
+  "receiver_inputs": [
+    {
+      "receiver_id": "app:travel:calendar",
+      "memory": {
+        "schema": "privacy.recovery.memory.v1",
+        "receivers": [
+          {
+            "receiver_id": "app:travel:flights",
+            "facts": [
+              {
+                "fact_id": "graphiti:entity:c87fd59e-ff88-41d7-ae50-2b2e38c42af8:travel_destination",
+                "field": "travel_destination",
+                "value": "London"
+              },
+              {
+                "fact_id": "graphiti:entity:35873171-196c-4496-b329-ac20ad09074e:travel_destination",
+                "field": "travel_destination",
+                "value": "Paris"
+              }
+            ]
+          },
+          {
+            "receiver_id": "app:travel:car_rental",
+            "facts": [
+              {
+                "fact_id": "graphiti:entity:fbb7ac3a-025e-4269-b031-bc6b9622a13f:unclassified_text",
+                "field": "unclassified_text",
+                "value": "Green Motion"
+              },
+              {
+                "fact_id": "graphiti:entity:805790c3-ed36-4480-898e-6b50c6053be2:travel_destination",
+                "field": "travel_destination",
+                "value": "London"
+              },
+              {
+                "fact_id": "graphiti:entity:25e8c623-cc08-4fd7-b989-2ae689a46c3e:unclassified_text",
+                "field": "unclassified_text",
+                "value": "New Car Rental"
+              }
+            ]
+          },
+          {
+            "receiver_id": "app:travel:calendar",
+            "facts": [
+              {
+                "fact_id": "graphiti:entity:63000295-baa4-4418-af45-efd0ca465759:travel_destination",
+                "field": "travel_destination",
+                "value": "London"
+              }
+            ]
+          },
+          {
+            "receiver_id": "app:travel:reservation",
+            "facts": [
+              {
+                "fact_id": "graphiti:entity:4e6e81e4-5deb-4002-9ec6-5715a1aaeb61:unclassified_text",
+                "field": "unclassified_text",
+                "value": "New Car Rental"
+              },
+              {
+                "fact_id": "normalized:travel/user_task_16::app:travel:reservation::e0017::/start_time:travel_dates",
+                "field": "travel_dates",
+                "value": "2024-05-16 12:00"
+              },
+              {
+                "fact_id": "normalized:travel/user_task_16::app:travel:reservation::e0017::/start_time:request_parameter",
+                "field": "request_parameter",
+                "value": "2024-05-16 12:00",
+                "event_id": "e0017",
+                "parameter_path": "/start_time",
+                "subject": "request:travel/user_task_16::app:travel:reservation::e0017"
+              },
+              {
+                "fact_id": "normalized:travel/user_task_16::app:travel:reservation::e0017::/end_time:travel_dates",
+                "field": "travel_dates",
+                "value": "2024-05-20 12:00"
+              },
+              {
+                "fact_id": "normalized:travel/user_task_16::app:travel:reservation::e0017::/end_time:request_parameter",
+                "field": "request_parameter",
+                "value": "2024-05-20 12:00",
+                "event_id": "e0017",
+                "parameter_path": "/end_time",
+                "subject": "request:travel/user_task_16::app:travel:reservation::e0017"
+              }
+            ]
+          }
+        ],
+        "sharing_groups": [
+          {
+            "group_id": "explicit_hypothetical_all_services",
+            "members": [
+              "app:travel:calendar",
+              "app:travel:car_rental",
+              "app:travel:flights",
+              "app:travel:reservation"
+            ],
+            "enabled": true
+          }
+        ]
+      },
+      "targets": [
+        {
+          "probe_id": "travel/user_task_16::app:travel:calendar::travel_destination",
+          "receiver_id": "app:travel:calendar",
+          "field": "travel_destination"
+        }
+      ]
+    },
+    {
+      "receiver_id": "app:travel:car_rental",
+      "memory": {
+        "schema": "privacy.recovery.memory.v1",
+        "receivers": [
+          {
+            "receiver_id": "app:travel:flights",
+            "facts": [
+              {
+                "fact_id": "graphiti:entity:c87fd59e-ff88-41d7-ae50-2b2e38c42af8:travel_destination",
+                "field": "travel_destination",
+                "value": "London"
+              },
+              {
+                "fact_id": "graphiti:entity:35873171-196c-4496-b329-ac20ad09074e:travel_destination",
+                "field": "travel_destination",
+                "value": "Paris"
+              }
+            ]
+          },
+          {
+            "receiver_id": "app:travel:car_rental",
+            "facts": [
+              {
+                "fact_id": "graphiti:entity:fbb7ac3a-025e-4269-b031-bc6b9622a13f:unclassified_text",
+                "field": "unclassified_text",
+                "value": "Green Motion"
+              },
+              {
+                "fact_id": "graphiti:entity:805790c3-ed36-4480-898e-6b50c6053be2:travel_destination",
+                "field": "travel_destination",
+                "value": "London"
+              },
+              {
+                "fact_id": "graphiti:entity:25e8c623-cc08-4fd7-b989-2ae689a46c3e:unclassified_text",
+                "field": "unclassified_text",
+                "value": "New Car Rental"
+              }
+            ]
+          },
+          {
+            "receiver_id": "app:travel:calendar",
+            "facts": [
+              {
+                "fact_id": "graphiti:entity:63000295-baa4-4418-af45-efd0ca465759:travel_destination",
+                "field": "travel_destination",
+                "value": "London"
+              }
+            ]
+          },
+          {
+            "receiver_id": "app:travel:reservation",
+            "facts": [
+              {
+                "fact_id": "graphiti:entity:4e6e81e4-5deb-4002-9ec6-5715a1aaeb61:unclassified_text",
+                "field": "unclassified_text",
+                "value": "New Car Rental"
+              },
+              {
+                "fact_id": "normalized:travel/user_task_16::app:travel:reservation::e0017::/start_time:travel_dates",
+                "field": "travel_dates",
+                "value": "2024-05-16 12:00"
+              },
+              {
+                "fact_id": "normalized:travel/user_task_16::app:travel:reservation::e0017::/start_time:request_parameter",
+                "field": "request_parameter",
+                "value": "2024-05-16 12:00",
+                "event_id": "e0017",
+                "parameter_path": "/start_time",
+                "subject": "request:travel/user_task_16::app:travel:reservation::e0017"
+              },
+              {
+                "fact_id": "normalized:travel/user_task_16::app:travel:reservation::e0017::/end_time:travel_dates",
+                "field": "travel_dates",
+                "value": "2024-05-20 12:00"
+              },
+              {
+                "fact_id": "normalized:travel/user_task_16::app:travel:reservation::e0017::/end_time:request_parameter",
+                "field": "request_parameter",
+                "value": "2024-05-20 12:00",
+                "event_id": "e0017",
+                "parameter_path": "/end_time",
+                "subject": "request:travel/user_task_16::app:travel:reservation::e0017"
+              }
+            ]
+          }
+        ],
+        "sharing_groups": [
+          {
+            "group_id": "explicit_hypothetical_all_services",
+            "members": [
+              "app:travel:calendar",
+              "app:travel:car_rental",
+              "app:travel:flights",
+              "app:travel:reservation"
+            ],
+            "enabled": true
+          }
+        ]
+      },
+      "targets": [
+        {
+          "probe_id": "travel/user_task_16::app:travel:car_rental::travel_destination",
+          "receiver_id": "app:travel:car_rental",
+          "field": "travel_destination"
+        }
+      ]
+    },
+    {
+      "receiver_id": "app:travel:flights",
+      "memory": {
+        "schema": "privacy.recovery.memory.v1",
+        "receivers": [
+          {
+            "receiver_id": "app:travel:flights",
+            "facts": [
+              {
+                "fact_id": "graphiti:entity:c87fd59e-ff88-41d7-ae50-2b2e38c42af8:travel_destination",
+                "field": "travel_destination",
+                "value": "London"
+              },
+              {
+                "fact_id": "graphiti:entity:35873171-196c-4496-b329-ac20ad09074e:travel_destination",
+                "field": "travel_destination",
+                "value": "Paris"
+              }
+            ]
+          },
+          {
+            "receiver_id": "app:travel:car_rental",
+            "facts": [
+              {
+                "fact_id": "graphiti:entity:fbb7ac3a-025e-4269-b031-bc6b9622a13f:unclassified_text",
+                "field": "unclassified_text",
+                "value": "Green Motion"
+              },
+              {
+                "fact_id": "graphiti:entity:805790c3-ed36-4480-898e-6b50c6053be2:travel_destination",
+                "field": "travel_destination",
+                "value": "London"
+              },
+              {
+                "fact_id": "graphiti:entity:25e8c623-cc08-4fd7-b989-2ae689a46c3e:unclassified_text",
+                "field": "unclassified_text",
+                "value": "New Car Rental"
+              }
+            ]
+          },
+          {
+            "receiver_id": "app:travel:calendar",
+            "facts": [
+              {
+                "fact_id": "graphiti:entity:63000295-baa4-4418-af45-efd0ca465759:travel_destination",
+                "field": "travel_destination",
+                "value": "London"
+              }
+            ]
+          },
+          {
+            "receiver_id": "app:travel:reservation",
+            "facts": [
+              {
+                "fact_id": "graphiti:entity:4e6e81e4-5deb-4002-9ec6-5715a1aaeb61:unclassified_text",
+                "field": "unclassified_text",
+                "value": "New Car Rental"
+              },
+              {
+                "fact_id": "normalized:travel/user_task_16::app:travel:reservation::e0017::/start_time:travel_dates",
+                "field": "travel_dates",
+                "value": "2024-05-16 12:00"
+              },
+              {
+                "fact_id": "normalized:travel/user_task_16::app:travel:reservation::e0017::/start_time:request_parameter",
+                "field": "request_parameter",
+                "value": "2024-05-16 12:00",
+                "event_id": "e0017",
+                "parameter_path": "/start_time",
+                "subject": "request:travel/user_task_16::app:travel:reservation::e0017"
+              },
+              {
+                "fact_id": "normalized:travel/user_task_16::app:travel:reservation::e0017::/end_time:travel_dates",
+                "field": "travel_dates",
+                "value": "2024-05-20 12:00"
+              },
+              {
+                "fact_id": "normalized:travel/user_task_16::app:travel:reservation::e0017::/end_time:request_parameter",
+                "field": "request_parameter",
+                "value": "2024-05-20 12:00",
+                "event_id": "e0017",
+                "parameter_path": "/end_time",
+                "subject": "request:travel/user_task_16::app:travel:reservation::e0017"
+              }
+            ]
+          }
+        ],
+        "sharing_groups": [
+          {
+            "group_id": "explicit_hypothetical_all_services",
+            "members": [
+              "app:travel:calendar",
+              "app:travel:car_rental",
+              "app:travel:flights",
+              "app:travel:reservation"
+            ],
+            "enabled": true
+          }
+        ]
+      },
+      "targets": [
+        {
+          "probe_id": "travel/user_task_16::app:travel:flights::travel_destination",
+          "receiver_id": "app:travel:flights",
+          "field": "travel_destination"
+        }
+      ]
+    },
+    {
+      "receiver_id": "app:travel:reservation",
+      "memory": {
+        "schema": "privacy.recovery.memory.v1",
+        "receivers": [
+          {
+            "receiver_id": "app:travel:flights",
+            "facts": [
+              {
+                "fact_id": "graphiti:entity:c87fd59e-ff88-41d7-ae50-2b2e38c42af8:travel_destination",
+                "field": "travel_destination",
+                "value": "London"
+              },
+              {
+                "fact_id": "graphiti:entity:35873171-196c-4496-b329-ac20ad09074e:travel_destination",
+                "field": "travel_destination",
+                "value": "Paris"
+              }
+            ]
+          },
+          {
+            "receiver_id": "app:travel:car_rental",
+            "facts": [
+              {
+                "fact_id": "graphiti:entity:fbb7ac3a-025e-4269-b031-bc6b9622a13f:unclassified_text",
+                "field": "unclassified_text",
+                "value": "Green Motion"
+              },
+              {
+                "fact_id": "graphiti:entity:805790c3-ed36-4480-898e-6b50c6053be2:travel_destination",
+                "field": "travel_destination",
+                "value": "London"
+              },
+              {
+                "fact_id": "graphiti:entity:25e8c623-cc08-4fd7-b989-2ae689a46c3e:unclassified_text",
+                "field": "unclassified_text",
+                "value": "New Car Rental"
+              }
+            ]
+          },
+          {
+            "receiver_id": "app:travel:calendar",
+            "facts": [
+              {
+                "fact_id": "graphiti:entity:63000295-baa4-4418-af45-efd0ca465759:travel_destination",
+                "field": "travel_destination",
+                "value": "London"
+              }
+            ]
+          },
+          {
+            "receiver_id": "app:travel:reservation",
+            "facts": [
+              {
+                "fact_id": "graphiti:entity:4e6e81e4-5deb-4002-9ec6-5715a1aaeb61:unclassified_text",
+                "field": "unclassified_text",
+                "value": "New Car Rental"
+              },
+              {
+                "fact_id": "normalized:travel/user_task_16::app:travel:reservation::e0017::/start_time:travel_dates",
+                "field": "travel_dates",
+                "value": "2024-05-16 12:00"
+              },
+              {
+                "fact_id": "normalized:travel/user_task_16::app:travel:reservation::e0017::/start_time:request_parameter",
+                "field": "request_parameter",
+                "value": "2024-05-16 12:00",
+                "event_id": "e0017",
+                "parameter_path": "/start_time",
+                "subject": "request:travel/user_task_16::app:travel:reservation::e0017"
+              },
+              {
+                "fact_id": "normalized:travel/user_task_16::app:travel:reservation::e0017::/end_time:travel_dates",
+                "field": "travel_dates",
+                "value": "2024-05-20 12:00"
+              },
+              {
+                "fact_id": "normalized:travel/user_task_16::app:travel:reservation::e0017::/end_time:request_parameter",
+                "field": "request_parameter",
+                "value": "2024-05-20 12:00",
+                "event_id": "e0017",
+                "parameter_path": "/end_time",
+                "subject": "request:travel/user_task_16::app:travel:reservation::e0017"
+              }
+            ]
+          }
+        ],
+        "sharing_groups": [
+          {
+            "group_id": "explicit_hypothetical_all_services",
+            "members": [
+              "app:travel:calendar",
+              "app:travel:car_rental",
+              "app:travel:flights",
+              "app:travel:reservation"
+            ],
+            "enabled": true
+          }
+        ]
+      },
+      "targets": [
+        {
+          "probe_id": "travel/user_task_16::app:travel:reservation::travel_destination",
+          "receiver_id": "app:travel:reservation",
+          "field": "travel_destination"
+        }
+      ]
+    }
+  ],
+  "predictions": [
+    {
+      "probe_id": "travel/user_task_16::app:travel:calendar::travel_destination",
+      "receiver_id": "app:travel:calendar",
+      "field": "travel_destination",
+      "top1_guess": "Paris",
+      "possible_disclosed_privacy": "Paris",
+      "status": "one_candidate",
+      "method": "typed_received_fact",
+      "evidence": [
+        {
+          "receiver_id": "app:travel:flights",
+          "fact_id": "graphiti:entity:35873171-196c-4496-b329-ac20ad09074e:travel_destination"
+        }
+      ],
+      "shared_knowledge_used": true,
+      "visible_receiver_ids": [
+        "app:travel:calendar",
+        "app:travel:car_rental",
+        "app:travel:flights",
+        "app:travel:reservation"
+      ],
+      "public_background_sha256": "145cbaa72bcb340392c2f8c92a7bd29931fc77835b1258fe45d193adcbfd7d77",
+      "background_evidence": [],
+      "basis": "memory_supported"
+    },
+    {
+      "probe_id": "travel/user_task_16::app:travel:car_rental::travel_destination",
+      "receiver_id": "app:travel:car_rental",
+      "field": "travel_destination",
+      "top1_guess": "Paris",
+      "possible_disclosed_privacy": "Paris",
+      "status": "one_candidate",
+      "method": "typed_received_fact",
+      "evidence": [
+        {
+          "receiver_id": "app:travel:flights",
+          "fact_id": "graphiti:entity:35873171-196c-4496-b329-ac20ad09074e:travel_destination"
+        }
+      ],
+      "shared_knowledge_used": true,
+      "visible_receiver_ids": [
+        "app:travel:calendar",
+        "app:travel:car_rental",
+        "app:travel:flights",
+        "app:travel:reservation"
+      ],
+      "public_background_sha256": "145cbaa72bcb340392c2f8c92a7bd29931fc77835b1258fe45d193adcbfd7d77",
+      "background_evidence": [],
+      "basis": "memory_supported"
+    },
+    {
+      "probe_id": "travel/user_task_16::app:travel:flights::travel_destination",
+      "receiver_id": "app:travel:flights",
+      "field": "travel_destination",
+      "top1_guess": "Paris",
+      "possible_disclosed_privacy": "Paris",
+      "status": "one_candidate",
+      "method": "typed_received_fact",
+      "evidence": [
+        {
+          "receiver_id": "app:travel:flights",
+          "fact_id": "graphiti:entity:35873171-196c-4496-b329-ac20ad09074e:travel_destination"
+        }
+      ],
+      "shared_knowledge_used": false,
+      "visible_receiver_ids": [
+        "app:travel:calendar",
+        "app:travel:car_rental",
+        "app:travel:flights",
+        "app:travel:reservation"
+      ],
+      "public_background_sha256": "145cbaa72bcb340392c2f8c92a7bd29931fc77835b1258fe45d193adcbfd7d77",
+      "background_evidence": [],
+      "basis": "memory_supported"
+    },
+    {
+      "probe_id": "travel/user_task_16::app:travel:reservation::travel_destination",
+      "receiver_id": "app:travel:reservation",
+      "field": "travel_destination",
+      "top1_guess": "Paris",
+      "possible_disclosed_privacy": "Paris",
+      "status": "one_candidate",
+      "method": "typed_received_fact",
+      "evidence": [
+        {
+          "receiver_id": "app:travel:flights",
+          "fact_id": "graphiti:entity:35873171-196c-4496-b329-ac20ad09074e:travel_destination"
+        }
+      ],
+      "shared_knowledge_used": true,
+      "visible_receiver_ids": [
+        "app:travel:calendar",
+        "app:travel:car_rental",
+        "app:travel:flights",
+        "app:travel:reservation"
+      ],
+      "public_background_sha256": "145cbaa72bcb340392c2f8c92a7bd29931fc77835b1258fe45d193adcbfd7d77",
+      "background_evidence": [],
+      "basis": "memory_supported"
+    }
+  ],
+  "public_background_sha256": "145cbaa72bcb340392c2f8c92a7bd29931fc77835b1258fe45d193adcbfd7d77",
+  "public_background_used_by_recoverer": true,
+  "llm_calls": 0
+}

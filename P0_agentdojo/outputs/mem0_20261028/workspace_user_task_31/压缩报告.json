@@ -1,0 +1,68 @@
+{
+  "module": "mem0ai",
+  "version": "1.0.5",
+  "model": "deepseek-flash",
+  "mode": "offline_checkpoint_compression_not_live_pipeline",
+  "source": "D:\\Lironghua\\隐私子刊\\P0_agentdojo\\runs\\p0_20261028_seed20261028\\workspace_user_task_31\\requests.jsonl",
+  "source_sha256": "8fe93940e2b2128141de3d696038868fbaccd881091f81c1eed962745a454322",
+  "embedding": "local SHA256 lexical feature hashing, 256 dimensions; not semantic",
+  "retrieval": "get_all for this actor; no top-k semantic retrieval",
+  "recipe": "Mem0 inferred facts + exact protected source; both count toward size",
+  "privacy_detector_rerun": false,
+  "task_continuation_test": "not_run",
+  "receiver_memories_modified": false,
+  "actors": {
+    "A": {
+      "checkpoint_request_index": 2,
+      "mem0_fact_count": 7,
+      "before_context_utf8_bytes": 30711,
+      "after_context_utf8_bytes": 3786,
+      "reduction_fraction": 0.8767,
+      "size_basis": "compact JSON of all messages, including protected source; not DeepSeek tokens",
+      "checks": {
+        "unchanged_control_messages": true,
+        "unchanged_tool_call_ids": true,
+        "protected_source_exact_match": true,
+        "trip_fields_and_association": true,
+        "packing_items": 6,
+        "scope": "Only the protected vacation source; no claim about all original PII"
+      },
+      "compression_api": {
+        "calls": 2,
+        "returned_models": [
+          "deepseek-flash",
+          "deepseek-flash"
+        ],
+        "prompt_tokens": 9592,
+        "completion_tokens": 678,
+        "seconds": 10.859
+      }
+    },
+    "B": {
+      "checkpoint_request_index": 3,
+      "mem0_fact_count": 7,
+      "before_context_utf8_bytes": 5547,
+      "after_context_utf8_bytes": 4150,
+      "reduction_fraction": 0.2518,
+      "size_basis": "compact JSON of all messages, including protected source; not DeepSeek tokens",
+      "checks": {
+        "unchanged_control_messages": true,
+        "unchanged_tool_call_ids": true,
+        "protected_source_exact_match": true,
+        "trip_fields_and_association": true,
+        "packing_items": 6,
+        "scope": "Only the protected vacation source; no claim about all original PII"
+      },
+      "compression_api": {
+        "calls": 2,
+        "returned_models": [
+          "deepseek-flash",
+          "deepseek-flash"
+        ],
+        "prompt_tokens": 2975,
+        "completion_tokens": 679,
+        "seconds": 4.923
+      }
+    }
+  }
+}

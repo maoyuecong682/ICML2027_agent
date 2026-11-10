@@ -1,0 +1,362 @@
+{
+  "source": "synthetic_capability_check_NOT_AgentDojo",
+  "actual_message_recipient": "B",
+  "message": {
+    "fact_id": "new:B",
+    "field": "message_content",
+    "value": "X17 是并购项目。"
+  },
+  "before": {
+    "A": {
+      "input": {
+        "memory": {
+          "schema": "privacy.recovery.memory.v1",
+          "receivers": [
+            {
+              "receiver_id": "A",
+              "facts": [
+                {
+                  "fact_id": "prior:A",
+                  "field": "message_content",
+                  "value": "小张负责 X17。"
+                }
+              ]
+            }
+          ],
+          "sharing_groups": []
+        },
+        "targets": [
+          {
+            "probe_id": "p0",
+            "receiver_id": "A",
+            "field": "project_participation",
+            "subject": "小张"
+          }
+        ]
+      },
+      "prediction": {
+        "probe_id": "p0",
+        "receiver_id": "A",
+        "field": "project_participation",
+        "subject": "小张",
+        "top1_guess": null,
+        "possible_disclosed_privacy": null,
+        "status": "abstain",
+        "method": "abstain",
+        "evidence": [],
+        "shared_knowledge_used": false,
+        "visible_receiver_ids": [
+          "A"
+        ],
+        "recovery_version": "deterministic-relations-v2"
+      }
+    },
+    "B": {
+      "input": {
+        "memory": {
+          "schema": "privacy.recovery.memory.v1",
+          "receivers": [
+            {
+              "receiver_id": "B",
+              "facts": []
+            }
+          ],
+          "sharing_groups": []
+        },
+        "targets": [
+          {
+            "probe_id": "p0",
+            "receiver_id": "B",
+            "field": "project_participation",
+            "subject": "小张"
+          }
+        ]
+      },
+      "prediction": {
+        "probe_id": "p0",
+        "receiver_id": "B",
+        "field": "project_participation",
+        "subject": "小张",
+        "top1_guess": null,
+        "possible_disclosed_privacy": null,
+        "status": "abstain",
+        "method": "abstain",
+        "evidence": [],
+        "shared_knowledge_used": false,
+        "visible_receiver_ids": [
+          "B"
+        ],
+        "recovery_version": "deterministic-relations-v2"
+      }
+    },
+    "joint": {
+      "input": {
+        "memory": {
+          "schema": "privacy.recovery.memory.v1",
+          "receivers": [
+            {
+              "receiver_id": "A",
+              "facts": [
+                {
+                  "fact_id": "prior:A",
+                  "field": "message_content",
+                  "value": "小张负责 X17。"
+                }
+              ]
+            },
+            {
+              "receiver_id": "B",
+              "facts": []
+            }
+          ],
+          "sharing_groups": [
+            {
+              "group_id": "AB",
+              "members": [
+                "A",
+                "B"
+              ],
+              "enabled": true
+            }
+          ]
+        },
+        "targets": [
+          {
+            "probe_id": "p0",
+            "receiver_id": "A",
+            "field": "project_participation",
+            "subject": "小张"
+          }
+        ]
+      },
+      "prediction": {
+        "probe_id": "p0",
+        "receiver_id": "A",
+        "field": "project_participation",
+        "subject": "小张",
+        "top1_guess": null,
+        "possible_disclosed_privacy": null,
+        "status": "abstain",
+        "method": "abstain",
+        "evidence": [],
+        "shared_knowledge_used": false,
+        "visible_receiver_ids": [
+          "A",
+          "B"
+        ],
+        "recovery_version": "deterministic-relations-v2"
+      }
+    }
+  },
+  "after": {
+    "A": {
+      "input": {
+        "memory": {
+          "schema": "privacy.recovery.memory.v1",
+          "receivers": [
+            {
+              "receiver_id": "A",
+              "facts": [
+                {
+                  "fact_id": "prior:A",
+                  "field": "message_content",
+                  "value": "小张负责 X17。"
+                }
+              ]
+            }
+          ],
+          "sharing_groups": []
+        },
+        "targets": [
+          {
+            "probe_id": "p0",
+            "receiver_id": "A",
+            "field": "project_participation",
+            "subject": "小张"
+          }
+        ]
+      },
+      "prediction": {
+        "probe_id": "p0",
+        "receiver_id": "A",
+        "field": "project_participation",
+        "subject": "小张",
+        "top1_guess": null,
+        "possible_disclosed_privacy": null,
+        "status": "abstain",
+        "method": "abstain",
+        "evidence": [],
+        "shared_knowledge_used": false,
+        "visible_receiver_ids": [
+          "A"
+        ],
+        "recovery_version": "deterministic-relations-v2"
+      }
+    },
+    "B": {
+      "input": {
+        "memory": {
+          "schema": "privacy.recovery.memory.v1",
+          "receivers": [
+            {
+              "receiver_id": "B",
+              "facts": [
+                {
+                  "fact_id": "new:B",
+                  "field": "message_content",
+                  "value": "X17 是并购项目。"
+                }
+              ]
+            }
+          ],
+          "sharing_groups": []
+        },
+        "targets": [
+          {
+            "probe_id": "p0",
+            "receiver_id": "B",
+            "field": "project_participation",
+            "subject": "小张"
+          }
+        ]
+      },
+      "prediction": {
+        "probe_id": "p0",
+        "receiver_id": "B",
+        "field": "project_participation",
+        "subject": "小张",
+        "top1_guess": null,
+        "possible_disclosed_privacy": null,
+        "status": "abstain",
+        "method": "abstain",
+        "evidence": [],
+        "shared_knowledge_used": false,
+        "visible_receiver_ids": [
+          "B"
+        ],
+        "recovery_version": "deterministic-relations-v2"
+      }
+    },
+    "joint": {
+      "input": {
+        "memory": {
+          "schema": "privacy.recovery.memory.v1",
+          "receivers": [
+            {
+              "receiver_id": "A",
+              "facts": [
+                {
+                  "fact_id": "prior:A",
+                  "field": "message_content",
+                  "value": "小张负责 X17。"
+                }
+              ]
+            },
+            {
+              "receiver_id": "B",
+              "facts": [
+                {
+                  "fact_id": "new:B",
+                  "field": "message_content",
+                  "value": "X17 是并购项目。"
+                }
+              ]
+            }
+          ],
+          "sharing_groups": [
+            {
+              "group_id": "AB",
+              "members": [
+                "A",
+                "B"
+              ],
+              "enabled": true
+            }
+          ]
+        },
+        "targets": [
+          {
+            "probe_id": "p0",
+            "receiver_id": "A",
+            "field": "project_participation",
+            "subject": "小张"
+          }
+        ]
+      },
+      "prediction": {
+        "probe_id": "p0",
+        "receiver_id": "A",
+        "field": "project_participation",
+        "subject": "小张",
+        "top1_guess": {
+          "person": "小张",
+          "project": "X17",
+          "project_type": "并购"
+        },
+        "possible_disclosed_privacy": {
+          "person": "小张",
+          "project": "X17",
+          "project_type": "并购"
+        },
+        "status": "one_candidate",
+        "method": "deterministic_rule_inference",
+        "evidence": [
+          {
+            "receiver_id": "A",
+            "fact_id": "prior:A"
+          },
+          {
+            "receiver_id": "B",
+            "fact_id": "new:B"
+          }
+        ],
+        "shared_knowledge_used": true,
+        "visible_receiver_ids": [
+          "A",
+          "B"
+        ],
+        "recovery_version": "deterministic-relations-v2",
+        "claim": {
+          "subject": "小张",
+          "predicate": "project_participation",
+          "object": {
+            "person": "小张",
+            "project": "X17",
+            "project_type": "并购"
+          },
+          "context": {}
+        },
+        "public_evidence": [],
+        "proof": [
+          {
+            "rule_id": "responsibility_and_project_type",
+            "premise_fact_ids": [
+              "fact:9d7bbcc9ae514378b0b3e80f",
+              "fact:f9a0fdcda125ece9dbd5aec5"
+            ],
+            "operator": "AND",
+            "conclusion": {
+              "subject": "小张",
+              "predicate": "project_participation",
+              "object": {
+                "person": "小张",
+                "project": "X17",
+                "project_type": "并购"
+              },
+              "context": {}
+            }
+          }
+        ],
+        "minimal_receiver_sets": [
+          [
+            "A",
+            "B"
+          ]
+        ],
+        "requires_joint_evidence": true,
+        "version": "deterministic-relations-v2",
+        "inference_status": "proved"
+      }
+    }
+  }
+}

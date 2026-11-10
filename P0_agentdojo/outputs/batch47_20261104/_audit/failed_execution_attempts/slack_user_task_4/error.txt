@@ -1,0 +1,46 @@
+Traceback (most recent call last):
+  File "D:\Lironghua\隐私子刊\P0_agentdojo\p0\run.py", line 61, in run_one
+    utility, _ = suite.run_task_with_pipeline(pipeline, task, injection_task=None, injections={})
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Lironghua\隐私子刊\P0_agentdojo\.venv\Lib\site-packages\agentdojo\task_suite\task_suite.py", line 386, in run_task_with_pipeline
+    _, _, task_environment, messages, _ = agent_pipeline.query(prompt, runtime, task_environment)
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Lironghua\隐私子刊\P0_agentdojo\p0\pipeline.py", line 187, in query
+    final = graph.invoke(init, config={"recursion_limit": self.config.max_model_calls*3+10})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Lironghua\隐私子刊\P0_agentdojo\.venv\Lib\site-packages\langgraph\pregel\main.py", line 4001, in invoke
+    for chunk in self.stream(
+                 ^^^^^^^^^^^^
+  File "D:\Lironghua\隐私子刊\P0_agentdojo\.venv\Lib\site-packages\langgraph\pregel\main.py", line 3058, in stream
+    for _ in runner.tick(
+             ^^^^^^^^^^^^
+  File "D:\Lironghua\隐私子刊\P0_agentdojo\.venv\Lib\site-packages\langgraph\pregel\_runner.py", line 208, in tick
+    run_with_retry(
+  File "D:\Lironghua\隐私子刊\P0_agentdojo\.venv\Lib\site-packages\langgraph\pregel\_retry.py", line 617, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Lironghua\隐私子刊\P0_agentdojo\.venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 707, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Lironghua\隐私子刊\P0_agentdojo\.venv\Lib\site-packages\langgraph\_internal\_runnable.py", line 447, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Lironghua\隐私子刊\P0_agentdojo\p0\pipeline.py", line 78, in model
+    response = self.backend.complete(actor, messages, self.tools[actor])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Lironghua\隐私子刊\P0_agentdojo\p0\backend.py", line 26, in complete
+    response = self.client.chat.completions.create(**request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Lironghua\隐私子刊\P0_agentdojo\.venv\Lib\site-packages\openai\_utils\_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Lironghua\隐私子刊\P0_agentdojo\.venv\Lib\site-packages\openai\resources\chat\completions\completions.py", line 1318, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "D:\Lironghua\隐私子刊\P0_agentdojo\.venv\Lib\site-packages\openai\_base_client.py", line 1474, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Lironghua\隐私子刊\P0_agentdojo\.venv\Lib\site-packages\openai\_base_client.py", line 1247, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': "Invalid 'messages[6].tool_calls': empty array. Expected an array with minimum length 1, but got an empty array instead. (request_id: 49b7a49d-8a82-43e1-b0d4-bbc44fe15bdf)", 'type': 'invalid_request_error', 'param': None, 'code': 'invalid_request_error'}}
+During task with name 'agent_a' and id '565bb84b-c756-b7a8-7aaf-87bcc0ba5cad'

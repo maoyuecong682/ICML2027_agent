@@ -1,0 +1,53 @@
+{
+  "schema": "privacy.recovery.memory.v1",
+  "receivers": [
+    {
+      "receiver_id": "app:workspace:calendar",
+      "facts": [
+        {
+          "fact_id": "normalized:workspace/user_task_23::app:workspace:calendar::e0004::/day:calendar_schedule",
+          "field": "calendar_schedule",
+          "value": "2024-05-15"
+        },
+        {
+          "fact_id": "normalized:workspace/user_task_23::app:workspace:calendar::e0004::/day:request_parameter",
+          "field": "request_parameter",
+          "value": "2024-05-15",
+          "event_id": "e0004",
+          "parameter_path": "/day",
+          "subject": "request:workspace/user_task_23::app:workspace:calendar::e0004"
+        }
+      ]
+    },
+    {
+      "receiver_id": "app:workspace:email",
+      "facts": [
+        {
+          "fact_id": "workspace/user_task_23::app:workspace:email::e0005::atom:0:query_intent",
+          "field": "query_intent",
+          "value": "TechServices"
+        },
+        {
+          "fact_id": "workspace/user_task_23::app:workspace:email::e0005::atom:1:query_intent",
+          "field": "query_intent",
+          "value": "password reset"
+        },
+        {
+          "fact_id": "graphiti:entity:64a9efa8-258f-4099-9ce1-20f4865f1193:unclassified_text",
+          "field": "unclassified_text",
+          "value": "TechServices password reset"
+        }
+      ]
+    }
+  ],
+  "sharing_groups": [
+    {
+      "group_id": "explicit_hypothetical_all_services",
+      "members": [
+        "app:workspace:calendar",
+        "app:workspace:email"
+      ],
+      "enabled": true
+    }
+  ]
+}

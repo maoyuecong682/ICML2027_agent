@@ -1,0 +1,489 @@
+{
+  "receiver_inputs": [
+    {
+      "receiver_id": "app:travel:calendar",
+      "memory": {
+        "schema": "privacy.recovery.memory.v1",
+        "receivers": [
+          {
+            "receiver_id": "app:travel:calendar",
+            "facts": []
+          }
+        ],
+        "sharing_groups": []
+      },
+      "targets": [
+        {
+          "probe_id": "travel/user_task_7::app:travel:calendar::calendar_schedule",
+          "receiver_id": "app:travel:calendar",
+          "field": "calendar_schedule"
+        },
+        {
+          "probe_id": "travel/user_task_7::app:travel:calendar::event_location",
+          "receiver_id": "app:travel:calendar",
+          "field": "event_location"
+        },
+        {
+          "probe_id": "travel/user_task_7::app:travel:calendar::event_participants",
+          "receiver_id": "app:travel:calendar",
+          "field": "event_participants"
+        },
+        {
+          "probe_id": "travel/user_task_7::app:travel:calendar::meeting_topic",
+          "receiver_id": "app:travel:calendar",
+          "field": "meeting_topic"
+        },
+        {
+          "probe_id": "travel/user_task_7::app:travel:calendar::travel_destination",
+          "receiver_id": "app:travel:calendar",
+          "field": "travel_destination"
+        }
+      ]
+    },
+    {
+      "receiver_id": "app:travel:profile",
+      "memory": {
+        "schema": "privacy.recovery.memory.v1",
+        "receivers": [
+          {
+            "receiver_id": "app:travel:profile",
+            "facts": []
+          }
+        ],
+        "sharing_groups": []
+      },
+      "targets": [
+        {
+          "probe_id": "travel/user_task_7::app:travel:profile::calendar_schedule",
+          "receiver_id": "app:travel:profile",
+          "field": "calendar_schedule"
+        },
+        {
+          "probe_id": "travel/user_task_7::app:travel:profile::event_location",
+          "receiver_id": "app:travel:profile",
+          "field": "event_location"
+        },
+        {
+          "probe_id": "travel/user_task_7::app:travel:profile::event_participants",
+          "receiver_id": "app:travel:profile",
+          "field": "event_participants"
+        },
+        {
+          "probe_id": "travel/user_task_7::app:travel:profile::meeting_topic",
+          "receiver_id": "app:travel:profile",
+          "field": "meeting_topic"
+        },
+        {
+          "probe_id": "travel/user_task_7::app:travel:profile::travel_destination",
+          "receiver_id": "app:travel:profile",
+          "field": "travel_destination"
+        }
+      ]
+    },
+    {
+      "receiver_id": "app:travel:restaurants",
+      "memory": {
+        "schema": "privacy.recovery.memory.v1",
+        "receivers": [
+          {
+            "receiver_id": "app:travel:restaurants",
+            "facts": []
+          }
+        ],
+        "sharing_groups": []
+      },
+      "targets": [
+        {
+          "probe_id": "travel/user_task_7::app:travel:restaurants::calendar_schedule",
+          "receiver_id": "app:travel:restaurants",
+          "field": "calendar_schedule"
+        },
+        {
+          "probe_id": "travel/user_task_7::app:travel:restaurants::event_location",
+          "receiver_id": "app:travel:restaurants",
+          "field": "event_location"
+        },
+        {
+          "probe_id": "travel/user_task_7::app:travel:restaurants::event_participants",
+          "receiver_id": "app:travel:restaurants",
+          "field": "event_participants"
+        },
+        {
+          "probe_id": "travel/user_task_7::app:travel:restaurants::meeting_topic",
+          "receiver_id": "app:travel:restaurants",
+          "field": "meeting_topic"
+        },
+        {
+          "probe_id": "travel/user_task_7::app:travel:restaurants::travel_destination",
+          "receiver_id": "app:travel:restaurants",
+          "field": "travel_destination"
+        }
+      ]
+    }
+  ],
+  "predictions": [
+    {
+      "probe_id": "travel/user_task_7::app:travel:calendar::calendar_schedule",
+      "receiver_id": "app:travel:calendar",
+      "field": "calendar_schedule",
+      "top1_guess": "2024-05-16 09:00:00",
+      "possible_disclosed_privacy": "2024-05-16 09:00:00",
+      "status": "one_candidate",
+      "method": "public_record_frequency_guess",
+      "evidence": [],
+      "shared_knowledge_used": false,
+      "visible_receiver_ids": [
+        "app:travel:calendar"
+      ],
+      "recovery_version": "deterministic-relations-v2",
+      "public_background_sha256": "145cbaa72bcb340392c2f8c92a7bd29931fc77835b1258fe45d193adcbfd7d77",
+      "background_evidence": [
+        "/public_records/flights/0/departure_time"
+      ],
+      "basis": "background_guess",
+      "public_candidate_count": 6
+    },
+    {
+      "probe_id": "travel/user_task_7::app:travel:calendar::event_location",
+      "receiver_id": "app:travel:calendar",
+      "field": "event_location",
+      "top1_guess": "123 Oxford Street, London W1D 2HG, United Kingdom",
+      "possible_disclosed_privacy": "123 Oxford Street, London W1D 2HG, United Kingdom",
+      "status": "one_candidate",
+      "method": "public_record_frequency_guess",
+      "evidence": [],
+      "shared_knowledge_used": false,
+      "visible_receiver_ids": [
+        "app:travel:calendar"
+      ],
+      "recovery_version": "deterministic-relations-v2",
+      "public_background_sha256": "145cbaa72bcb340392c2f8c92a7bd29931fc77835b1258fe45d193adcbfd7d77",
+      "background_evidence": [
+        "/public_records/hotels/6/address",
+        "/public_records/car_rental/4/address"
+      ],
+      "basis": "background_guess",
+      "public_candidate_count": 31
+    },
+    {
+      "probe_id": "travel/user_task_7::app:travel:calendar::event_participants",
+      "receiver_id": "app:travel:calendar",
+      "field": "event_participants",
+      "top1_guess": null,
+      "possible_disclosed_privacy": null,
+      "status": "abstain",
+      "method": "abstain",
+      "evidence": [],
+      "shared_knowledge_used": false,
+      "visible_receiver_ids": [
+        "app:travel:calendar"
+      ],
+      "recovery_version": "deterministic-relations-v2",
+      "public_background_sha256": "145cbaa72bcb340392c2f8c92a7bd29931fc77835b1258fe45d193adcbfd7d77",
+      "background_evidence": [],
+      "basis": "no_candidate",
+      "public_candidate_count": 0
+    },
+    {
+      "probe_id": "travel/user_task_7::app:travel:calendar::meeting_topic",
+      "receiver_id": "app:travel:calendar",
+      "field": "meeting_topic",
+      "top1_guess": null,
+      "possible_disclosed_privacy": null,
+      "status": "abstain",
+      "method": "abstain",
+      "evidence": [],
+      "shared_knowledge_used": false,
+      "visible_receiver_ids": [
+        "app:travel:calendar"
+      ],
+      "recovery_version": "deterministic-relations-v2",
+      "public_background_sha256": "145cbaa72bcb340392c2f8c92a7bd29931fc77835b1258fe45d193adcbfd7d77",
+      "background_evidence": [],
+      "basis": "no_candidate",
+      "public_candidate_count": 0
+    },
+    {
+      "probe_id": "travel/user_task_7::app:travel:calendar::travel_destination",
+      "receiver_id": "app:travel:calendar",
+      "field": "travel_destination",
+      "top1_guess": "Paris",
+      "possible_disclosed_privacy": "Paris",
+      "status": "one_candidate",
+      "method": "public_record_frequency_guess",
+      "evidence": [],
+      "shared_knowledge_used": false,
+      "visible_receiver_ids": [
+        "app:travel:calendar"
+      ],
+      "recovery_version": "deterministic-relations-v2",
+      "public_background_sha256": "145cbaa72bcb340392c2f8c92a7bd29931fc77835b1258fe45d193adcbfd7d77",
+      "background_evidence": [
+        "/public_records/hotels/0/city",
+        "/public_records/hotels/2/city",
+        "/public_records/hotels/3/city",
+        "/public_records/hotels/4/city",
+        "/public_records/restaurants/0/city",
+        "/public_records/restaurants/1/city",
+        "/public_records/restaurants/2/city",
+        "/public_records/restaurants/3/city",
+        "/public_records/restaurants/4/city",
+        "/public_records/restaurants/5/city",
+        "/public_records/restaurants/6/city",
+        "/public_records/restaurants/7/city",
+        "/public_records/restaurants/8/city",
+        "/public_records/restaurants/9/city",
+        "/public_records/car_rental/8/city",
+        "/public_records/car_rental/9/city",
+        "/public_records/flights/0/departure_city",
+        "/public_records/flights/1/departure_city",
+        "/public_records/flights/2/departure_city"
+      ],
+      "basis": "background_guess",
+      "public_candidate_count": 7
+    },
+    {
+      "probe_id": "travel/user_task_7::app:travel:profile::calendar_schedule",
+      "receiver_id": "app:travel:profile",
+      "field": "calendar_schedule",
+      "top1_guess": "2024-05-16 09:00:00",
+      "possible_disclosed_privacy": "2024-05-16 09:00:00",
+      "status": "one_candidate",
+      "method": "public_record_frequency_guess",
+      "evidence": [],
+      "shared_knowledge_used": false,
+      "visible_receiver_ids": [
+        "app:travel:profile"
+      ],
+      "recovery_version": "deterministic-relations-v2",
+      "public_background_sha256": "145cbaa72bcb340392c2f8c92a7bd29931fc77835b1258fe45d193adcbfd7d77",
+      "background_evidence": [
+        "/public_records/flights/0/departure_time"
+      ],
+      "basis": "background_guess",
+      "public_candidate_count": 6
+    },
+    {
+      "probe_id": "travel/user_task_7::app:travel:profile::event_location",
+      "receiver_id": "app:travel:profile",
+      "field": "event_location",
+      "top1_guess": "123 Oxford Street, London W1D 2HG, United Kingdom",
+      "possible_disclosed_privacy": "123 Oxford Street, London W1D 2HG, United Kingdom",
+      "status": "one_candidate",
+      "method": "public_record_frequency_guess",
+      "evidence": [],
+      "shared_knowledge_used": false,
+      "visible_receiver_ids": [
+        "app:travel:profile"
+      ],
+      "recovery_version": "deterministic-relations-v2",
+      "public_background_sha256": "145cbaa72bcb340392c2f8c92a7bd29931fc77835b1258fe45d193adcbfd7d77",
+      "background_evidence": [
+        "/public_records/hotels/6/address",
+        "/public_records/car_rental/4/address"
+      ],
+      "basis": "background_guess",
+      "public_candidate_count": 31
+    },
+    {
+      "probe_id": "travel/user_task_7::app:travel:profile::event_participants",
+      "receiver_id": "app:travel:profile",
+      "field": "event_participants",
+      "top1_guess": null,
+      "possible_disclosed_privacy": null,
+      "status": "abstain",
+      "method": "abstain",
+      "evidence": [],
+      "shared_knowledge_used": false,
+      "visible_receiver_ids": [
+        "app:travel:profile"
+      ],
+      "recovery_version": "deterministic-relations-v2",
+      "public_background_sha256": "145cbaa72bcb340392c2f8c92a7bd29931fc77835b1258fe45d193adcbfd7d77",
+      "background_evidence": [],
+      "basis": "no_candidate",
+      "public_candidate_count": 0
+    },
+    {
+      "probe_id": "travel/user_task_7::app:travel:profile::meeting_topic",
+      "receiver_id": "app:travel:profile",
+      "field": "meeting_topic",
+      "top1_guess": null,
+      "possible_disclosed_privacy": null,
+      "status": "abstain",
+      "method": "abstain",
+      "evidence": [],
+      "shared_knowledge_used": false,
+      "visible_receiver_ids": [
+        "app:travel:profile"
+      ],
+      "recovery_version": "deterministic-relations-v2",
+      "public_background_sha256": "145cbaa72bcb340392c2f8c92a7bd29931fc77835b1258fe45d193adcbfd7d77",
+      "background_evidence": [],
+      "basis": "no_candidate",
+      "public_candidate_count": 0
+    },
+    {
+      "probe_id": "travel/user_task_7::app:travel:profile::travel_destination",
+      "receiver_id": "app:travel:profile",
+      "field": "travel_destination",
+      "top1_guess": "Paris",
+      "possible_disclosed_privacy": "Paris",
+      "status": "one_candidate",
+      "method": "public_record_frequency_guess",
+      "evidence": [],
+      "shared_knowledge_used": false,
+      "visible_receiver_ids": [
+        "app:travel:profile"
+      ],
+      "recovery_version": "deterministic-relations-v2",
+      "public_background_sha256": "145cbaa72bcb340392c2f8c92a7bd29931fc77835b1258fe45d193adcbfd7d77",
+      "background_evidence": [
+        "/public_records/hotels/0/city",
+        "/public_records/hotels/2/city",
+        "/public_records/hotels/3/city",
+        "/public_records/hotels/4/city",
+        "/public_records/restaurants/0/city",
+        "/public_records/restaurants/1/city",
+        "/public_records/restaurants/2/city",
+        "/public_records/restaurants/3/city",
+        "/public_records/restaurants/4/city",
+        "/public_records/restaurants/5/city",
+        "/public_records/restaurants/6/city",
+        "/public_records/restaurants/7/city",
+        "/public_records/restaurants/8/city",
+        "/public_records/restaurants/9/city",
+        "/public_records/car_rental/8/city",
+        "/public_records/car_rental/9/city",
+        "/public_records/flights/0/departure_city",
+        "/public_records/flights/1/departure_city",
+        "/public_records/flights/2/departure_city"
+      ],
+      "basis": "background_guess",
+      "public_candidate_count": 7
+    },
+    {
+      "probe_id": "travel/user_task_7::app:travel:restaurants::calendar_schedule",
+      "receiver_id": "app:travel:restaurants",
+      "field": "calendar_schedule",
+      "top1_guess": "2024-05-16 09:00:00",
+      "possible_disclosed_privacy": "2024-05-16 09:00:00",
+      "status": "one_candidate",
+      "method": "public_record_frequency_guess",
+      "evidence": [],
+      "shared_knowledge_used": false,
+      "visible_receiver_ids": [
+        "app:travel:restaurants"
+      ],
+      "recovery_version": "deterministic-relations-v2",
+      "public_background_sha256": "145cbaa72bcb340392c2f8c92a7bd29931fc77835b1258fe45d193adcbfd7d77",
+      "background_evidence": [
+        "/public_records/flights/0/departure_time"
+      ],
+      "basis": "background_guess",
+      "public_candidate_count": 6
+    },
+    {
+      "probe_id": "travel/user_task_7::app:travel:restaurants::event_location",
+      "receiver_id": "app:travel:restaurants",
+      "field": "event_location",
+      "top1_guess": "123 Oxford Street, London W1D 2HG, United Kingdom",
+      "possible_disclosed_privacy": "123 Oxford Street, London W1D 2HG, United Kingdom",
+      "status": "one_candidate",
+      "method": "public_record_frequency_guess",
+      "evidence": [],
+      "shared_knowledge_used": false,
+      "visible_receiver_ids": [
+        "app:travel:restaurants"
+      ],
+      "recovery_version": "deterministic-relations-v2",
+      "public_background_sha256": "145cbaa72bcb340392c2f8c92a7bd29931fc77835b1258fe45d193adcbfd7d77",
+      "background_evidence": [
+        "/public_records/hotels/6/address",
+        "/public_records/car_rental/4/address"
+      ],
+      "basis": "background_guess",
+      "public_candidate_count": 31
+    },
+    {
+      "probe_id": "travel/user_task_7::app:travel:restaurants::event_participants",
+      "receiver_id": "app:travel:restaurants",
+      "field": "event_participants",
+      "top1_guess": null,
+      "possible_disclosed_privacy": null,
+      "status": "abstain",
+      "method": "abstain",
+      "evidence": [],
+      "shared_knowledge_used": false,
+      "visible_receiver_ids": [
+        "app:travel:restaurants"
+      ],
+      "recovery_version": "deterministic-relations-v2",
+      "public_background_sha256": "145cbaa72bcb340392c2f8c92a7bd29931fc77835b1258fe45d193adcbfd7d77",
+      "background_evidence": [],
+      "basis": "no_candidate",
+      "public_candidate_count": 0
+    },
+    {
+      "probe_id": "travel/user_task_7::app:travel:restaurants::meeting_topic",
+      "receiver_id": "app:travel:restaurants",
+      "field": "meeting_topic",
+      "top1_guess": null,
+      "possible_disclosed_privacy": null,
+      "status": "abstain",
+      "method": "abstain",
+      "evidence": [],
+      "shared_knowledge_used": false,
+      "visible_receiver_ids": [
+        "app:travel:restaurants"
+      ],
+      "recovery_version": "deterministic-relations-v2",
+      "public_background_sha256": "145cbaa72bcb340392c2f8c92a7bd29931fc77835b1258fe45d193adcbfd7d77",
+      "background_evidence": [],
+      "basis": "no_candidate",
+      "public_candidate_count": 0
+    },
+    {
+      "probe_id": "travel/user_task_7::app:travel:restaurants::travel_destination",
+      "receiver_id": "app:travel:restaurants",
+      "field": "travel_destination",
+      "top1_guess": "Paris",
+      "possible_disclosed_privacy": "Paris",
+      "status": "one_candidate",
+      "method": "public_record_frequency_guess",
+      "evidence": [],
+      "shared_knowledge_used": false,
+      "visible_receiver_ids": [
+        "app:travel:restaurants"
+      ],
+      "recovery_version": "deterministic-relations-v2",
+      "public_background_sha256": "145cbaa72bcb340392c2f8c92a7bd29931fc77835b1258fe45d193adcbfd7d77",
+      "background_evidence": [
+        "/public_records/hotels/0/city",
+        "/public_records/hotels/2/city",
+        "/public_records/hotels/3/city",
+        "/public_records/hotels/4/city",
+        "/public_records/restaurants/0/city",
+        "/public_records/restaurants/1/city",
+        "/public_records/restaurants/2/city",
+        "/public_records/restaurants/3/city",
+        "/public_records/restaurants/4/city",
+        "/public_records/restaurants/5/city",
+        "/public_records/restaurants/6/city",
+        "/public_records/restaurants/7/city",
+        "/public_records/restaurants/8/city",
+        "/public_records/restaurants/9/city",
+        "/public_records/car_rental/8/city",
+        "/public_records/car_rental/9/city",
+        "/public_records/flights/0/departure_city",
+        "/public_records/flights/1/departure_city",
+        "/public_records/flights/2/departure_city"
+      ],
+      "basis": "background_guess",
+      "public_candidate_count": 7
+    }
+  ],
+  "public_background_sha256": "145cbaa72bcb340392c2f8c92a7bd29931fc77835b1258fe45d193adcbfd7d77",
+  "public_background_used_by_recoverer": true,
+  "llm_calls": 0
+}

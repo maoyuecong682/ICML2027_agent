@@ -1,0 +1,32 @@
+Traceback (most recent call last):
+  File "D:\Lironghua\隐私子刊\P0_agentdojo\p0_privacy\batch_pipeline.py", line 299, in analysis_task
+    saved = await asyncio.to_thread(annotate_task, task, [cat[c] for c in task['category_ids']],
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maoyu\anaconda3\Lib\asyncio\threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maoyu\anaconda3\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Lironghua\隐私子刊\P0_agentdojo\p0_privacy\annotation.py", line 245, in annotate_task
+    raise RuntimeError(f"Annotation failed validation after 4 attempts: {task['task_key']}: {repair}")
+RuntimeError: Annotation failed validation after 4 attempts: workspace/user_task_6: Contradictory sensitivity review at /title: no_sensitive_content requires all atoms at that path to use field=none; if nonpublic file_metadata is protected, use potentially_sensitive or sensitive instead
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Lironghua\隐私子刊\P0_agentdojo\p0_privacy\batch_pipeline.py", line 409, in run_analysis
+    bundle['tasks'][key] = await analysis_task(folder, entry, store, categories, strategy)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Lironghua\隐私子刊\P0_agentdojo\p0_privacy\batch_pipeline.py", line 305, in analysis_task
+    result = await asyncio.to_thread(annotate_task, part, [cat[c] for c in task['category_ids']],
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maoyu\anaconda3\Lib\asyncio\threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maoyu\anaconda3\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Lironghua\隐私子刊\P0_agentdojo\p0_privacy\annotation.py", line 245, in annotate_task
+    raise RuntimeError(f"Annotation failed validation after 4 attempts: {task['task_key']}: {repair}")
+RuntimeError: Annotation failed validation after 4 attempts: workspace/user_task_6: Contradictory sensitivity review at /title: no_sensitive_content requires all atoms at that path to use field=none; if nonpublic file_metadata is protected, use potentially_sensitive or sensitive instead

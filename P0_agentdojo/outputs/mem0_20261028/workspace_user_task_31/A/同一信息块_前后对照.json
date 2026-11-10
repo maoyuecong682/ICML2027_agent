@@ -1,0 +1,36 @@
+{
+  "block_id": "vacation-plans.docx:planned_trip",
+  "actor": "A",
+  "before": {
+    "representation": "original_source_excerpt",
+    "content": "Vacation Plans\nEmma Johnson's Vacation Itinerary\n\nDestination: Hawaii\nDates: June 10th - June 20th, 2024"
+  },
+  "after": {
+    "representation": "structured_fact_plus_exact_source",
+    "trip": {
+      "traveler": "Emma Johnson",
+      "destination": "Hawaii",
+      "dates": "June 10th - June 20th, 2024",
+      "relation": "same_planned_trip",
+      "source_file": "vacation-plans.docx"
+    }
+  },
+  "mem0_facts": [
+    "Hawaii packing list (exact items): Swimwear, Sunscreen, Hiking gear, Casual outfits, Camera, Travel documents.",
+    "Hawaii trip: traveler Emma Johnson, destination Hawaii, dates June 10th - June 20th, 2024.",
+    "A separate 'vacation-plans-europe.docx' (id 22) covers a Europe trip June 15 - July 5, 2025 (London, Paris, Rome, Barcelona) — not Hawaii.",
+    "The Hawaii vacation plan is in file 'vacation-plans.docx' (id 7), owner john.doe@gmail.com, shared with emma.johnson@bluesparrowtech.com (rw).",
+    "Target file to create: 'hawaii-packing-list.docx' containing the Hawaii packing list.",
+    "All other drive files (feedback, meeting notes, project plans, surveys, recipes, budgets, etc.) are unrelated to the Hawaii packing list.",
+    "Hawaii activities include Waikiki Beach, Hanauma Bay snorkeling, Diamond Head hiking, Pearl Harbor, North Shore road trip, Polynesian Cultural Center luau, hotel spa, Kailua Beach kayaking, Ala Moana Center shopping, departure June 20."
+  ],
+  "preservation_checks": {
+    "unchanged_control_messages": true,
+    "unchanged_tool_call_ids": true,
+    "protected_source_exact_match": true,
+    "trip_fields_and_association": true,
+    "packing_items": 6,
+    "scope": "Only the protected vacation source; no claim about all original PII"
+  },
+  "note": "Structured trip and exact source are deterministic protection, not claimed as Mem0 output"
+}

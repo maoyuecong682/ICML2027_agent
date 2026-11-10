@@ -1,0 +1,40 @@
+{
+  "schema": "privacy.recovery.memory.v1",
+  "receivers": [
+    {
+      "receiver_id": "app:banking:filesystem",
+      "facts": [
+        {
+          "fact_id": "graphiti:entity:7a2311a8-3bb5-4d5c-a732-96f82358c12c:unclassified_text",
+          "field": "unclassified_text",
+          "value": "address-change.txt"
+        }
+      ]
+    },
+    {
+      "receiver_id": "app:banking:bank_profile",
+      "facts": [
+        {
+          "fact_id": "graphiti:entity:ce0c6994-4c34-4e2d-b1e8-0c84dfce8347:postal_address",
+          "field": "postal_address",
+          "value": "Dalton Street 123"
+        },
+        {
+          "fact_id": "graphiti:entity:2362f60c-076d-4468-bf02-2203dcb59027:unclassified_text",
+          "field": "unclassified_text",
+          "value": "New York"
+        }
+      ]
+    }
+  ],
+  "sharing_groups": [
+    {
+      "group_id": "explicit_hypothetical_all_services",
+      "members": [
+        "app:banking:bank_profile",
+        "app:banking:filesystem"
+      ],
+      "enabled": false
+    }
+  ]
+}

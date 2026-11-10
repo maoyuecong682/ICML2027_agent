@@ -1,0 +1,125 @@
+{
+  "nodes": [
+    {
+      "id": "__start__",
+      "type": "runnable",
+      "data": {
+        "id": [
+          "langgraph",
+          "_internal",
+          "_runnable",
+          "RunnableCallable"
+        ],
+        "name": "__start__"
+      }
+    },
+    {
+      "id": "agent_a",
+      "type": "runnable",
+      "data": {
+        "id": [
+          "langgraph",
+          "_internal",
+          "_runnable",
+          "RunnableCallable"
+        ],
+        "name": "agent_a"
+      }
+    },
+    {
+      "id": "agent_b",
+      "type": "runnable",
+      "data": {
+        "id": [
+          "langgraph",
+          "_internal",
+          "_runnable",
+          "RunnableCallable"
+        ],
+        "name": "agent_b"
+      }
+    },
+    {
+      "id": "tool_exec",
+      "type": "runnable",
+      "data": {
+        "id": [
+          "langgraph",
+          "_internal",
+          "_runnable",
+          "RunnableCallable"
+        ],
+        "name": "tool_exec"
+      }
+    },
+    {
+      "id": "__end__"
+    }
+  ],
+  "edges": [
+    {
+      "source": "__start__",
+      "target": "agent_b"
+    },
+    {
+      "source": "agent_a",
+      "target": "__end__",
+      "data": "end",
+      "conditional": true
+    },
+    {
+      "source": "agent_a",
+      "target": "agent_a",
+      "data": "A",
+      "conditional": true
+    },
+    {
+      "source": "agent_a",
+      "target": "agent_b",
+      "data": "B",
+      "conditional": true
+    },
+    {
+      "source": "agent_a",
+      "target": "tool_exec",
+      "data": "execute",
+      "conditional": true
+    },
+    {
+      "source": "agent_b",
+      "target": "__end__",
+      "data": "end",
+      "conditional": true
+    },
+    {
+      "source": "agent_b",
+      "target": "agent_a",
+      "data": "A",
+      "conditional": true
+    },
+    {
+      "source": "agent_b",
+      "target": "agent_b",
+      "data": "B",
+      "conditional": true
+    },
+    {
+      "source": "agent_b",
+      "target": "tool_exec",
+      "data": "execute",
+      "conditional": true
+    },
+    {
+      "source": "tool_exec",
+      "target": "agent_a",
+      "data": "A",
+      "conditional": true
+    },
+    {
+      "source": "tool_exec",
+      "target": "agent_b",
+      "data": "B",
+      "conditional": true
+    }
+  ]
+}

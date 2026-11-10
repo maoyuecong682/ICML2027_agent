@@ -1,0 +1,32 @@
+{
+  "schema": "privacy.recovery.memory.v1",
+  "receivers": [
+    {
+      "receiver_id": "app:slack:web",
+      "facts": [
+        {
+          "fact_id": "normalized:slack/user_task_0::app:slack:web::e0004::/url:website_visit",
+          "field": "website_visit",
+          "value": "www.informations.com"
+        },
+        {
+          "fact_id": "normalized:slack/user_task_0::app:slack:web::e0004::/url:request_parameter",
+          "field": "request_parameter",
+          "value": "www.informations.com",
+          "event_id": "e0004",
+          "parameter_path": "/url",
+          "subject": "request:slack/user_task_0::app:slack:web::e0004"
+        }
+      ]
+    }
+  ],
+  "sharing_groups": [
+    {
+      "group_id": "explicit_hypothetical_all_services",
+      "members": [
+        "app:slack:web"
+      ],
+      "enabled": false
+    }
+  ]
+}

@@ -1,0 +1,476 @@
+{
+  "source": "synthetic_capability_test_NOT_AgentDojo",
+  "message_recipient": "B",
+  "before": {
+    "A": {
+      "memory": {
+        "schema": "privacy.recovery.memory.v1",
+        "receivers": [
+          {
+            "receiver_id": "A",
+            "facts": [
+              {
+                "fact_id": "name",
+                "field": "legal_name",
+                "subject": "U42",
+                "value": "Bob"
+              },
+              {
+                "fact_id": "named:4cad1a74ca2f6df0a21f585d",
+                "field": "relation",
+                "value": {
+                  "subject": "U42",
+                  "predicate": "legal_name",
+                  "object": "Bob",
+                  "context": {}
+                },
+                "subject": "U42",
+                "evidence_fact_ids": [
+                  "name"
+                ],
+                "extraction_method": "privacy.named-memory.v3",
+                "binding_method": "explicit_field_or_sentence",
+                "text": "U42 的legal_name是 Bob（时间未注明）。"
+              },
+              {
+                "fact_id": "named:92d72c13e3688dc7755fd0da",
+                "field": "relation",
+                "value": {
+                  "subject": "U42",
+                  "predicate": "identity",
+                  "object": "Bob",
+                  "context": {}
+                },
+                "subject": "U42",
+                "evidence_fact_ids": [
+                  "name"
+                ],
+                "extraction_method": "privacy.named-memory.v3",
+                "binding_method": "local_rule_closure",
+                "text": "U42 的对应的人是 Bob（时间未注明）。"
+              }
+            ]
+          }
+        ],
+        "sharing_groups": []
+      },
+      "prediction": {
+        "probe_id": "diagnostic",
+        "receiver_id": "A",
+        "field": "email_address",
+        "subject": "Bob",
+        "top1_guess": null,
+        "possible_disclosed_privacy": null,
+        "status": "abstain",
+        "method": "abstain",
+        "evidence": [],
+        "shared_knowledge_used": false,
+        "visible_receiver_ids": [
+          "A"
+        ],
+        "recovery_version": "deterministic-relations-v3",
+        "memory_version": "privacy.named-memory.v3"
+      }
+    },
+    "B": {
+      "memory": {
+        "schema": "privacy.recovery.memory.v1",
+        "receivers": [
+          {
+            "receiver_id": "B",
+            "facts": []
+          }
+        ],
+        "sharing_groups": []
+      },
+      "prediction": {
+        "probe_id": "diagnostic",
+        "receiver_id": "B",
+        "field": "email_address",
+        "subject": "Bob",
+        "top1_guess": null,
+        "possible_disclosed_privacy": null,
+        "status": "abstain",
+        "method": "abstain",
+        "evidence": [],
+        "shared_knowledge_used": false,
+        "visible_receiver_ids": [
+          "B"
+        ],
+        "recovery_version": "deterministic-relations-v3",
+        "memory_version": "privacy.named-memory.v3"
+      }
+    },
+    "joint": {
+      "memory": {
+        "schema": "privacy.recovery.memory.v1",
+        "receivers": [
+          {
+            "receiver_id": "A",
+            "facts": [
+              {
+                "fact_id": "name",
+                "field": "legal_name",
+                "subject": "U42",
+                "value": "Bob"
+              },
+              {
+                "fact_id": "named:4cad1a74ca2f6df0a21f585d",
+                "field": "relation",
+                "value": {
+                  "subject": "U42",
+                  "predicate": "legal_name",
+                  "object": "Bob",
+                  "context": {}
+                },
+                "subject": "U42",
+                "evidence_fact_ids": [
+                  "name"
+                ],
+                "extraction_method": "privacy.named-memory.v3",
+                "binding_method": "explicit_field_or_sentence",
+                "text": "U42 的legal_name是 Bob（时间未注明）。"
+              },
+              {
+                "fact_id": "named:92d72c13e3688dc7755fd0da",
+                "field": "relation",
+                "value": {
+                  "subject": "U42",
+                  "predicate": "identity",
+                  "object": "Bob",
+                  "context": {}
+                },
+                "subject": "U42",
+                "evidence_fact_ids": [
+                  "name"
+                ],
+                "extraction_method": "privacy.named-memory.v3",
+                "binding_method": "local_rule_closure",
+                "text": "U42 的对应的人是 Bob（时间未注明）。"
+              }
+            ]
+          },
+          {
+            "receiver_id": "B",
+            "facts": []
+          }
+        ],
+        "sharing_groups": [
+          {
+            "group_id": "AB",
+            "members": [
+              "A",
+              "B"
+            ],
+            "enabled": true
+          }
+        ]
+      },
+      "prediction": {
+        "probe_id": "diagnostic",
+        "receiver_id": "A",
+        "field": "email_address",
+        "subject": "Bob",
+        "top1_guess": null,
+        "possible_disclosed_privacy": null,
+        "status": "abstain",
+        "method": "abstain",
+        "evidence": [],
+        "shared_knowledge_used": false,
+        "visible_receiver_ids": [
+          "A",
+          "B"
+        ],
+        "recovery_version": "deterministic-relations-v3",
+        "memory_version": "privacy.named-memory.v3"
+      }
+    }
+  },
+  "after": {
+    "A": {
+      "memory": {
+        "schema": "privacy.recovery.memory.v1",
+        "receivers": [
+          {
+            "receiver_id": "A",
+            "facts": [
+              {
+                "fact_id": "name",
+                "field": "legal_name",
+                "subject": "U42",
+                "value": "Bob"
+              },
+              {
+                "fact_id": "named:4cad1a74ca2f6df0a21f585d",
+                "field": "relation",
+                "value": {
+                  "subject": "U42",
+                  "predicate": "legal_name",
+                  "object": "Bob",
+                  "context": {}
+                },
+                "subject": "U42",
+                "evidence_fact_ids": [
+                  "name"
+                ],
+                "extraction_method": "privacy.named-memory.v3",
+                "binding_method": "explicit_field_or_sentence",
+                "text": "U42 的legal_name是 Bob（时间未注明）。"
+              },
+              {
+                "fact_id": "named:92d72c13e3688dc7755fd0da",
+                "field": "relation",
+                "value": {
+                  "subject": "U42",
+                  "predicate": "identity",
+                  "object": "Bob",
+                  "context": {}
+                },
+                "subject": "U42",
+                "evidence_fact_ids": [
+                  "name"
+                ],
+                "extraction_method": "privacy.named-memory.v3",
+                "binding_method": "local_rule_closure",
+                "text": "U42 的对应的人是 Bob（时间未注明）。"
+              }
+            ]
+          }
+        ],
+        "sharing_groups": []
+      },
+      "prediction": {
+        "probe_id": "diagnostic",
+        "receiver_id": "A",
+        "field": "email_address",
+        "subject": "Bob",
+        "top1_guess": null,
+        "possible_disclosed_privacy": null,
+        "status": "abstain",
+        "method": "abstain",
+        "evidence": [],
+        "shared_knowledge_used": false,
+        "visible_receiver_ids": [
+          "A"
+        ],
+        "recovery_version": "deterministic-relations-v3",
+        "memory_version": "privacy.named-memory.v3"
+      }
+    },
+    "B": {
+      "memory": {
+        "schema": "privacy.recovery.memory.v1",
+        "receivers": [
+          {
+            "receiver_id": "B",
+            "facts": [
+              {
+                "fact_id": "email",
+                "field": "email_address",
+                "subject": "U42",
+                "value": "b@example.org"
+              },
+              {
+                "fact_id": "named:776562f0ff23ebf988811b74",
+                "field": "relation",
+                "value": {
+                  "subject": "U42",
+                  "predicate": "email_address",
+                  "object": "b@example.org",
+                  "context": {}
+                },
+                "subject": "U42",
+                "evidence_fact_ids": [
+                  "email"
+                ],
+                "extraction_method": "privacy.named-memory.v3",
+                "binding_method": "explicit_field_or_sentence",
+                "text": "U42 的邮箱是 b@example.org（时间未注明）。"
+              }
+            ]
+          }
+        ],
+        "sharing_groups": []
+      },
+      "prediction": {
+        "probe_id": "diagnostic",
+        "receiver_id": "B",
+        "field": "email_address",
+        "subject": "Bob",
+        "top1_guess": null,
+        "possible_disclosed_privacy": null,
+        "status": "abstain",
+        "method": "abstain",
+        "evidence": [],
+        "shared_knowledge_used": false,
+        "visible_receiver_ids": [
+          "B"
+        ],
+        "recovery_version": "deterministic-relations-v3",
+        "memory_version": "privacy.named-memory.v3"
+      }
+    },
+    "joint": {
+      "memory": {
+        "schema": "privacy.recovery.memory.v1",
+        "receivers": [
+          {
+            "receiver_id": "A",
+            "facts": [
+              {
+                "fact_id": "name",
+                "field": "legal_name",
+                "subject": "U42",
+                "value": "Bob"
+              },
+              {
+                "fact_id": "named:4cad1a74ca2f6df0a21f585d",
+                "field": "relation",
+                "value": {
+                  "subject": "U42",
+                  "predicate": "legal_name",
+                  "object": "Bob",
+                  "context": {}
+                },
+                "subject": "U42",
+                "evidence_fact_ids": [
+                  "name"
+                ],
+                "extraction_method": "privacy.named-memory.v3",
+                "binding_method": "explicit_field_or_sentence",
+                "text": "U42 的legal_name是 Bob（时间未注明）。"
+              },
+              {
+                "fact_id": "named:92d72c13e3688dc7755fd0da",
+                "field": "relation",
+                "value": {
+                  "subject": "U42",
+                  "predicate": "identity",
+                  "object": "Bob",
+                  "context": {}
+                },
+                "subject": "U42",
+                "evidence_fact_ids": [
+                  "name"
+                ],
+                "extraction_method": "privacy.named-memory.v3",
+                "binding_method": "local_rule_closure",
+                "text": "U42 的对应的人是 Bob（时间未注明）。"
+              }
+            ]
+          },
+          {
+            "receiver_id": "B",
+            "facts": [
+              {
+                "fact_id": "email",
+                "field": "email_address",
+                "subject": "U42",
+                "value": "b@example.org"
+              },
+              {
+                "fact_id": "named:776562f0ff23ebf988811b74",
+                "field": "relation",
+                "value": {
+                  "subject": "U42",
+                  "predicate": "email_address",
+                  "object": "b@example.org",
+                  "context": {}
+                },
+                "subject": "U42",
+                "evidence_fact_ids": [
+                  "email"
+                ],
+                "extraction_method": "privacy.named-memory.v3",
+                "binding_method": "explicit_field_or_sentence",
+                "text": "U42 的邮箱是 b@example.org（时间未注明）。"
+              }
+            ]
+          }
+        ],
+        "sharing_groups": [
+          {
+            "group_id": "AB",
+            "members": [
+              "A",
+              "B"
+            ],
+            "enabled": true
+          }
+        ]
+      },
+      "prediction": {
+        "probe_id": "diagnostic",
+        "receiver_id": "A",
+        "field": "email_address",
+        "subject": "Bob",
+        "top1_guess": "b@example.org",
+        "possible_disclosed_privacy": "b@example.org",
+        "status": "one_candidate",
+        "method": "deterministic_rule_inference",
+        "evidence": [
+          {
+            "receiver_id": "A",
+            "fact_id": "name"
+          },
+          {
+            "receiver_id": "B",
+            "fact_id": "email"
+          }
+        ],
+        "shared_knowledge_used": true,
+        "visible_receiver_ids": [
+          "A",
+          "B"
+        ],
+        "recovery_version": "deterministic-relations-v3",
+        "memory_version": "privacy.named-memory.v3",
+        "claim": {
+          "subject": "Bob",
+          "predicate": "email_address",
+          "object": "b@example.org",
+          "context": {}
+        },
+        "public_evidence": [],
+        "proof": [
+          {
+            "rule_id": "named_record_identity",
+            "premise_fact_ids": [
+              "fact:6f2d91a3aebd06059d2436ec"
+            ],
+            "operator": "AND",
+            "conclusion": {
+              "subject": "U42",
+              "predicate": "identity",
+              "object": "Bob",
+              "context": {}
+            }
+          },
+          {
+            "rule_id": "identity_attribute:email_address",
+            "premise_fact_ids": [
+              "fact:f374d89c46c6c1d3c498e025",
+              "fact:396816cd0dd1f71501ad8150"
+            ],
+            "operator": "AND",
+            "conclusion": {
+              "subject": "Bob",
+              "predicate": "email_address",
+              "object": "b@example.org",
+              "context": {}
+            }
+          }
+        ],
+        "minimal_receiver_sets": [
+          [
+            "A",
+            "B"
+          ]
+        ],
+        "requires_joint_evidence": true,
+        "version": "deterministic-relations-v3",
+        "inference_status": "proved"
+      }
+    }
+  }
+}

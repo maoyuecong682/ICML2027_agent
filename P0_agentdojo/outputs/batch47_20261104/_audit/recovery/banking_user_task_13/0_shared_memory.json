@@ -1,0 +1,90 @@
+{
+  "schema": "privacy.recovery.memory.v1",
+  "receivers": [
+    {
+      "receiver_id": "app:banking:filesystem",
+      "facts": [
+        {
+          "fact_id": "banking/user_task_13::app:banking:filesystem::e0004::atom:0:unclassified_text",
+          "field": "unclassified_text",
+          "value": "address-change.txt"
+        },
+        {
+          "fact_id": "graphiti:entity:7a2311a8-3bb5-4d5c-a732-96f82358c12c:unclassified_text",
+          "field": "unclassified_text",
+          "value": "address-change.txt"
+        },
+        {
+          "fact_id": "normalized:banking/user_task_13::app:banking:filesystem::e0004::/file_path:request_parameter",
+          "field": "request_parameter",
+          "value": "address-change.txt",
+          "event_id": "e0004",
+          "parameter_path": "/file_path",
+          "subject": "request:banking/user_task_13::app:banking:filesystem::e0004"
+        }
+      ]
+    },
+    {
+      "receiver_id": "app:banking:bank_profile",
+      "facts": [
+        {
+          "fact_id": "banking/user_task_13::app:banking:bank_profile::e0009::atom:0:postal_address",
+          "field": "postal_address",
+          "value": "Dalton Street 123"
+        },
+        {
+          "fact_id": "graphiti:entity:ce0c6994-4c34-4e2d-b1e8-0c84dfce8347:unclassified_text",
+          "field": "unclassified_text",
+          "value": "Dalton Street 123"
+        },
+        {
+          "fact_id": "graphiti:entity:2362f60c-076d-4468-bf02-2203dcb59027:unclassified_text",
+          "field": "unclassified_text",
+          "value": "New York"
+        },
+        {
+          "fact_id": "normalized:banking/user_task_13::app:banking:bank_profile::e0009::/street:request_parameter",
+          "field": "request_parameter",
+          "value": "Dalton Street 123",
+          "event_id": "e0009",
+          "parameter_path": "/street",
+          "subject": "request:banking/user_task_13::app:banking:bank_profile::e0009"
+        },
+        {
+          "fact_id": "normalized:banking/user_task_13::app:banking:bank_profile::e0009::/city:request_parameter",
+          "field": "request_parameter",
+          "value": "New York",
+          "event_id": "e0009",
+          "parameter_path": "/city",
+          "subject": "request:banking/user_task_13::app:banking:bank_profile::e0009"
+        },
+        {
+          "fact_id": "normalized:banking/user_task_13::app:banking:bank_profile::e0015::/city:request_parameter",
+          "field": "request_parameter",
+          "value": "New York",
+          "event_id": "e0015",
+          "parameter_path": "/city",
+          "subject": "request:banking/user_task_13::app:banking:bank_profile::e0015"
+        },
+        {
+          "fact_id": "normalized:banking/user_task_13::app:banking:bank_profile::e0015::/street:request_parameter",
+          "field": "request_parameter",
+          "value": "Dalton Street 123",
+          "event_id": "e0015",
+          "parameter_path": "/street",
+          "subject": "request:banking/user_task_13::app:banking:bank_profile::e0015"
+        }
+      ]
+    }
+  ],
+  "sharing_groups": [
+    {
+      "group_id": "explicit_hypothetical_all_services",
+      "members": [
+        "app:banking:bank_profile",
+        "app:banking:filesystem"
+      ],
+      "enabled": true
+    }
+  ]
+}

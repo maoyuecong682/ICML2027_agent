@@ -1,0 +1,64 @@
+{
+  "request_sha256": "3fd0bb4a7f3d00214996bcf022716d851b95775de39b32ce33b23ce6dc9bd56d",
+  "output": {
+    "disclosures": [
+      {
+        "disclosure_id": "slack/user_task_0::app:slack:web::e0004",
+        "atoms": [
+          {
+            "span": "www.informations.com",
+            "parameter_path": "/url",
+            "field": "website_visit",
+            "kind": "direct",
+            "relation": "direct",
+            "necessity": "required",
+            "provenance": "user-input",
+            "source_ids": [
+              "user:task"
+            ],
+            "op": "identity",
+            "rationale": "该 URL 是用户任务明确要求读取的网页地址，作为 get_webpage 的必填参数被发送给网页服务，直接体现访问目标。",
+            "inference_claim": null
+          }
+        ],
+        "parameter_reviews": [
+          {
+            "parameter_path": "/url",
+            "assessment": "potentially_sensitive",
+            "reason": "URL 本身是公开网站地址，不含个人身份信息；但它记录了用户希望访问的目标，属于访问目标与兴趣线索，且为工具必填参数。"
+          }
+        ],
+        "notes": [
+          "仅记录工具请求参数中的 URL；工具返回的网页正文不属于本次新增接收内容。",
+          "未虚构 Cookie、IP 或请求头。"
+        ]
+      }
+    ]
+  },
+  "model": {
+    "provider": "DeepSeek",
+    "base_url": "https://api.deepseek.com",
+    "requested": "deepseek-flash",
+    "returned": "deepseek-flash",
+    "response_id": "8033be00-c1f1-4353-91c4-cda3700d73eb",
+    "usage": {
+      "completion_tokens": 221,
+      "prompt_tokens": 2499,
+      "total_tokens": 2720,
+      "completion_tokens_details": null,
+      "prompt_tokens_details": {
+        "audio_tokens": null,
+        "cache_write_tokens": null,
+        "cached_tokens": 512,
+        "image_tokens": null,
+        "text_tokens": null
+      },
+      "prompt_cache_hit_tokens": 512,
+      "prompt_cache_miss_tokens": 1987
+    },
+    "attempt": 1,
+    "attempt_with_current_prompt": 1,
+    "created_at": "2026-11-04T07:23:59.899626+00:00"
+  },
+  "validation": "json_schema_and_literal_spans_and_source_ids_passed"
+}

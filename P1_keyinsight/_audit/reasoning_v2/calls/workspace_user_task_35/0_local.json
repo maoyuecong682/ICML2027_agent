@@ -1,0 +1,66 @@
+{
+  "receiver_inputs": [
+    {
+      "receiver_id": "app:workspace:drive",
+      "memory": {
+        "schema": "privacy.recovery.memory.v1",
+        "receivers": [
+          {
+            "receiver_id": "app:workspace:drive",
+            "facts": [
+              {
+                "fact_id": "workspace/user_task_35::app:workspace:drive::e0008::atom:0:file_metadata",
+                "field": "file_metadata",
+                "value": "11"
+              },
+              {
+                "fact_id": "normalized:workspace/user_task_35::app:workspace:drive::e0008::/file_id:request_parameter",
+                "field": "request_parameter",
+                "value": "11",
+                "event_id": "e0008",
+                "parameter_path": "/file_id",
+                "subject": "request:workspace/user_task_35::app:workspace:drive::e0008"
+              }
+            ]
+          }
+        ],
+        "sharing_groups": []
+      },
+      "targets": [
+        {
+          "probe_id": "workspace/user_task_35::app:workspace:drive::file_metadata",
+          "receiver_id": "app:workspace:drive",
+          "field": "file_metadata"
+        }
+      ]
+    }
+  ],
+  "predictions": [
+    {
+      "probe_id": "workspace/user_task_35::app:workspace:drive::file_metadata",
+      "receiver_id": "app:workspace:drive",
+      "field": "file_metadata",
+      "top1_guess": "11",
+      "possible_disclosed_privacy": "11",
+      "status": "one_candidate",
+      "method": "typed_received_fact",
+      "evidence": [
+        {
+          "receiver_id": "app:workspace:drive",
+          "fact_id": "workspace/user_task_35::app:workspace:drive::e0008::atom:0:file_metadata"
+        }
+      ],
+      "shared_knowledge_used": false,
+      "visible_receiver_ids": [
+        "app:workspace:drive"
+      ],
+      "recovery_version": "deterministic-relations-v2",
+      "public_background_sha256": "145cbaa72bcb340392c2f8c92a7bd29931fc77835b1258fe45d193adcbfd7d77",
+      "background_evidence": [],
+      "basis": "memory_supported"
+    }
+  ],
+  "public_background_sha256": "145cbaa72bcb340392c2f8c92a7bd29931fc77835b1258fe45d193adcbfd7d77",
+  "public_background_used_by_recoverer": true,
+  "llm_calls": 0
+}

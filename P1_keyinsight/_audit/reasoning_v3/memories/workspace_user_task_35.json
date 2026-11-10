@@ -1,0 +1,52 @@
+{
+  "schema": "privacy.recovery.memory.v1",
+  "receivers": [
+    {
+      "receiver_id": "app:workspace:drive",
+      "facts": [
+        {
+          "fact_id": "workspace/user_task_35::app:workspace:drive::e0008::atom:0:file_metadata",
+          "field": "file_metadata",
+          "value": "11"
+        },
+        {
+          "fact_id": "normalized:workspace/user_task_35::app:workspace:drive::e0008::/file_id:request_parameter",
+          "field": "request_parameter",
+          "value": "11",
+          "event_id": "e0008",
+          "parameter_path": "/file_id",
+          "subject": "request:workspace/user_task_35::app:workspace:drive::e0008",
+          "tool": "delete_file",
+          "observed_at": "2026-11-04T07:09:51.878756+00:00"
+        },
+        {
+          "fact_id": "named:4dcb474ff8ea1170adbcb88c",
+          "field": "relation",
+          "value": {
+            "subject": "request:workspace/user_task_35::app:workspace:drive::e0008",
+            "predicate": "file_ref",
+            "object": "drive:file:11",
+            "context": {}
+          },
+          "subject": "request:workspace/user_task_35::app:workspace:drive::e0008",
+          "evidence_fact_ids": [
+            "normalized:workspace/user_task_35::app:workspace:drive::e0008::/file_id:request_parameter"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "request:workspace/user_task_35::app:workspace:drive::e0008 的操作的文件是 drive:file:11（时间未注明）。",
+          "observed_at": "2026-11-04T07:09:51.878756+00:00"
+        }
+      ]
+    }
+  ],
+  "sharing_groups": [
+    {
+      "group_id": "explicit_hypothetical_all_services",
+      "members": [
+        "app:workspace:drive"
+      ],
+      "enabled": false
+    }
+  ]
+}

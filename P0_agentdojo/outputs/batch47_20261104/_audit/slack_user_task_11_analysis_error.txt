@@ -1,0 +1,16 @@
+Traceback (most recent call last):
+  File "D:\Lironghua\隐私子刊\P0_agentdojo\p0_privacy\batch_pipeline.py", line 341, in run_analysis
+    bundle['tasks'][key] = await analysis_task(folder, entry, store, categories, strategy)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Lironghua\隐私子刊\P0_agentdojo\p0_privacy\batch_pipeline.py", line 288, in analysis_task
+    saved = await asyncio.to_thread(annotate_task, task, [cat[c] for c in task['category_ids']],
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maoyu\anaconda3\Lib\asyncio\threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maoyu\anaconda3\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Lironghua\隐私子刊\P0_agentdojo\p0_privacy\annotation.py", line 225, in annotate_task
+    raise RuntimeError(f"Annotation failed validation after 2 attempts: {task['task_key']}: {repair}")
+RuntimeError: Annotation failed validation after 2 attempts: slack/user_task_11: Unknown source evidence

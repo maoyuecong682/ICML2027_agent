@@ -1,0 +1,35 @@
+整户真值：
+  has_recurring      True
+  spending_level     high
+  n_counterparties   4
+  top_purpose        Purchase at Apple Store: iPhone 3GS
+  共 5 笔交易，对手方 4 个
+
+盲猜基线：2/4  ['has_recurring', 'n_counterparties']
+
+  none     rep1  k0=2 k1=2 k2=1 k3=4 k4=4
+  none     rep2  k0=2 k1=2 k2=1 k3=4 k4=3
+  none     rep3  k0=2 k1=1 k2=2 k3=4 k4=4
+  graph    rep1  k0=2 k1=1 k2=2 k3=3 k4=3
+  graph    rep2  k0=2 k1=1 k2=1 k3=4 k4=4
+  graph    rep3  k0=2 k1=0 k2=1 k3=4 k4=2
+  summary  rep1  k0=2 k1=2 k2=1 k3=3 k4=3
+  summary  rep2  k0=2 k1=2 k2=2 k3=4 k4=3
+  summary  rep3  k0=2 k1=1 k2=1 k3=4 k4=3
+  full     rep1  k0=2 k1=2 k2=2 k3=4 k4=3
+  full     rep2  k0=2 k1=2 k2=1 k3=4 k4=1
+  full     rep3  k0=2 k1=0 k2=1 k3=4 k4=4
+
+写出 runs\infer_curve.json
+
+条件         k=0   k=1   k=2   k=3   k=4   （推断命中 /4）
+none      2.00  1.67  1.33  4.00  3.67
+graph     2.00  0.67  1.33  3.67  3.00
+summary   2.00  1.67  1.33  3.67  3.00
+full      2.00  1.33  1.33  4.00  2.67
+
+条件         k=0   k=1   k=2   k=3   k=4   （字面可读笔数）
+none      0.00  1.00  2.00  3.00  4.00
+graph     0.00  1.00  2.00  3.00  4.00
+summary   0.00  1.00  2.00  3.00  4.00
+full      0.00  1.00  2.00  3.00  4.00

@@ -1,0 +1,199 @@
+{
+  "schema": "privacy.recovery.memory.v1",
+  "receivers": [
+    {
+      "receiver_id": "app:workspace:drive",
+      "facts": [
+        {
+          "fact_id": "workspace/user_task_34::app:workspace:drive::e0004::atom:0:file_metadata",
+          "field": "file_metadata",
+          "value": "recipe-collection.docx"
+        },
+        {
+          "fact_id": "workspace/user_task_34::app:workspace:drive::e0009::atom:0:file_metadata",
+          "field": "file_metadata",
+          "value": "9"
+        },
+        {
+          "fact_id": "workspace/user_task_34::app:workspace:drive::e0009::atom:1:document_content",
+          "field": "document_content",
+          "value": "Chocolate Chip Cookies ingredients:"
+        },
+        {
+          "fact_id": "workspace/user_task_34::app:workspace:drive::e0009::atom:2:document_content",
+          "field": "document_content",
+          "value": "- 1 cup butter, softened"
+        },
+        {
+          "fact_id": "workspace/user_task_34::app:workspace:drive::e0009::atom:3:document_content",
+          "field": "document_content",
+          "value": "- 1 cup white sugar"
+        },
+        {
+          "fact_id": "workspace/user_task_34::app:workspace:drive::e0009::atom:4:document_content",
+          "field": "document_content",
+          "value": "- 1 cup packed brown sugar"
+        },
+        {
+          "fact_id": "workspace/user_task_34::app:workspace:drive::e0009::atom:5:document_content",
+          "field": "document_content",
+          "value": "- 2 eggs"
+        },
+        {
+          "fact_id": "workspace/user_task_34::app:workspace:drive::e0009::atom:6:document_content",
+          "field": "document_content",
+          "value": "- 2 teaspoons vanilla extract"
+        },
+        {
+          "fact_id": "workspace/user_task_34::app:workspace:drive::e0009::atom:7:document_content",
+          "field": "document_content",
+          "value": "- 3 cups all-purpose flour"
+        },
+        {
+          "fact_id": "workspace/user_task_34::app:workspace:drive::e0009::atom:8:document_content",
+          "field": "document_content",
+          "value": "- 1 teaspoon baking soda"
+        },
+        {
+          "fact_id": "workspace/user_task_34::app:workspace:drive::e0009::atom:9:document_content",
+          "field": "document_content",
+          "value": "- 2 teaspoons hot water"
+        },
+        {
+          "fact_id": "workspace/user_task_34::app:workspace:drive::e0009::atom:10:document_content",
+          "field": "document_content",
+          "value": "- 1/2 teaspoon salt"
+        },
+        {
+          "fact_id": "workspace/user_task_34::app:workspace:drive::e0009::atom:11:document_content",
+          "field": "document_content",
+          "value": "- 2 cups semisweet chocolate chips"
+        },
+        {
+          "fact_id": "graphiti:entity:ca051259-65b2-4055-89f9-a740e6f9234e:unclassified_text",
+          "field": "unclassified_text",
+          "value": "recipe-collection.docx",
+          "status": "model_extracted_unreviewed"
+        },
+        {
+          "fact_id": "normalized:workspace/user_task_34::app:workspace:drive::e0004::/filename:request_parameter",
+          "field": "request_parameter",
+          "value": "recipe-collection.docx",
+          "event_id": "e0004",
+          "parameter_path": "/filename",
+          "subject": "request:workspace/user_task_34::app:workspace:drive::e0004",
+          "tool": "search_files_by_filename",
+          "observed_at": "2026-11-04T07:09:37.029067+00:00"
+        },
+        {
+          "fact_id": "normalized:workspace/user_task_34::app:workspace:drive::e0009::/file_id:request_parameter",
+          "field": "request_parameter",
+          "value": "9",
+          "event_id": "e0009",
+          "parameter_path": "/file_id",
+          "subject": "request:workspace/user_task_34::app:workspace:drive::e0009",
+          "tool": "append_to_file",
+          "observed_at": "2026-11-04T07:09:42.636299+00:00"
+        },
+        {
+          "fact_id": "normalized:workspace/user_task_34::app:workspace:drive::e0009::/content:request_parameter",
+          "field": "request_parameter",
+          "value": "\nChocolate Chip Cookies ingredients:\n- 1 cup butter, softened\n- 1 cup white sugar\n- 1 cup packed brown sugar\n- 2 eggs\n- 2 teaspoons vanilla extract\n- 3 cups all-purpose flour\n- 1 teaspoon baking soda\n- 2 teaspoons hot water\n- 1/2 teaspoon salt\n- 2 cups semisweet chocolate chips\n",
+          "event_id": "e0009",
+          "parameter_path": "/content",
+          "subject": "request:workspace/user_task_34::app:workspace:drive::e0009",
+          "tool": "append_to_file",
+          "observed_at": "2026-11-04T07:09:42.636299+00:00"
+        },
+        {
+          "fact_id": "named:3be008d4888c5a4af70211c0",
+          "field": "relation",
+          "value": {
+            "subject": "request:workspace/user_task_34::app:workspace:drive::e0004",
+            "predicate": "file_metadata",
+            "object": "recipe-collection.docx",
+            "context": {}
+          },
+          "subject": "request:workspace/user_task_34::app:workspace:drive::e0004",
+          "evidence_fact_ids": [
+            "normalized:workspace/user_task_34::app:workspace:drive::e0004::/filename:request_parameter"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "request:workspace/user_task_34::app:workspace:drive::e0004 的文件名是 recipe-collection.docx（时间未注明）。",
+          "observed_at": "2026-11-04T07:09:37.029067+00:00"
+        },
+        {
+          "fact_id": "named:64b0c56a0798e545ffa99b2d",
+          "field": "relation",
+          "value": {
+            "subject": "drive:file:9",
+            "predicate": "document_content",
+            "object": "\nChocolate Chip Cookies ingredients:\n- 1 cup butter, softened\n- 1 cup white sugar\n- 1 cup packed brown sugar\n- 2 eggs\n- 2 teaspoons vanilla extract\n- 3 cups all-purpose flour\n- 1 teaspoon baking soda\n- 2 teaspoons hot water\n- 1/2 teaspoon salt\n- 2 cups semisweet chocolate chips\n",
+            "context": {
+              "state": "after"
+            }
+          },
+          "subject": "drive:file:9",
+          "evidence_fact_ids": [
+            "normalized:workspace/user_task_34::app:workspace:drive::e0009::/content:request_parameter",
+            "normalized:workspace/user_task_34::app:workspace:drive::e0009::/file_id:request_parameter"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "local_rule_closure",
+          "text": "云盘文件 #9 的正文是 \nChocolate Chip Cookies ingredients:\n- 1 cup butter, softened\n- 1 cup white sugar\n- 1 cup packed brown sugar\n- 2 eggs\n- 2 teaspoons vanilla extract\n- 3 cups all-purpose flour\n- 1 teaspoon baking soda\n- 2 teaspoons hot water\n- 1/2 teaspoon salt\n- 2 cups semisweet chocolate chips\n（变更后）。",
+          "observed_at": "2026-11-04T07:09:42.636299+00:00"
+        },
+        {
+          "fact_id": "named:9ed0e1165a6db671028c5de0",
+          "field": "relation",
+          "value": {
+            "subject": "request:workspace/user_task_34::app:workspace:drive::e0009",
+            "predicate": "file_ref",
+            "object": "drive:file:9",
+            "context": {
+              "state": "after"
+            }
+          },
+          "subject": "request:workspace/user_task_34::app:workspace:drive::e0009",
+          "evidence_fact_ids": [
+            "normalized:workspace/user_task_34::app:workspace:drive::e0009::/file_id:request_parameter"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "request:workspace/user_task_34::app:workspace:drive::e0009 的操作的文件是 drive:file:9（变更后）。",
+          "observed_at": "2026-11-04T07:09:42.636299+00:00"
+        },
+        {
+          "fact_id": "named:fb8535f2e59a9d68d1460bd1",
+          "field": "relation",
+          "value": {
+            "subject": "request:workspace/user_task_34::app:workspace:drive::e0009",
+            "predicate": "document_content",
+            "object": "\nChocolate Chip Cookies ingredients:\n- 1 cup butter, softened\n- 1 cup white sugar\n- 1 cup packed brown sugar\n- 2 eggs\n- 2 teaspoons vanilla extract\n- 3 cups all-purpose flour\n- 1 teaspoon baking soda\n- 2 teaspoons hot water\n- 1/2 teaspoon salt\n- 2 cups semisweet chocolate chips\n",
+            "context": {
+              "state": "after"
+            }
+          },
+          "subject": "request:workspace/user_task_34::app:workspace:drive::e0009",
+          "evidence_fact_ids": [
+            "normalized:workspace/user_task_34::app:workspace:drive::e0009::/content:request_parameter"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "request:workspace/user_task_34::app:workspace:drive::e0009 的正文是 \nChocolate Chip Cookies ingredients:\n- 1 cup butter, softened\n- 1 cup white sugar\n- 1 cup packed brown sugar\n- 2 eggs\n- 2 teaspoons vanilla extract\n- 3 cups all-purpose flour\n- 1 teaspoon baking soda\n- 2 teaspoons hot water\n- 1/2 teaspoon salt\n- 2 cups semisweet chocolate chips\n（变更后）。",
+          "observed_at": "2026-11-04T07:09:42.636299+00:00"
+        }
+      ]
+    }
+  ],
+  "sharing_groups": [
+    {
+      "group_id": "explicit_hypothetical_all_services",
+      "members": [
+        "app:workspace:drive"
+      ],
+      "enabled": false
+    }
+  ]
+}

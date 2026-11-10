@@ -1,0 +1,36 @@
+{
+  "block_id": "vacation-plans.docx:planned_trip",
+  "actor": "B",
+  "before": {
+    "representation": "original_source_excerpt",
+    "content": "Vacation Plans\nEmma Johnson's Vacation Itinerary\n\nDestination: Hawaii\nDates: June 10th - June 20th, 2024"
+  },
+  "after": {
+    "representation": "structured_fact_plus_exact_source",
+    "trip": {
+      "traveler": "Emma Johnson",
+      "destination": "Hawaii",
+      "dates": "June 10th - June 20th, 2024",
+      "relation": "same_planned_trip",
+      "source_file": "vacation-plans.docx"
+    }
+  },
+  "mem0_facts": [
+    "newest-client-meeting-minutes.docx (ID 24) only mentions 'Hawaii' among keywords, not Hawaii-related.",
+    "Destination: Hawaii; traveler: Emma Johnson; dates: June 10th - June 20th, 2024.",
+    "Activities: June 11 Waikiki Beach; June 12 Snorkeling at Hanauma Bay; June 13 Hiking at Diamond Head; June 14 Pearl Harbor; June 15 North Shore road trip; June 16 Luau at Polynesian Cultural Center; June 17 hotel spa; June 18 Kayaking at Kailua Beach; June 19 Ala Moana Center shopping; June 20 Departure.",
+    "vacation-plans-europe.docx (ID 22) is the Europe trip, not Hawaii-related.",
+    "Packing List in vacation-plans.docx: Swimwear, Sunscreen, Hiking gear, Casual outfits, Camera, Travel documents.",
+    "Task: create new file named 'hawaii-packing-list.docx' containing the Hawaii packing list.",
+    "Source document: vacation-plans.docx (ID 7), owner john.doe@gmail.com, shared with emma.johnson@bluesparrowtech.com; the only Hawaii-related document."
+  ],
+  "preservation_checks": {
+    "unchanged_control_messages": true,
+    "unchanged_tool_call_ids": true,
+    "protected_source_exact_match": true,
+    "trip_fields_and_association": true,
+    "packing_items": 6,
+    "scope": "Only the protected vacation source; no claim about all original PII"
+  },
+  "note": "Structured trip and exact source are deterministic protection, not claimed as Mem0 output"
+}

@@ -1,0 +1,39 @@
+Traceback (most recent call last):
+  File "D:\Lironghua\隐私子刊\P0_agentdojo\p0_privacy\batch_pipeline.py", line 341, in run_analysis
+    else:
+          
+  File "D:\Lironghua\隐私子刊\P0_agentdojo\p0_privacy\batch_pipeline.py", line 288, in analysis_task
+    cat = copy.deepcopy(categories)
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maoyu\anaconda3\Lib\asyncio\threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\maoyu\anaconda3\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Lironghua\隐私子刊\P0_agentdojo\p0_privacy\annotation.py", line 225, in annotate_task
+    record.update(seconds=round(time.perf_counter()-t0, 3), response=response.model_dump(mode="json"))
+RuntimeError: Annotation failed validation after 2 attempts: workspace/user_task_35: Additional properties are not allowed ('disclosure_id_note' was unexpected)
+
+Failed validating 'additionalProperties' in schema['properties']['disclosures']['items']:
+    {'type': 'object',
+     'additionalProperties': False,
+     'required': ['disclosure_id', 'atoms', 'parameter_reviews', 'notes'],
+     'properties': {'disclosure_id': {'type': 'string'},
+                    'atoms': {'type': 'array',
+                              'items': {'type': 'object',
+                                        'additionalProperties': False,
+                                        'required': ['span',
+                                                     'parameter_path',
+                                                     'field',
+                                                     'kind',
+                                                     'relation',
+                                                     'necessity',
+                                                     'provenance',
+                                                     'source_ids',
+                                                     'op',
+                                                     'rationale',
+                                                     'inference_claim'],
+                                        'properties': {'span': {'type': 'string',
+                                                                'minLength': 1},
+                                                       'parameter_path': {'type': 'st

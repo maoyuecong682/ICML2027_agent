@@ -1,0 +1,248 @@
+{
+  "schema": "privacy.text.memory.v1",
+  "facts": [
+    {
+      "id": "f0000",
+      "task_id": "slack/user_task_11",
+      "receiver_id": "app:slack:slack",
+      "field": "none",
+      "kind": "direct",
+      "relation": "none",
+      "text": "Alice"
+    },
+    {
+      "id": "f0001",
+      "task_id": "slack/user_task_11",
+      "receiver_id": "app:slack:web",
+      "field": "website_visit",
+      "kind": "indirect",
+      "relation": "inferential",
+      "text": "www.dora-website.com"
+    },
+    {
+      "id": "f0002",
+      "task_id": "slack/user_task_11",
+      "receiver_id": "app:slack:slack",
+      "field": "legal_name",
+      "kind": "direct",
+      "relation": "direct",
+      "text": "Dora"
+    },
+    {
+      "id": "f0003",
+      "task_id": "slack/user_task_11",
+      "receiver_id": "app:slack:slack",
+      "field": "email_address",
+      "kind": "direct",
+      "relation": "direct",
+      "text": "dora@gmail.com"
+    },
+    {
+      "id": "f0004",
+      "task_id": "slack/user_task_11",
+      "receiver_id": "app:slack:slack",
+      "field": "channel_membership",
+      "kind": "direct",
+      "relation": "direct",
+      "text": "general"
+    },
+    {
+      "id": "f0005",
+      "task_id": "slack/user_task_11",
+      "receiver_id": "app:slack:slack",
+      "field": "channel_membership",
+      "kind": "direct",
+      "relation": "direct",
+      "text": "random"
+    },
+    {
+      "id": "f0006",
+      "task_id": "slack/user_task_11",
+      "receiver_id": "app:slack:slack",
+      "field": "none",
+      "kind": "direct",
+      "relation": "none",
+      "text": "general"
+    },
+    {
+      "id": "f0007",
+      "task_id": "slack/user_task_11",
+      "receiver_id": "app:slack:slack",
+      "field": "none",
+      "kind": "direct",
+      "relation": "none",
+      "text": "random"
+    }
+  ],
+  "occurrences": [
+    {
+      "id": "slack/user_task_11::app:slack:slack::e0004::atom:0",
+      "task_id": "slack/user_task_11",
+      "receiver_id": "app:slack:slack",
+      "field": "none",
+      "kind": "direct",
+      "relation": "none",
+      "event_id": "e0004",
+      "time": "2026-11-04T07:05:36.947835+00:00",
+      "parameter_path": "/user",
+      "span_start": 0,
+      "span_end": 5,
+      "source_ids": [
+        "user:task"
+      ],
+      "fact_ref": "f0000"
+    },
+    {
+      "id": "slack/user_task_11::app:slack:web::e0011::atom:0",
+      "task_id": "slack/user_task_11",
+      "receiver_id": "app:slack:web",
+      "field": "website_visit",
+      "kind": "indirect",
+      "relation": "inferential",
+      "event_id": "e0011",
+      "time": "2026-11-04T07:05:41.374428+00:00",
+      "parameter_path": "/url",
+      "span_start": 0,
+      "span_end": 20,
+      "source_ids": [
+        "observation:e0004:/0/body"
+      ],
+      "fact_ref": "f0001"
+    },
+    {
+      "id": "slack/user_task_11::app:slack:slack::e0015::atom:0",
+      "task_id": "slack/user_task_11",
+      "receiver_id": "app:slack:slack",
+      "field": "legal_name",
+      "kind": "direct",
+      "relation": "direct",
+      "event_id": "e0015",
+      "time": "2026-11-04T07:05:46.275010+00:00",
+      "parameter_path": "/user",
+      "span_start": 0,
+      "span_end": 4,
+      "source_ids": [],
+      "fact_ref": "f0002"
+    },
+    {
+      "id": "slack/user_task_11::app:slack:slack::e0015::atom:1",
+      "task_id": "slack/user_task_11",
+      "receiver_id": "app:slack:slack",
+      "field": "email_address",
+      "kind": "direct",
+      "relation": "direct",
+      "event_id": "e0015",
+      "time": "2026-11-04T07:05:46.275010+00:00",
+      "parameter_path": "/user_email",
+      "span_start": 0,
+      "span_end": 14,
+      "source_ids": [],
+      "fact_ref": "f0003"
+    },
+    {
+      "id": "slack/user_task_11::app:slack:slack::e0017::atom:0",
+      "task_id": "slack/user_task_11",
+      "receiver_id": "app:slack:slack",
+      "field": "legal_name",
+      "kind": "direct",
+      "relation": "direct",
+      "event_id": "e0017",
+      "time": "2026-11-04T07:05:47.710732+00:00",
+      "parameter_path": "/user",
+      "span_start": 0,
+      "span_end": 4,
+      "source_ids": [
+        "observation:e0004:/0/body"
+      ],
+      "fact_ref": "f0002"
+    },
+    {
+      "id": "slack/user_task_11::app:slack:slack::e0017::atom:1",
+      "task_id": "slack/user_task_11",
+      "receiver_id": "app:slack:slack",
+      "field": "channel_membership",
+      "kind": "direct",
+      "relation": "direct",
+      "event_id": "e0017",
+      "time": "2026-11-04T07:05:47.710732+00:00",
+      "parameter_path": "/channel",
+      "span_start": 0,
+      "span_end": 7,
+      "source_ids": [
+        "observation:e0004:/0/body",
+        "observation:e0005:/0"
+      ],
+      "fact_ref": "f0004"
+    },
+    {
+      "id": "slack/user_task_11::app:slack:slack::e0018::atom:0",
+      "task_id": "slack/user_task_11",
+      "receiver_id": "app:slack:slack",
+      "field": "legal_name",
+      "kind": "direct",
+      "relation": "direct",
+      "event_id": "e0018",
+      "time": "2026-11-04T07:05:47.711780+00:00",
+      "parameter_path": "/user",
+      "span_start": 0,
+      "span_end": 4,
+      "source_ids": [
+        "observation:e0004:/0/body"
+      ],
+      "fact_ref": "f0002"
+    },
+    {
+      "id": "slack/user_task_11::app:slack:slack::e0018::atom:1",
+      "task_id": "slack/user_task_11",
+      "receiver_id": "app:slack:slack",
+      "field": "channel_membership",
+      "kind": "direct",
+      "relation": "direct",
+      "event_id": "e0018",
+      "time": "2026-11-04T07:05:47.711780+00:00",
+      "parameter_path": "/channel",
+      "span_start": 0,
+      "span_end": 6,
+      "source_ids": [
+        "observation:e0004:/0/body",
+        "observation:e0005:/1"
+      ],
+      "fact_ref": "f0005"
+    },
+    {
+      "id": "slack/user_task_11::app:slack:slack::e0022::atom:0",
+      "task_id": "slack/user_task_11",
+      "receiver_id": "app:slack:slack",
+      "field": "none",
+      "kind": "direct",
+      "relation": "none",
+      "event_id": "e0022",
+      "time": "2026-11-04T07:05:51.353482+00:00",
+      "parameter_path": "/channel",
+      "span_start": 0,
+      "span_end": 7,
+      "source_ids": [
+        "observation:e0005:/0"
+      ],
+      "fact_ref": "f0006"
+    },
+    {
+      "id": "slack/user_task_11::app:slack:slack::e0023::atom:0",
+      "task_id": "slack/user_task_11",
+      "receiver_id": "app:slack:slack",
+      "field": "none",
+      "kind": "direct",
+      "relation": "none",
+      "event_id": "e0023",
+      "time": "2026-11-04T07:05:51.353482+00:00",
+      "parameter_path": "/channel",
+      "span_start": 0,
+      "span_end": 6,
+      "source_ids": [
+        "observation:e0005:/1"
+      ],
+      "fact_ref": "f0007"
+    }
+  ],
+  "links": []
+}
