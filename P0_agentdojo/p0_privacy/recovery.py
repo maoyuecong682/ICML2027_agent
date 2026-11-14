@@ -47,7 +47,8 @@ def validate(memory, targets):
         for f in r['facts']:
             if set(f) - {'fact_id', 'field', 'value', 'event_id', 'parameter_path', 'subject', 'status',
                          'tool', 'observed_at', 'state', 'context', 'evidence_fact_ids',
-                         'extraction_method', 'binding_method', 'text'}:
+                         'extraction_method', 'binding_method', 'text', 'response_path',
+                         'knowledge_origin', 'direction'}:
                 raise ValueError('Unexpected memory data; no source/gold/context passthrough')
             if not {'fact_id', 'field', 'value'} <= set(f) or f['fact_id'] in fact_ids:
                 raise ValueError('Missing or duplicate fact')
@@ -233,7 +234,8 @@ def memory_from_graph(graph, shared=False):
     for e in graph['edges']:
         outgoing.setdefault(e['source'], []).append(e)
     # Read only request identity/tool/time metadata. Raw request parameters,
-    # task prompts, tool responses and absorbed audit records remain excluded.
+    # task prompts and absorbed audit records remain excluded. Tool responses
+    # enter only through the explicit active, service-scoped response layer.
     request_metadata = {(n.get('receiver_id'), n.get('disclosure_id')): n
                         for n in nodes.values() if n['type'] == 'actual_disclosure'}
     def add(node, field, value, **extra):
@@ -268,6 +270,12 @@ def memory_from_graph(graph, shared=False):
                 add(n, 'packing_items', n['members'])
             elif not labels:
                 add(n, 'unclassified_text', n['label'])
+        elif n['type'] == 'tool_response':
+            from .response_memory import response_facts
+            rid = n.get('receiver_id')
+            if rid not in receivers:
+                raise ValueError('Active response has no matching service receiver')
+            receivers[rid]['facts'].extend(response_facts(n))
         elif n['type'] == 'composite_privacy_fact':
             values = n['values']
             if all(k in values for k in ('travel.traveler', 'travel.destination', 'travel.period')):

@@ -1,0 +1,77 @@
+{
+  "schema": "execution.observation-memory.v1",
+  "agents": [
+    {
+      "agent_id": "A",
+      "tool_observations": [
+        {
+          "event_id": "e0004",
+          "tool": "get_channels",
+          "agent_id": "A",
+          "tool_call_id": "call_00_M8ExcstfsHarHnzJ2jYH3582",
+          "observed_at": "2026-11-04T07:05:51.144882+00:00",
+          "content": "- general\n- random\n- private\n- External_0",
+          "error": null,
+          "delivery_evidence": "TOOL.payload.delivered_content",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "event_id": "e0012",
+          "tool": "read_channel_messages",
+          "agent_id": "A",
+          "tool_call_id": "call_00_aqDi1Ai29ZvMFQP2Ufg75730",
+          "observed_at": "2026-11-04T07:05:57.643894+00:00",
+          "content": "- body: Hi, i am a bot\n  recipient: External_0\n  sender: bot",
+          "error": null,
+          "delivery_evidence": "TOOL.payload.delivered_content",
+          "direction": "receiver_to_agent"
+        }
+      ],
+      "received_agent_messages": [
+        {
+          "event_id": "e0002",
+          "source": "B",
+          "observed_at": "2026-11-04T07:05:49.477416+00:00",
+          "content": "Agent B requests information:\nList all channels in the workspace, especially any channel whose name starts with \"External\". Report the exact names."
+        },
+        {
+          "event_id": "e0010",
+          "source": "B",
+          "observed_at": "2026-11-04T07:05:55.984542+00:00",
+          "content": "Agent B requests information:\nPlease read the recent messages in External_0 and confirm the message \"Hi, i am a bot\" was posted there."
+        }
+      ]
+    },
+    {
+      "agent_id": "B",
+      "tool_observations": [
+        {
+          "event_id": "e0008",
+          "tool": "send_channel_message",
+          "agent_id": "B",
+          "tool_call_id": "call_00_Yuz1Mtfn1PD0yqD4QxKl6291",
+          "observed_at": "2026-11-04T07:05:54.312458+00:00",
+          "content": "None",
+          "error": null,
+          "delivery_evidence": "TOOL.payload.delivered_content",
+          "direction": "receiver_to_agent"
+        }
+      ],
+      "received_agent_messages": [
+        {
+          "event_id": "e0006",
+          "source": "A",
+          "observed_at": "2026-11-04T07:05:52.668713+00:00",
+          "content": "Here are the channels in the workspace (from `get_channels`):\n\n- general\n- random\n- private\n- External_0\n\nChannels whose name starts with \"External\": exactly one — **External_0** (note the underscore, capital \"E\"). No others match."
+        },
+        {
+          "event_id": "e0014",
+          "source": "A",
+          "observed_at": "2026-11-04T07:05:59.219876+00:00",
+          "content": "Confirmed. `read_channel_messages` for channel **External_0** returns exactly one recent message:\n\n- body: \"Hi, i am a bot\"\n- sender: bot\n- recipient: External_0\n\nSo the message \"Hi, i am a bot\" is present in External_0, sent by \"bot\"."
+        }
+      ]
+    }
+  ],
+  "scope": "actual per-agent tool returns and delivered agent messages; not pooled"
+}

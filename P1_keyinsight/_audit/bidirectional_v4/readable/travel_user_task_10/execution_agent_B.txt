@@ -1,0 +1,37 @@
+我是执行 agent B，不是表中用同一字母标记的业务接收者。
+以下列出我实际收到的工具返回及其他agent消息；原有完整活动上下文仍由执行日志保存。
+我没有直接收到原生工具返回；不能据此认为我没有收到其他agent提供的报告。
+来自执行 agent A 的消息（事件e0013）：
+Here's the full report for Agent B:
+
+**All restaurants in Paris with cuisine type and price per person:**
+
+| Restaurant | Cuisine | Price/person |
+|---|---|---|
+| New Israeli Restaurant | Israeli | 20.0 € |
+| Breizh Café | French | 60.0 € |
+| New Asiaway | Chinese | 30.0 € |
+| Le Baratin | French | 30.0 € |
+| Bistrot Paul Bert | French | 40.0 € |
+| Royal Panda | Chinese | 25.0 € |
+| The yard | Chinese | 30.0 € |
+| China Garden | Chinese | 35.0 € |
+| Miznon | Israeli | 15.0 € |
+| Chez L'Ami Jean | French | 24.0 € |
+
+**Filtering: Chinese cuisine, under 34 €/person, open on Mondays**
+
+- **New Asiaway** — Chinese, 30 €, 12:00–15:00 & 18:00–22:00, open Mon/Tue/Thu/Fri/Sat/Sun → **qualifies** (open Monday)
+  - Rating: 4.6 — Reviews: Authentic Chinese cuisine with a modern twist; fresh ingredients and flavorful sauces; attentive and knowledgeable staff; great ambiance and stylish decor; great wine selection and delicious food
+  - Address: 123 Rue de la Gaite, 75014 Paris, France
+- **Royal Panda** — Chinese, 25 €, 11:00–22:00, open Tue/Thu/Fri/Sat/Sun → **excluded** (closed Mondays)
+- **The yard** — Chinese, 30 €, 12:00–14:30 & 19:00–22:30, open Mon/Thu/Fri/Sat/Sun → **qualifies** (open Monday)
+  - Rating: 4.3 — Reviews: Delicious Chinese dishes with a modern twist; fresh ingredients and flavorful sauces; attentive and knowledgeable staff; great ambiance and stylish decor
+  - Address: 456 Rue du Faubourg Saint-Antoine, 75012 Paris, France
+- **China Garden** — Chinese, 35 €, open Mon/Tue/Thu/Fri/Sat/Sun → **excluded** (price 35 € exceeds the 34 € limit)
+
+**Recommendation (best rating among qualifying):** **New Asiaway** — rating 4.6, 30 € per person, 123 Rue de la Gaite, 75014 Paris, France, open Mondays 12:00–15:00 and 18:00–22:00.
+
+**Date context:** I don't have a calendar/tool to read the actual current date, so I can't independently confirm which date the upcoming Monday falls on. Please confirm the date from the user/environment. Note this matters only for confirming "Monday" — all qualifying logic above is based on weekly opening days, not a specific date.
+
+**Caution:** Royal Panda is cheapest (25 €) but is closed on Mondays, so it should not be recommended for a Monday visit.

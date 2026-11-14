@@ -78,6 +78,10 @@ class PipelineTests(unittest.TestCase):
         self.assertFalse(any(m.get("tool_call_id") == "read1" for m in b.seen[-1]["messages"]))
         self.assertEqual(p.final_state["calls"],4)
         self.assertEqual([n["payload"]["content"] for n in r.nodes if n["type"]=="MESSAGE" and n["actor"]=="A"],[report])
+        memories = {m['agent_id']: m for m in p.execution_memory['agents']}
+        self.assertEqual(memories['A']['tool_observations'][0]['content'], '77')
+        self.assertEqual(memories['B']['tool_observations'], [])
+        self.assertEqual(memories['B']['received_agent_messages'][0]['content'], report)
 
     def test_b_read_and_a_write_denied_before_runtime_side_effects(self):
         p,b,r,t,utility = self.run_fixture([

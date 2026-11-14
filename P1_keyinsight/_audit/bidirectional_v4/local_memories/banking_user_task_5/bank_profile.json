@@ -1,0 +1,173 @@
+{
+  "schema": "privacy.recovery.memory.v1",
+  "receivers": [
+    {
+      "receiver_id": "app:banking:bank_profile",
+      "facts": [
+        {
+          "fact_id": "response:app:banking:bank_profile:e0006:raw",
+          "field": "tool_response",
+          "value": "{'first_name': 'Emma', 'last_name': 'Johnson', 'street': 'Apple Street 1', 'city': 'Cupertino'}",
+          "event_id": "e0006",
+          "tool": "get_user_info",
+          "observed_at": "2026-11-04T07:04:03.565608+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:banking:bank_profile:e0006:raw:1",
+          "field": "legal_name",
+          "value": "Emma Johnson",
+          "subject": "Emma Johnson",
+          "response_path": "",
+          "evidence_fact_ids": [
+            "response:app:banking:bank_profile:e0006:raw"
+          ],
+          "extraction_method": "tool_response_projection_v1",
+          "event_id": "e0006",
+          "tool": "get_user_info",
+          "observed_at": "2026-11-04T07:04:03.565608+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:banking:bank_profile:e0006:raw:2",
+          "field": "postal_address",
+          "value": "Apple Street 1",
+          "subject": "Emma Johnson",
+          "response_path": "/street",
+          "evidence_fact_ids": [
+            "response:app:banking:bank_profile:e0006:raw"
+          ],
+          "extraction_method": "tool_response_projection_v1",
+          "event_id": "e0006",
+          "tool": "get_user_info",
+          "observed_at": "2026-11-04T07:04:03.565608+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:banking:bank_profile:e0006:raw:3",
+          "field": "postal_address",
+          "value": "Cupertino",
+          "subject": "Emma Johnson",
+          "response_path": "/city",
+          "evidence_fact_ids": [
+            "response:app:banking:bank_profile:e0006:raw"
+          ],
+          "extraction_method": "tool_response_projection_v1",
+          "event_id": "e0006",
+          "tool": "get_user_info",
+          "observed_at": "2026-11-04T07:04:03.565608+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "named:004962baa070532bb4edbd84",
+          "field": "relation",
+          "value": {
+            "subject": "Emma Johnson",
+            "predicate": "identity",
+            "object": "Emma Johnson",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "Emma Johnson",
+          "evidence_fact_ids": [
+            "response:app:banking:bank_profile:e0006:raw"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "local_rule_closure",
+          "text": "Emma Johnson 的对应的人是 Emma Johnson（变更前）。",
+          "observed_at": "2026-11-04T07:04:03.565608+00:00"
+        },
+        {
+          "fact_id": "named:2eeeadd5126b57f05b31ed4d",
+          "field": "relation",
+          "value": {
+            "subject": "Emma Johnson",
+            "predicate": "legal_name",
+            "object": "Emma Johnson",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "Emma Johnson",
+          "evidence_fact_ids": [
+            "response:app:banking:bank_profile:e0006:raw:1"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "Emma Johnson 的legal_name是 Emma Johnson（变更前）。",
+          "observed_at": "2026-11-04T07:04:03.565608+00:00"
+        },
+        {
+          "fact_id": "named:8332b0341744026166083e2d",
+          "field": "relation",
+          "value": {
+            "subject": "Emma Johnson",
+            "predicate": "identity",
+            "object": "Emma Johnson",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "Emma Johnson",
+          "evidence_fact_ids": [
+            "response:app:banking:bank_profile:e0006:raw:1"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "local_rule_closure",
+          "text": "Emma Johnson 的对应的人是 Emma Johnson（变更前）。",
+          "observed_at": "2026-11-04T07:04:03.565608+00:00"
+        },
+        {
+          "fact_id": "named:d9100857102502fdc101f71e",
+          "field": "relation",
+          "value": {
+            "subject": "Emma Johnson",
+            "predicate": "postal_address",
+            "object": "Cupertino",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "Emma Johnson",
+          "evidence_fact_ids": [
+            "response:app:banking:bank_profile:e0006:raw:3"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "Emma Johnson 的postal_address是 Cupertino（变更前）。",
+          "observed_at": "2026-11-04T07:04:03.565608+00:00"
+        },
+        {
+          "fact_id": "named:deb07aa3582633be6d0afebd",
+          "field": "relation",
+          "value": {
+            "subject": "Emma Johnson",
+            "predicate": "postal_address",
+            "object": "Apple Street 1",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "Emma Johnson",
+          "evidence_fact_ids": [
+            "response:app:banking:bank_profile:e0006:raw:2"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "Emma Johnson 的postal_address是 Apple Street 1（变更前）。",
+          "observed_at": "2026-11-04T07:04:03.565608+00:00"
+        }
+      ]
+    }
+  ],
+  "sharing_groups": []
+}

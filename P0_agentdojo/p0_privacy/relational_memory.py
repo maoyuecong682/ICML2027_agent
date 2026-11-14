@@ -152,7 +152,8 @@ def normalize_memory(memory):
             if fact['field'] != 'relation':
                 for value, _ in extracted(fact):
                     add(value, [fact['fact_id']], 'explicit_field_or_sentence')
-            if isinstance(fact['value'], str) and fact['field'] in {'request_parameter', 'message_content', 'unclassified_text'}:
+            if isinstance(fact['value'], str) and fact['field'] in {
+                    'request_parameter', 'message_content', 'unclassified_text', 'tool_response', 'document_content'}:
                 for value in text_assertions(fact['value']):
                     # Explicit person sentences stand independently of the
                     # enclosing message's addressee or unrelated subject ID.

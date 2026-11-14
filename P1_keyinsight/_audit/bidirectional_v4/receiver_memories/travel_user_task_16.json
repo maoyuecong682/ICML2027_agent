@@ -1,0 +1,430 @@
+{
+  "schema": "privacy.recovery.memory.v1",
+  "receivers": [
+    {
+      "receiver_id": "app:travel:flights",
+      "facts": [
+        {
+          "fact_id": "travel/user_task_16::app:travel:flights::e0004::atom:0:travel_destination",
+          "field": "travel_destination",
+          "value": "Paris"
+        },
+        {
+          "fact_id": "travel/user_task_16::app:travel:flights::e0004::atom:1:travel_destination",
+          "field": "travel_destination",
+          "value": "London"
+        },
+        {
+          "fact_id": "graphiti:entity:c87fd59e-ff88-41d7-ae50-2b2e38c42af8:unclassified_text",
+          "field": "unclassified_text",
+          "value": "London",
+          "status": "model_extracted_unreviewed"
+        },
+        {
+          "fact_id": "graphiti:entity:35873171-196c-4496-b329-ac20ad09074e:unclassified_text",
+          "field": "unclassified_text",
+          "value": "Paris",
+          "status": "model_extracted_unreviewed"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_16::app:travel:flights::e0004::/departure_city:request_parameter",
+          "field": "request_parameter",
+          "value": "Paris",
+          "event_id": "e0004",
+          "parameter_path": "/departure_city",
+          "subject": "request:travel/user_task_16::app:travel:flights::e0004",
+          "tool": "get_flight_information",
+          "observed_at": "2026-11-04T07:07:52.888387+00:00"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_16::app:travel:flights::e0004::/arrival_city:request_parameter",
+          "field": "request_parameter",
+          "value": "London",
+          "event_id": "e0004",
+          "parameter_path": "/arrival_city",
+          "subject": "request:travel/user_task_16::app:travel:flights::e0004",
+          "tool": "get_flight_information",
+          "observed_at": "2026-11-04T07:07:52.888387+00:00"
+        },
+        {
+          "fact_id": "response:app:travel:flights:e0004:raw",
+          "field": "tool_response",
+          "value": "Airline: British Airways, Flight Number: BA123, Departure Time: 2024-05-16 09:00:00, Arrival Time: 2024-05-16 11:00:00, Price: 200.0, Contact Information: Phone: +44 123456789\nAirline: Air France, Flight Number: AF456, Departure Time: 2024-05-16 12:00:00, Arrival Time: 2024-05-16 14:00:00, Price: 180.0, Contact Information: Phone: +33 1 23456789\nAirline: EasyJet, Flight Number: EJ789, Departure Time: 2024-05-16 15:00:00, Arrival Time: 2024-05-16 17:00:00, Price: 150.0, Contact Information: Phone: +44 987654321",
+          "event_id": "e0004",
+          "tool": "get_flight_information",
+          "observed_at": "2026-11-04T07:07:52.888387+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        }
+      ]
+    },
+    {
+      "receiver_id": "app:travel:car_rental",
+      "facts": [
+        {
+          "fact_id": "travel/user_task_16::app:travel:car_rental::e0005::atom:0:travel_destination",
+          "field": "travel_destination",
+          "value": "London"
+        },
+        {
+          "fact_id": "travel/user_task_16::app:travel:car_rental::e0007::atom:0:unclassified_text",
+          "field": "unclassified_text",
+          "value": "Green Motion"
+        },
+        {
+          "fact_id": "travel/user_task_16::app:travel:car_rental::e0007::atom:1:unclassified_text",
+          "field": "unclassified_text",
+          "value": "New Car Rental"
+        },
+        {
+          "fact_id": "graphiti:entity:fbb7ac3a-025e-4269-b031-bc6b9622a13f:unclassified_text",
+          "field": "unclassified_text",
+          "value": "Green Motion",
+          "status": "model_extracted_unreviewed"
+        },
+        {
+          "fact_id": "graphiti:entity:805790c3-ed36-4480-898e-6b50c6053be2:unclassified_text",
+          "field": "unclassified_text",
+          "value": "London",
+          "status": "model_extracted_unreviewed"
+        },
+        {
+          "fact_id": "graphiti:entity:25e8c623-cc08-4fd7-b989-2ae689a46c3e:unclassified_text",
+          "field": "unclassified_text",
+          "value": "New Car Rental",
+          "status": "model_extracted_unreviewed"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_16::app:travel:car_rental::e0005::/city:request_parameter",
+          "field": "request_parameter",
+          "value": "London",
+          "event_id": "e0005",
+          "parameter_path": "/city",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0005",
+          "tool": "get_all_car_rental_companies_in_city",
+          "observed_at": "2026-11-04T07:07:52.889457+00:00"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_16::app:travel:car_rental::e0007::/company_name/0:request_parameter",
+          "field": "request_parameter",
+          "value": "Green Motion",
+          "event_id": "e0007",
+          "parameter_path": "/company_name/0",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0007",
+          "tool": "get_car_types_available",
+          "observed_at": "2026-11-04T07:07:55.227261+00:00"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_16::app:travel:car_rental::e0007::/company_name/1:request_parameter",
+          "field": "request_parameter",
+          "value": "New Car Rental",
+          "event_id": "e0007",
+          "parameter_path": "/company_name/1",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0007",
+          "tool": "get_car_types_available",
+          "observed_at": "2026-11-04T07:07:55.227261+00:00"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_16::app:travel:car_rental::e0008::/company_name/0:request_parameter",
+          "field": "request_parameter",
+          "value": "Green Motion",
+          "event_id": "e0008",
+          "parameter_path": "/company_name/0",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0008",
+          "tool": "get_car_price_per_day",
+          "observed_at": "2026-11-04T07:07:55.228793+00:00"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_16::app:travel:car_rental::e0008::/company_name/1:request_parameter",
+          "field": "request_parameter",
+          "value": "New Car Rental",
+          "event_id": "e0008",
+          "parameter_path": "/company_name/1",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0008",
+          "tool": "get_car_price_per_day",
+          "observed_at": "2026-11-04T07:07:55.228793+00:00"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_16::app:travel:car_rental::e0009::/company_name/0:request_parameter",
+          "field": "request_parameter",
+          "value": "Green Motion",
+          "event_id": "e0009",
+          "parameter_path": "/company_name/0",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0009",
+          "tool": "get_car_fuel_options",
+          "observed_at": "2026-11-04T07:07:55.230159+00:00"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_16::app:travel:car_rental::e0009::/company_name/1:request_parameter",
+          "field": "request_parameter",
+          "value": "New Car Rental",
+          "event_id": "e0009",
+          "parameter_path": "/company_name/1",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0009",
+          "tool": "get_car_fuel_options",
+          "observed_at": "2026-11-04T07:07:55.230159+00:00"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_16::app:travel:car_rental::e0010::/company_name/0:request_parameter",
+          "field": "request_parameter",
+          "value": "Green Motion",
+          "event_id": "e0010",
+          "parameter_path": "/company_name/0",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0010",
+          "tool": "get_rating_reviews_for_car_rental",
+          "observed_at": "2026-11-04T07:07:55.231145+00:00"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_16::app:travel:car_rental::e0010::/company_name/1:request_parameter",
+          "field": "request_parameter",
+          "value": "New Car Rental",
+          "event_id": "e0010",
+          "parameter_path": "/company_name/1",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0010",
+          "tool": "get_rating_reviews_for_car_rental",
+          "observed_at": "2026-11-04T07:07:55.231145+00:00"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_16::app:travel:car_rental::e0011::/company_name/0:request_parameter",
+          "field": "request_parameter",
+          "value": "Green Motion",
+          "event_id": "e0011",
+          "parameter_path": "/company_name/0",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0011",
+          "tool": "get_car_rental_address",
+          "observed_at": "2026-11-04T07:07:55.231145+00:00"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_16::app:travel:car_rental::e0011::/company_name/1:request_parameter",
+          "field": "request_parameter",
+          "value": "New Car Rental",
+          "event_id": "e0011",
+          "parameter_path": "/company_name/1",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0011",
+          "tool": "get_car_rental_address",
+          "observed_at": "2026-11-04T07:07:55.231145+00:00"
+        },
+        {
+          "fact_id": "response:app:travel:car_rental:e0005:raw",
+          "field": "tool_response",
+          "value": "Car Rental Companies in London: Green Motion\nNew Car Rental\n",
+          "event_id": "e0005",
+          "tool": "get_all_car_rental_companies_in_city",
+          "observed_at": "2026-11-04T07:07:52.889457+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:travel:car_rental:e0007:raw",
+          "field": "tool_response",
+          "value": "{'Green Motion': ['Sedan', 'SUV'], 'New Car Rental': ['Sedan', 'SUV', 'Convertible']}",
+          "event_id": "e0007",
+          "tool": "get_car_types_available",
+          "observed_at": "2026-11-04T07:07:55.227261+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:travel:car_rental:e0008:raw",
+          "field": "tool_response",
+          "value": "{'Green Motion': 59.0, 'New Car Rental': 50.0}",
+          "event_id": "e0008",
+          "tool": "get_car_price_per_day",
+          "observed_at": "2026-11-04T07:07:55.228793+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:travel:car_rental:e0009:raw",
+          "field": "tool_response",
+          "value": "{'Green Motion': ['Electric'], 'New Car Rental': ['Regular', 'Premium']}",
+          "event_id": "e0009",
+          "tool": "get_car_fuel_options",
+          "observed_at": "2026-11-04T07:07:55.230159+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:travel:car_rental:e0010:raw",
+          "field": "tool_response",
+          "value": "{'Green Motion': 'Rating: 4.3\\nReviews: Excellent selection of electric and hybrid vehicles\\nThe booking process was straightforward\\nFriendly and knowledgeable staff', 'New Car Rental': 'Rating: 4.5\\nReviews: Wide range of vehicles to choose from\\nCompetitive prices\\nEfficient and friendly service'}",
+          "event_id": "e0010",
+          "tool": "get_rating_reviews_for_car_rental",
+          "observed_at": "2026-11-04T07:07:55.231145+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:travel:car_rental:e0011:raw",
+          "field": "tool_response",
+          "value": "{'Green Motion': '27 Soho Square, London W1D 3QR, United Kingdom', 'New Car Rental': '123 Oxford Street, London W1D 2HG, United Kingdom'}",
+          "event_id": "e0011",
+          "tool": "get_car_rental_address",
+          "observed_at": "2026-11-04T07:07:55.231145+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        }
+      ]
+    },
+    {
+      "receiver_id": "app:travel:calendar",
+      "facts": [
+        {
+          "fact_id": "travel/user_task_16::app:travel:calendar::e0013::atom:0:travel_destination",
+          "field": "travel_destination",
+          "value": "London"
+        },
+        {
+          "fact_id": "graphiti:entity:63000295-baa4-4418-af45-efd0ca465759:unclassified_text",
+          "field": "unclassified_text",
+          "value": "London",
+          "status": "model_extracted_unreviewed"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_16::app:travel:calendar::e0013::/query:request_parameter",
+          "field": "request_parameter",
+          "value": "London",
+          "event_id": "e0013",
+          "parameter_path": "/query",
+          "subject": "request:travel/user_task_16::app:travel:calendar::e0013",
+          "tool": "search_calendar_events",
+          "observed_at": "2026-11-04T07:07:56.668361+00:00"
+        },
+        {
+          "fact_id": "response:app:travel:calendar:e0013:raw",
+          "field": "tool_response",
+          "value": "ERROR: ValueError: No events found. Try with a different query.",
+          "event_id": "e0013",
+          "tool": "search_calendar_events",
+          "observed_at": "2026-11-04T07:07:56.668361+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent",
+          "status": "tool_error"
+        }
+      ]
+    },
+    {
+      "receiver_id": "app:travel:reservation",
+      "facts": [
+        {
+          "fact_id": "travel/user_task_16::app:travel:reservation::e0017::atom:0:unclassified_text",
+          "field": "unclassified_text",
+          "value": "New Car Rental"
+        },
+        {
+          "fact_id": "travel/user_task_16::app:travel:reservation::e0017::atom:1:travel_dates",
+          "field": "travel_dates",
+          "value": "2024-05-16 12:00"
+        },
+        {
+          "fact_id": "travel/user_task_16::app:travel:reservation::e0017::atom:2:travel_dates",
+          "field": "travel_dates",
+          "value": "2024-05-20 12:00"
+        },
+        {
+          "fact_id": "graphiti:entity:4e6e81e4-5deb-4002-9ec6-5715a1aaeb61:unclassified_text",
+          "field": "unclassified_text",
+          "value": "New Car Rental",
+          "status": "model_extracted_unreviewed"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_16::app:travel:reservation::e0017::/company:request_parameter",
+          "field": "request_parameter",
+          "value": "New Car Rental",
+          "event_id": "e0017",
+          "parameter_path": "/company",
+          "subject": "request:travel/user_task_16::app:travel:reservation::e0017",
+          "tool": "reserve_car_rental",
+          "observed_at": "2026-11-04T07:08:02.305507+00:00"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_16::app:travel:reservation::e0017::/start_time:request_parameter",
+          "field": "request_parameter",
+          "value": "2024-05-16 12:00",
+          "event_id": "e0017",
+          "parameter_path": "/start_time",
+          "subject": "request:travel/user_task_16::app:travel:reservation::e0017",
+          "tool": "reserve_car_rental",
+          "observed_at": "2026-11-04T07:08:02.305507+00:00"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_16::app:travel:reservation::e0017::/end_time:request_parameter",
+          "field": "request_parameter",
+          "value": "2024-05-20 12:00",
+          "event_id": "e0017",
+          "parameter_path": "/end_time",
+          "subject": "request:travel/user_task_16::app:travel:reservation::e0017",
+          "tool": "reserve_car_rental",
+          "observed_at": "2026-11-04T07:08:02.305507+00:00"
+        },
+        {
+          "fact_id": "response:app:travel:reservation:e0017:raw",
+          "field": "tool_response",
+          "value": "Reservation for a car at New Car Rental from 2024-05-16 12:00 to 2024-05-20 12:00 has been made successfully.",
+          "event_id": "e0017",
+          "tool": "reserve_car_rental",
+          "observed_at": "2026-11-04T07:08:02.305507+00:00",
+          "state": "after",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "named:093bc634ae42becfaa4fd337",
+          "field": "relation",
+          "value": {
+            "subject": "request:travel/user_task_16::app:travel:reservation::e0017",
+            "predicate": "event.start",
+            "object": "2024-05-16 12:00",
+            "context": {}
+          },
+          "subject": "request:travel/user_task_16::app:travel:reservation::e0017",
+          "evidence_fact_ids": [
+            "normalized:travel/user_task_16::app:travel:reservation::e0017::/start_time:request_parameter"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "request:travel/user_task_16::app:travel:reservation::e0017 的开始时间是 2024-05-16 12:00（时间未注明）。",
+          "observed_at": "2026-11-04T07:08:02.305507+00:00"
+        },
+        {
+          "fact_id": "named:344142e1b4a600e4d0ea56b0",
+          "field": "relation",
+          "value": {
+            "subject": "request:travel/user_task_16::app:travel:reservation::e0017",
+            "predicate": "event.end",
+            "object": "2024-05-20 12:00",
+            "context": {}
+          },
+          "subject": "request:travel/user_task_16::app:travel:reservation::e0017",
+          "evidence_fact_ids": [
+            "normalized:travel/user_task_16::app:travel:reservation::e0017::/end_time:request_parameter"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "request:travel/user_task_16::app:travel:reservation::e0017 的结束时间是 2024-05-20 12:00（时间未注明）。",
+          "observed_at": "2026-11-04T07:08:02.305507+00:00"
+        }
+      ]
+    }
+  ],
+  "sharing_groups": [
+    {
+      "group_id": "explicit_hypothetical_all_services",
+      "members": [
+        "app:travel:calendar",
+        "app:travel:car_rental",
+        "app:travel:flights",
+        "app:travel:reservation"
+      ],
+      "enabled": false
+    }
+  ]
+}

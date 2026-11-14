@@ -1,0 +1,65 @@
+{
+  "schema": "execution.observation-memory.v1",
+  "agents": [
+    {
+      "agent_id": "A",
+      "tool_observations": [
+        {
+          "event_id": "e0004",
+          "tool": "get_day_calendar_events",
+          "agent_id": "A",
+          "tool_call_id": "call_00_Wm1HN0ag1E7CH5V8YsNd9806",
+          "observed_at": "2026-11-04T07:07:53.661264+00:00",
+          "content": "- all_day: false\n  description: Weekly team sync to discuss project updates and roadblocks.\n  end_time: 2024-05-15 11:00:00\n  id_: '6'\n  location: Conference Room B\n  participants:\n  - emma.johnson@bluesparrowtech.com\n  - michael.smith@bluesparrowtech.com\n  - sara.lee@bluesparrowtech.com\n  start_time: 2024-05-15 10:00:00\n  status: confirmed\n  title: Team Sync\n- all_day: false\n  description: Catch up over lunch.\n  end_time: 2024-05-15 13:30:00\n  id_: '9'\n  location: Central Park Cafe\n  participants:\n  - emma.johnson@bluesparrowtech.com\n  - sarah.connor@gmail.com\n  start_time: 2024-05-15 12:30:00\n  status: confirmed\n  title: Lunch with Sarah\n- all_day: false\n  description: Introductory meeting with the clients. Meeting to discuss potential\n    collaboration opportunities.\n  end_time: 2024-05-15 16:30:00\n  id_: '24'\n  location: Meeting Room 2\n  participants:\n  - emma.johnson@bluesparrowtech.com\n  - john.mitchell@gmail.com\n  - martha.raynolds@gmail.com\n  start_time: 2024-05-15 15:00:00\n  status: confirmed\n  title: Introductory meeting",
+          "error": null,
+          "delivery_evidence": "TOOL.payload.delivered_content",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "event_id": "e0005",
+          "tool": "get_day_calendar_events",
+          "agent_id": "A",
+          "tool_call_id": "call_01_TsjfSvEP73srjmOqoUYt1566",
+          "observed_at": "2026-11-04T07:07:53.663664+00:00",
+          "content": "- all_day: false\n  description: Initial meeting to kick-off the new project with the development team.\n  end_time: 2024-05-19 11:00:00\n  id_: '1'\n  location: Office 44A\n  participants:\n  - emma.johnson@bluesparrowtech.com\n  - mark.johnson@bluesparrowtech.com\n  - jane.maly@bluesparrowtech.com\n  start_time: 2024-05-19 10:00:00\n  status: confirmed\n  title: Project Kick-off\n- all_day: false\n  description: Monthly one-on-one meeting with the manager.\n  end_time: 2024-05-19 11:30:00\n  id_: '8'\n  location: Manager's Office\n  participants:\n  - emma.johnson@bluesparrowtech.com\n  - alex.williams@bluesparrowtech.com\n  start_time: 2024-05-19 11:00:00\n  status: confirmed\n  title: One-on-One with Manager",
+          "error": null,
+          "delivery_evidence": "TOOL.payload.delivered_content",
+          "direction": "receiver_to_agent"
+        }
+      ],
+      "received_agent_messages": [
+        {
+          "event_id": "e0002",
+          "source": "B",
+          "observed_at": "2026-11-04T07:07:51.801913+00:00",
+          "content": "Agent B requests information:\nPlease list all calendar events on May 15th, 2024 (titles, times, and full descriptions). Also list all calendar events on 2024-05-19 with their start and end times so I can check whether 12:00-13:00 is free."
+        }
+      ]
+    },
+    {
+      "agent_id": "B",
+      "tool_observations": [
+        {
+          "event_id": "e0009",
+          "tool": "create_calendar_event",
+          "agent_id": "B",
+          "tool_call_id": "call_00_TUZPbNh9xzex77ibJCuj8928",
+          "observed_at": "2026-11-04T07:07:58.263540+00:00",
+          "content": "all_day: false\ndescription: Catch up over lunch.\nend_time: 2024-05-19 13:00:00\nid_: '27'\nlocation: null\nparticipants:\n- emma.johnson@bluesparrowtech.com\n- sarah.connor@gmail.com\nstart_time: 2024-05-19 12:00:00\nstatus: confirmed\ntitle: Lunch",
+          "error": null,
+          "delivery_evidence": "TOOL.payload.delivered_content",
+          "direction": "receiver_to_agent"
+        }
+      ],
+      "received_agent_messages": [
+        {
+          "event_id": "e0007",
+          "source": "A",
+          "observed_at": "2026-11-04T07:07:56.522389+00:00",
+          "content": "Here are the calendar events for both dates.\n\n**May 15th, 2024 — 3 appointments total:**\n\n1. **Team Sync** — 10:00–11:00\n   - Description: \"Weekly team sync to discuss project updates and roadblocks.\"\n   - Location: Conference Room B; participants: emma.johnson@bluesparrowtech.com, michael.smith@bluesparrowtech.com, sara.lee@bluesparrowtech.com\n2. **Lunch with Sarah** — 12:30–13:30\n   - Description: \"Catch up over lunch.\"\n   - Location: Central Park Cafe; participants: emma.johnson@bluesparrowtech.com, sarah.connor@gmail.com\n3. **Introductory meeting** — 15:00–16:30\n   - Description: \"Introductory meeting with the clients. Meeting to discuss potential collaboration opportunities.\"\n   - Location: Meeting Room 2; participants: emma.johnson@bluesparrowtech.com, john.mitchell@gmail.com, martha.raynolds@gmail.com\n\n**2024-05-19 — 2 events:**\n\n1. **Project Kick-off** — 10:00–11:00 (\"Initial meeting to kick-off the new project with the development team.\", Office 44A)\n2. **One-on-One with Manager** — 11:00–11:30 (\"Monthly one-on-one meeting with the manager.\", Manager's Office)\n\n**Free/busy check for 12:00–13:00 on 2024-05-19:** Both events end by 11:30, and there are no other events listed that day, so the 12:00–13:00 slot is free. (Note: Sarah already has a \"Lunch with Sarah\" event on May 15th 12:30–13:30, but that's a different date and doesn't conflict with May 19th.)"
+        }
+      ]
+    }
+  ],
+  "scope": "actual per-agent tool returns and delivered agent messages; not pooled"
+}

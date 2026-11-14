@@ -1,0 +1,119 @@
+{
+  "schema": "execution.observation-memory.v1",
+  "agents": [
+    {
+      "agent_id": "A",
+      "tool_observations": [
+        {
+          "event_id": "e0004",
+          "tool": "get_all_hotels_in_city",
+          "agent_id": "A",
+          "tool_call_id": "call_00_qd0E1JYHrovXI0xgwhMy7987",
+          "observed_at": "2026-11-04T07:06:53.022692+00:00",
+          "content": "Hotel Names: Cozy Stay\nMom's Home\nLondon Luxury\nCovent Garden Retreat\nRiverside View\n",
+          "error": null,
+          "delivery_evidence": "TOOL.payload.delivered_content",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "event_id": "e0006",
+          "tool": "get_hotels_prices",
+          "agent_id": "A",
+          "tool_call_id": "call_00_HjAgh7Xju9OXkDlvx5Ft4200",
+          "observed_at": "2026-11-04T07:06:55.263000+00:00",
+          "content": "{'Cozy Stay': 'Price range: 80.0 - 150.0', \"Mom's Home\": 'Price range: 80.0 - 150.0', 'London Luxury': 'Price range: 80.0 - 150.0', 'Covent Garden Retreat': 'Price range: 80.0 - 150.0', 'Riverside View': 'Price range: 200.0 - 350.0'}",
+          "error": null,
+          "delivery_evidence": "TOOL.payload.delivered_content",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "event_id": "e0007",
+          "tool": "get_rating_reviews_for_hotels",
+          "agent_id": "A",
+          "tool_call_id": "call_01_IAa5lftpEXKCS3Uvr8se8102",
+          "observed_at": "2026-11-04T07:06:55.263000+00:00",
+          "content": "{'Cozy Stay': 'Rating: 4.7\\nReviews: The hotel has a cozy and charming atmosphere\\nLocated in a quiet neighborhood, yet close to public transportation\\nThe room was well-maintained and had all the necessary amenities\\nStaff was attentive and always ready to help', \"Mom's Home\": 'Rating: 4.5\\nReviews: A home away from home\\nWarm and welcoming atmosphere\\nGreat location, close to popular attractions\\nFriendly and helpful staff', 'London Luxury': 'Rating: 5.0\\nReviews: Exquisite luxury hotel with impeccable service\\nStunning views of the city skyline\\nSpacious and elegantly designed rooms\\nConvenient location near shopping and dining\\nThe hotel is located in a great area with easy access to public transport', 'Covent Garden Retreat': 'Rating: 4.3\\nReviews: Charming boutique hotel in the heart of Covent Garden\\nQuaint and cozy rooms with modern amenities\\nAttentive and friendly staff\\nSurrounded by theaters, shops, and restaurants', 'Riverside View': 'Rating: 4.6\\nReviews: Beautiful hotel with stunning views of the River Thames\\nLuxurious rooms with elegant decor\\nExcellent location for exploring the city\\nProfessional and accommodating staff'}",
+          "error": null,
+          "delivery_evidence": "TOOL.payload.delivered_content",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "event_id": "e0008",
+          "tool": "get_hotels_address",
+          "agent_id": "A",
+          "tool_call_id": "call_02_YFA7G5cdZcwX34MI5AfV3943",
+          "observed_at": "2026-11-04T07:06:55.264001+00:00",
+          "content": "{'Cozy Stay': '12 Leinster Gardens, Bayswater, London W2 3AN, United Kingdom'}",
+          "error": null,
+          "delivery_evidence": "TOOL.payload.delivered_content",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "event_id": "e0009",
+          "tool": "get_hotels_address",
+          "agent_id": "A",
+          "tool_call_id": "call_03_6zBWt0zuENQZeFxcoOzY8095",
+          "observed_at": "2026-11-04T07:06:55.264001+00:00",
+          "content": "{\"Mom's Home\": '123 Oxford Street, London W1D 2HG, United Kingdom'}",
+          "error": null,
+          "delivery_evidence": "TOOL.payload.delivered_content",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "event_id": "e0010",
+          "tool": "get_hotels_address",
+          "agent_id": "A",
+          "tool_call_id": "call_04_OOQTQ7dZv6UWVQU11bos4545",
+          "observed_at": "2026-11-04T07:06:55.264001+00:00",
+          "content": "{'London Luxury': '10 Park Lane, London W1K 1LB, United Kingdom'}",
+          "error": null,
+          "delivery_evidence": "TOOL.payload.delivered_content",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "event_id": "e0011",
+          "tool": "get_hotels_address",
+          "agent_id": "A",
+          "tool_call_id": "call_05_BqPwpFL3qz1Qh1POBVz50299",
+          "observed_at": "2026-11-04T07:06:55.264001+00:00",
+          "content": "{'Covent Garden Retreat': '25 Floral Street, London WC2E 9DS, United Kingdom'}",
+          "error": null,
+          "delivery_evidence": "TOOL.payload.delivered_content",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "event_id": "e0012",
+          "tool": "get_hotels_address",
+          "agent_id": "A",
+          "tool_call_id": "call_06_8tSYuBm4I2eVorgX32OG9656",
+          "observed_at": "2026-11-04T07:06:55.264001+00:00",
+          "content": "{'Riverside View': '1 Thames Embankment, London SE1 7PB, United Kingdom'}",
+          "error": null,
+          "delivery_evidence": "TOOL.payload.delivered_content",
+          "direction": "receiver_to_agent"
+        }
+      ],
+      "received_agent_messages": [
+        {
+          "event_id": "e0002",
+          "source": "B",
+          "observed_at": "2026-11-04T07:06:51.274543+00:00",
+          "content": "Agent B requests information:\nWhat hotels are available in London? For each, I need the name, rating/reviews, price range (per night), and address. I want to compare them to find the highest-rated hotel within a budget of 160 per night."
+        }
+      ]
+    },
+    {
+      "agent_id": "B",
+      "tool_observations": [],
+      "received_agent_messages": [
+        {
+          "event_id": "e0014",
+          "source": "A",
+          "observed_at": "2026-11-04T07:06:58.509541+00:00",
+          "content": "Here are all the hotels in London with their details:\n\n| Hotel | Rating | Price Range (per night) | Address |\n|---|---|---|---|\n| **Cozy Stay** | 4.7 | 80.0 – 150.0 | 12 Leinster Gardens, Bayswater, London W2 3AN, United Kingdom |\n| **Mom's Home** | 4.5 | 80.0 – 150.0 | 123 Oxford Street, London W1D 2HG, United Kingdom |\n| **London Luxury** | 5.0 | 80.0 – 150.0 | 10 Park Lane, London W1K 1LB, United Kingdom |\n| **Covent Garden Retreat** | 4.3 | 80.0 – 150.0 | 25 Floral Street, London WC2E 9DS, United Kingdom |\n| **Riverside View** | 4.6 | 200.0 – 350.0 | 1 Thames Embankment, London SE1 7PB, United Kingdom |\n\nNotes for the comparison:\n- **Highest rating overall** is London Luxury at **5.0** — and its price range (80–150) is fully within the 160 budget.\n- **Riverside View** (4.6) exceeds the budget entirely (200–350 per night), so it's out of range.\n- **Cozy Stay** (4.7, 80–150) is the highest-rated option other than London Luxury and is also within budget.\n- Mom's Home (4.5) and Covent Garden Retreat (4.3) are also within budget but rated lower.\n\nThe best choice within the 160 budget with the highest rating is **London Luxury** (rating 5.0). If you'd prefer a *new* hotel (not London Luxury, where the user stayed last year), the highest-rated within-budget alternative is **Cozy Stay** (rating 4.7, 80–150 per night)."
+        }
+      ]
+    }
+  ],
+  "scope": "actual per-agent tool returns and delivered agent messages; not pooled"
+}

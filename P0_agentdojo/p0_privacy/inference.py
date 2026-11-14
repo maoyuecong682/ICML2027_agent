@@ -13,7 +13,7 @@ from .relational_memory import context_for, parameter_predicate
 
 VERSION = 'deterministic-relations-v3'
 UNVERIFIED = {'hypothesis', 'unverified_inference', 'model_extracted_unreviewed',
-              'quote_verified_semantics_unreviewed'}
+              'quote_verified_semantics_unreviewed', 'tool_error'}
 ALIASES = {'travel.traveler': 'legal_name', 'travel.destination': 'travel_destination',
            'travel.period': 'travel_dates', 'person.email': 'email_address',
            'project.type': 'project_type', 'person.responsible_for': 'responsible_for',
@@ -142,7 +142,7 @@ def extracted(fact):
     if field == 'relation':
         return [(checked_relation(value), True)]
     out = []
-    if subject and field not in {'request_parameter', 'unclassified_text', 'message_content'}:
+    if subject and field not in {'request_parameter', 'unclassified_text', 'message_content', 'tool_response'}:
         predicate = ALIASES.get(field, field)
         # Lists represent multiple assertions, not a guessed association.
         for item in value if isinstance(value, list) else [value]:
@@ -161,7 +161,8 @@ def extracted(fact):
             reference, prefix = RECORD_IDS[key]
             out.append((claim(subject, reference, prefix + str(value), context), False))
     # Whole affirmative sentences only; never infer a relation from cooccurrence.
-    if isinstance(value, str) and field in {'request_parameter', 'unclassified_text', 'message_content'}:
+    if isinstance(value, str) and field in {'request_parameter', 'unclassified_text', 'message_content',
+                                           'tool_response', 'document_content'}:
         # A labelled table or explicit possessive sentence supplies a binding;
         # nearby names and addresses by themselves never supply one.
         if re.match(r'\A(?:Employee Hobbies|员工爱好)\s*\n', value, re.I):

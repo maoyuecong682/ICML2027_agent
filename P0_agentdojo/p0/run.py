@@ -83,6 +83,7 @@ def run_one(task_info, config, folder, api_key):
          **({"tool_call": msg["tool_call"].model_dump()} if msg.get("tool_call") else {})}
         for msg in pipeline.evaluation_messages])
     dump(folder / "result.json", result)
+    dump(folder / "execution_memory.json", pipeline.execution_memory)
     if hasattr(pipeline, "workflow"):
         dump(folder / "workflow.json", pipeline.workflow)
     dump(folder / "graph.json", {"schema_version": "p0.execution.v1", "task": task_info,

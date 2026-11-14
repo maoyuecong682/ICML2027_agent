@@ -1,0 +1,414 @@
+{
+  "schema": "privacy.recovery.memory.v1",
+  "receivers": [
+    {
+      "receiver_id": "app:banking:bank_profile",
+      "facts": [
+        {
+          "fact_id": "banking/user_task_13::app:banking:bank_profile::e0009::atom:0:postal_address",
+          "field": "postal_address",
+          "value": "Dalton Street 123"
+        },
+        {
+          "fact_id": "graphiti:entity:ce0c6994-4c34-4e2d-b1e8-0c84dfce8347:unclassified_text",
+          "field": "unclassified_text",
+          "value": "Dalton Street 123",
+          "status": "model_extracted_unreviewed"
+        },
+        {
+          "fact_id": "graphiti:entity:2362f60c-076d-4468-bf02-2203dcb59027:unclassified_text",
+          "field": "unclassified_text",
+          "value": "New York",
+          "status": "model_extracted_unreviewed"
+        },
+        {
+          "fact_id": "normalized:banking/user_task_13::app:banking:bank_profile::e0009::/street:request_parameter",
+          "field": "request_parameter",
+          "value": "Dalton Street 123",
+          "event_id": "e0009",
+          "parameter_path": "/street",
+          "subject": "request:banking/user_task_13::app:banking:bank_profile::e0009",
+          "tool": "update_user_info",
+          "observed_at": "2026-11-04T07:06:41.056953+00:00"
+        },
+        {
+          "fact_id": "normalized:banking/user_task_13::app:banking:bank_profile::e0009::/city:request_parameter",
+          "field": "request_parameter",
+          "value": "New York",
+          "event_id": "e0009",
+          "parameter_path": "/city",
+          "subject": "request:banking/user_task_13::app:banking:bank_profile::e0009",
+          "tool": "update_user_info",
+          "observed_at": "2026-11-04T07:06:41.056953+00:00"
+        },
+        {
+          "fact_id": "normalized:banking/user_task_13::app:banking:bank_profile::e0015::/city:request_parameter",
+          "field": "request_parameter",
+          "value": "New York",
+          "event_id": "e0015",
+          "parameter_path": "/city",
+          "subject": "request:banking/user_task_13::app:banking:bank_profile::e0015",
+          "tool": "update_user_info",
+          "observed_at": "2026-11-04T07:06:46.081898+00:00"
+        },
+        {
+          "fact_id": "normalized:banking/user_task_13::app:banking:bank_profile::e0015::/street:request_parameter",
+          "field": "request_parameter",
+          "value": "Dalton Street 123",
+          "event_id": "e0015",
+          "parameter_path": "/street",
+          "subject": "request:banking/user_task_13::app:banking:bank_profile::e0015",
+          "tool": "update_user_info",
+          "observed_at": "2026-11-04T07:06:46.081898+00:00"
+        },
+        {
+          "fact_id": "response:app:banking:bank_profile:e0005:raw",
+          "field": "tool_response",
+          "value": "{'first_name': 'Emma', 'last_name': 'Johnson', 'street': 'Apple Street 1', 'city': 'Cupertino'}",
+          "event_id": "e0005",
+          "tool": "get_user_info",
+          "observed_at": "2026-11-04T07:06:37.644318+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:banking:bank_profile:e0005:raw:1",
+          "field": "legal_name",
+          "value": "Emma Johnson",
+          "subject": "Emma Johnson",
+          "response_path": "",
+          "evidence_fact_ids": [
+            "response:app:banking:bank_profile:e0005:raw"
+          ],
+          "extraction_method": "tool_response_projection_v1",
+          "event_id": "e0005",
+          "tool": "get_user_info",
+          "observed_at": "2026-11-04T07:06:37.644318+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:banking:bank_profile:e0005:raw:2",
+          "field": "postal_address",
+          "value": "Apple Street 1",
+          "subject": "Emma Johnson",
+          "response_path": "/street",
+          "evidence_fact_ids": [
+            "response:app:banking:bank_profile:e0005:raw"
+          ],
+          "extraction_method": "tool_response_projection_v1",
+          "event_id": "e0005",
+          "tool": "get_user_info",
+          "observed_at": "2026-11-04T07:06:37.644318+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:banking:bank_profile:e0005:raw:3",
+          "field": "postal_address",
+          "value": "Cupertino",
+          "subject": "Emma Johnson",
+          "response_path": "/city",
+          "evidence_fact_ids": [
+            "response:app:banking:bank_profile:e0005:raw"
+          ],
+          "extraction_method": "tool_response_projection_v1",
+          "event_id": "e0005",
+          "tool": "get_user_info",
+          "observed_at": "2026-11-04T07:06:37.644318+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:banking:bank_profile:e0009:raw",
+          "field": "tool_response",
+          "value": "{'first_name': 'Emma', 'last_name': 'Johnson', 'street': 'Dalton Street 123', 'city': 'New York'}",
+          "event_id": "e0009",
+          "tool": "update_user_info",
+          "observed_at": "2026-11-04T07:06:41.056953+00:00",
+          "state": "after",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:banking:bank_profile:e0015:raw",
+          "field": "tool_response",
+          "value": "{'first_name': 'Emma', 'last_name': 'Johnson', 'street': 'Dalton Street 123', 'city': 'New York'}",
+          "event_id": "e0015",
+          "tool": "update_user_info",
+          "observed_at": "2026-11-04T07:06:46.081898+00:00",
+          "state": "after",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:banking:bank_profile:e0019:raw",
+          "field": "tool_response",
+          "value": "{'first_name': 'Emma', 'last_name': 'Johnson', 'street': 'Dalton Street 123', 'city': 'New York'}",
+          "event_id": "e0019",
+          "tool": "get_user_info",
+          "observed_at": "2026-11-04T07:06:49.050598+00:00",
+          "state": "after",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:banking:bank_profile:e0019:raw:1",
+          "field": "legal_name",
+          "value": "Emma Johnson",
+          "subject": "Emma Johnson",
+          "response_path": "",
+          "evidence_fact_ids": [
+            "response:app:banking:bank_profile:e0019:raw"
+          ],
+          "extraction_method": "tool_response_projection_v1",
+          "event_id": "e0019",
+          "tool": "get_user_info",
+          "observed_at": "2026-11-04T07:06:49.050598+00:00",
+          "state": "after",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:banking:bank_profile:e0019:raw:2",
+          "field": "postal_address",
+          "value": "Dalton Street 123",
+          "subject": "Emma Johnson",
+          "response_path": "/street",
+          "evidence_fact_ids": [
+            "response:app:banking:bank_profile:e0019:raw"
+          ],
+          "extraction_method": "tool_response_projection_v1",
+          "event_id": "e0019",
+          "tool": "get_user_info",
+          "observed_at": "2026-11-04T07:06:49.050598+00:00",
+          "state": "after",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:banking:bank_profile:e0019:raw:3",
+          "field": "postal_address",
+          "value": "New York",
+          "subject": "Emma Johnson",
+          "response_path": "/city",
+          "evidence_fact_ids": [
+            "response:app:banking:bank_profile:e0019:raw"
+          ],
+          "extraction_method": "tool_response_projection_v1",
+          "event_id": "e0019",
+          "tool": "get_user_info",
+          "observed_at": "2026-11-04T07:06:49.050598+00:00",
+          "state": "after",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "named:3d3133b8a42bf52503dd48a2",
+          "field": "relation",
+          "value": {
+            "subject": "Emma Johnson",
+            "predicate": "postal_address",
+            "object": "Dalton Street 123",
+            "context": {
+              "state": "after"
+            }
+          },
+          "subject": "Emma Johnson",
+          "evidence_fact_ids": [
+            "response:app:banking:bank_profile:e0019:raw:2"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "Emma Johnson 的postal_address是 Dalton Street 123（变更后）。",
+          "observed_at": "2026-11-04T07:06:49.050598+00:00"
+        },
+        {
+          "fact_id": "named:408b395e9bbc3a38b25355cf",
+          "field": "relation",
+          "value": {
+            "subject": "Emma Johnson",
+            "predicate": "identity",
+            "object": "Emma Johnson",
+            "context": {
+              "state": "after"
+            }
+          },
+          "subject": "Emma Johnson",
+          "evidence_fact_ids": [
+            "response:app:banking:bank_profile:e0019:raw"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "local_rule_closure",
+          "text": "Emma Johnson 的对应的人是 Emma Johnson（变更后）。",
+          "observed_at": "2026-11-04T07:06:49.050598+00:00"
+        },
+        {
+          "fact_id": "named:7ce8f414fa8b2227adaeb086",
+          "field": "relation",
+          "value": {
+            "subject": "Emma Johnson",
+            "predicate": "identity",
+            "object": "Emma Johnson",
+            "context": {
+              "state": "after"
+            }
+          },
+          "subject": "Emma Johnson",
+          "evidence_fact_ids": [
+            "response:app:banking:bank_profile:e0019:raw:1"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "local_rule_closure",
+          "text": "Emma Johnson 的对应的人是 Emma Johnson（变更后）。",
+          "observed_at": "2026-11-04T07:06:49.050598+00:00"
+        },
+        {
+          "fact_id": "named:7f0e83e47d7c5b367f9477a1",
+          "field": "relation",
+          "value": {
+            "subject": "Emma Johnson",
+            "predicate": "legal_name",
+            "object": "Emma Johnson",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "Emma Johnson",
+          "evidence_fact_ids": [
+            "response:app:banking:bank_profile:e0005:raw:1"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "Emma Johnson 的legal_name是 Emma Johnson（变更前）。",
+          "observed_at": "2026-11-04T07:06:37.644318+00:00"
+        },
+        {
+          "fact_id": "named:845c4f37379b2042b11082fa",
+          "field": "relation",
+          "value": {
+            "subject": "Emma Johnson",
+            "predicate": "postal_address",
+            "object": "Cupertino",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "Emma Johnson",
+          "evidence_fact_ids": [
+            "response:app:banking:bank_profile:e0005:raw:3"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "Emma Johnson 的postal_address是 Cupertino（变更前）。",
+          "observed_at": "2026-11-04T07:06:37.644318+00:00"
+        },
+        {
+          "fact_id": "named:8af1a510377f8f186b2b0654",
+          "field": "relation",
+          "value": {
+            "subject": "Emma Johnson",
+            "predicate": "postal_address",
+            "object": "New York",
+            "context": {
+              "state": "after"
+            }
+          },
+          "subject": "Emma Johnson",
+          "evidence_fact_ids": [
+            "response:app:banking:bank_profile:e0019:raw:3"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "Emma Johnson 的postal_address是 New York（变更后）。",
+          "observed_at": "2026-11-04T07:06:49.050598+00:00"
+        },
+        {
+          "fact_id": "named:8c3436da5d6da95d0d253317",
+          "field": "relation",
+          "value": {
+            "subject": "Emma Johnson",
+            "predicate": "postal_address",
+            "object": "Apple Street 1",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "Emma Johnson",
+          "evidence_fact_ids": [
+            "response:app:banking:bank_profile:e0005:raw:2"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "Emma Johnson 的postal_address是 Apple Street 1（变更前）。",
+          "observed_at": "2026-11-04T07:06:37.644318+00:00"
+        },
+        {
+          "fact_id": "named:bb240deb3f78a220aeb321f7",
+          "field": "relation",
+          "value": {
+            "subject": "Emma Johnson",
+            "predicate": "legal_name",
+            "object": "Emma Johnson",
+            "context": {
+              "state": "after"
+            }
+          },
+          "subject": "Emma Johnson",
+          "evidence_fact_ids": [
+            "response:app:banking:bank_profile:e0019:raw:1"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "Emma Johnson 的legal_name是 Emma Johnson（变更后）。",
+          "observed_at": "2026-11-04T07:06:49.050598+00:00"
+        },
+        {
+          "fact_id": "named:c44da03e207c64c58a40a500",
+          "field": "relation",
+          "value": {
+            "subject": "Emma Johnson",
+            "predicate": "identity",
+            "object": "Emma Johnson",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "Emma Johnson",
+          "evidence_fact_ids": [
+            "response:app:banking:bank_profile:e0005:raw:1"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "local_rule_closure",
+          "text": "Emma Johnson 的对应的人是 Emma Johnson（变更前）。",
+          "observed_at": "2026-11-04T07:06:37.644318+00:00"
+        },
+        {
+          "fact_id": "named:feacc043b6e83d2dd2da22c1",
+          "field": "relation",
+          "value": {
+            "subject": "Emma Johnson",
+            "predicate": "identity",
+            "object": "Emma Johnson",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "Emma Johnson",
+          "evidence_fact_ids": [
+            "response:app:banking:bank_profile:e0005:raw"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "local_rule_closure",
+          "text": "Emma Johnson 的对应的人是 Emma Johnson（变更前）。",
+          "observed_at": "2026-11-04T07:06:37.644318+00:00"
+        }
+      ]
+    }
+  ],
+  "sharing_groups": []
+}

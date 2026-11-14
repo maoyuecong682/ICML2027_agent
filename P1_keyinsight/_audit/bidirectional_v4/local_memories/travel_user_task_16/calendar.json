@@ -1,0 +1,44 @@
+{
+  "schema": "privacy.recovery.memory.v1",
+  "receivers": [
+    {
+      "receiver_id": "app:travel:calendar",
+      "facts": [
+        {
+          "fact_id": "travel/user_task_16::app:travel:calendar::e0013::atom:0:travel_destination",
+          "field": "travel_destination",
+          "value": "London"
+        },
+        {
+          "fact_id": "graphiti:entity:63000295-baa4-4418-af45-efd0ca465759:unclassified_text",
+          "field": "unclassified_text",
+          "value": "London",
+          "status": "model_extracted_unreviewed"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_16::app:travel:calendar::e0013::/query:request_parameter",
+          "field": "request_parameter",
+          "value": "London",
+          "event_id": "e0013",
+          "parameter_path": "/query",
+          "subject": "request:travel/user_task_16::app:travel:calendar::e0013",
+          "tool": "search_calendar_events",
+          "observed_at": "2026-11-04T07:07:56.668361+00:00"
+        },
+        {
+          "fact_id": "response:app:travel:calendar:e0013:raw",
+          "field": "tool_response",
+          "value": "ERROR: ValueError: No events found. Try with a different query.",
+          "event_id": "e0013",
+          "tool": "search_calendar_events",
+          "observed_at": "2026-11-04T07:07:56.668361+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent",
+          "status": "tool_error"
+        }
+      ]
+    }
+  ],
+  "sharing_groups": []
+}

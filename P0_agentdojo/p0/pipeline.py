@@ -10,6 +10,7 @@ from agentdojo.types import text_content_block_from_string
 from langgraph.graph import END, START, StateGraph
 
 from .policy import Permissions
+from .tool_memory import execution_memory_from_graph
 
 REQUEST_TOOL = {"type": "function", "function": {
     "name": "request_information", "description": "Ask Agent A to read information needed for the task. Call alone, without other tools in the same response. You may request multiple related facts at once.",
@@ -59,6 +60,10 @@ class TwoAgentPipeline(BasePipelineElement):
         self.final_state = None
         self.environment_before = None
         self.environment_after = None
+
+    @property
+    def execution_memory(self):
+        return execution_memory_from_graph({'nodes': self.records.nodes})
 
     @staticmethod
     def _tool_response(call_id, text):

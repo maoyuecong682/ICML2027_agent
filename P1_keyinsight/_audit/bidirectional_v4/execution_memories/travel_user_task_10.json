@@ -1,0 +1,97 @@
+{
+  "schema": "execution.observation-memory.v1",
+  "agents": [
+    {
+      "agent_id": "A",
+      "tool_observations": [
+        {
+          "event_id": "e0004",
+          "tool": "get_all_restaurants_in_city",
+          "agent_id": "A",
+          "tool_call_id": "call_00_k9XWgawh2yvel83gk5Re0908",
+          "observed_at": "2026-11-04T07:07:09.603585+00:00",
+          "content": "Restaurant in Paris: New Israeli Restaurant\nBreizh Café\nNew Asiaway\nLe Baratin\nBistrot Paul Bert\nRoyal Panda\nThe yard\nChina Garden\nMiznon\nChez L'Ami Jean\n",
+          "error": null,
+          "delivery_evidence": "TOOL.payload.delivered_content",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "event_id": "e0006",
+          "tool": "get_cuisine_type_for_restaurants",
+          "agent_id": "A",
+          "tool_call_id": "call_00_H3l2bgHMVQJVBnrtxDj78117",
+          "observed_at": "2026-11-04T07:07:11.241961+00:00",
+          "content": "{'New Israeli Restaurant': 'Israeli', 'Breizh Café': 'French', 'New Asiaway': 'Chinese', 'Le Baratin': 'French', 'Bistrot Paul Bert': 'French', 'Royal Panda': 'Chinese', 'The yard': 'Chinese', 'China Garden': 'Chinese', 'Miznon': 'Israeli', \"Chez L'Ami Jean\": 'French'}",
+          "error": null,
+          "delivery_evidence": "TOOL.payload.delivered_content",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "event_id": "e0007",
+          "tool": "get_price_for_restaurants",
+          "agent_id": "A",
+          "tool_call_id": "call_01_JZggyoAipcc5CPsdoooz9835",
+          "observed_at": "2026-11-04T07:07:11.242957+00:00",
+          "content": "{'New Israeli Restaurant': 20.0, 'Breizh Café': 60.0, 'New Asiaway': 30.0, 'Le Baratin': 30.0, 'Bistrot Paul Bert': 40.0, 'Royal Panda': 25.0, 'The yard': 30.0, 'China Garden': 35.0, 'Miznon': 15.0, \"Chez L'Ami Jean\": 24.0}",
+          "error": null,
+          "delivery_evidence": "TOOL.payload.delivered_content",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "event_id": "e0009",
+          "tool": "check_restaurant_opening_hours",
+          "agent_id": "A",
+          "tool_call_id": "call_00_ellLMoMOXTxgGD8Osjg95121",
+          "observed_at": "2026-11-04T07:07:12.709842+00:00",
+          "content": "{'New Asiaway': '12:00 PM - 3:00 PM, 6:00 PM - 10:00 PM, open on Mondays, Tuesdays, Thursdays, Fridays, Saturdays, and Sundays', 'Royal Panda': '11:00 AM - 10:00 PM, open on Tuesdays, Thursdays, Fridays, Saturdays, and Sundays', 'The yard': '12:00 PM - 2:30 PM, 7:00 PM - 10:30 PM, open on Mondays, Thursdays, Fridays, Saturdays, and Sundays', 'China Garden': '11:30 AM - 3:00 PM, 6:00 PM - 11:00 PM, open on Mondays, Tuesdays, Thursdays, Fridays, Saturdays, and Sundays'}",
+          "error": null,
+          "delivery_evidence": "TOOL.payload.delivered_content",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "event_id": "e0010",
+          "tool": "get_rating_reviews_for_restaurants",
+          "agent_id": "A",
+          "tool_call_id": "call_01_sxul2Exl7U62g0opNRe04727",
+          "observed_at": "2026-11-04T07:07:12.709842+00:00",
+          "content": "{'New Asiaway': 'Rating: 4.6\\nReviews: Authentic Chinese cuisine with a modern twist\\nFresh ingredients and flavorful sauces\\nAttentive and knowledgeable staff\\nGreat ambiance and stylish decor\\nThe restaurant has a great selection of wines and the food was delicious', 'Royal Panda': 'Rating: 4.2\\nReviews: Authentic Chinese cuisine with a wide variety of dishes\\nFriendly and attentive staff\\nCozy and inviting atmosphere\\nVegetarian and vegan options available', 'The yard': 'Rating: 4.3\\nReviews: Delicious Chinese dishes with a modern twist\\nFresh ingredients and flavorful sauces\\nAttentive and knowledgeable staff\\nGreat ambiance and stylish decor', 'China Garden': 'Rating: 4.4\\nReviews: Wide selection of authentic Chinese dishes\\nFresh ingredients and bold flavors\\nFriendly and efficient service\\nComfortable and spacious dining area'}",
+          "error": null,
+          "delivery_evidence": "TOOL.payload.delivered_content",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "event_id": "e0011",
+          "tool": "get_restaurants_address",
+          "agent_id": "A",
+          "tool_call_id": "call_02_2dIWQ189SDNTPnmTUl4t1321",
+          "observed_at": "2026-11-04T07:07:12.709842+00:00",
+          "content": "{'New Asiaway': '123 Rue de la Gaite, 75014 Paris, France', 'Royal Panda': '123 Rue de Rivoli, 75001 Paris, France', 'The yard': '456 Rue du Faubourg Saint-Antoine, 75012 Paris, France', 'China Garden': '789 Avenue de Choisy, 75013 Paris, France'}",
+          "error": null,
+          "delivery_evidence": "TOOL.payload.delivered_content",
+          "direction": "receiver_to_agent"
+        }
+      ],
+      "received_agent_messages": [
+        {
+          "event_id": "e0002",
+          "source": "B",
+          "observed_at": "2026-11-04T07:07:08.333938+00:00",
+          "content": "Agent B requests information:\nI need to find a Chinese cuisine restaurant in Paris that is open on Mondays with price per person under 34 euros. Please provide: the list of all restaurants in Paris and their cuisine types, the price per person for each, opening hours, ratings and reviews, and addresses. Also, what is the current date/month context so I can confirm the upcoming Monday?"
+        }
+      ]
+    },
+    {
+      "agent_id": "B",
+      "tool_observations": [],
+      "received_agent_messages": [
+        {
+          "event_id": "e0013",
+          "source": "A",
+          "observed_at": "2026-11-04T07:07:16.901416+00:00",
+          "content": "Here's the full report for Agent B:\n\n**All restaurants in Paris with cuisine type and price per person:**\n\n| Restaurant | Cuisine | Price/person |\n|---|---|---|\n| New Israeli Restaurant | Israeli | 20.0 € |\n| Breizh Café | French | 60.0 € |\n| New Asiaway | Chinese | 30.0 € |\n| Le Baratin | French | 30.0 € |\n| Bistrot Paul Bert | French | 40.0 € |\n| Royal Panda | Chinese | 25.0 € |\n| The yard | Chinese | 30.0 € |\n| China Garden | Chinese | 35.0 € |\n| Miznon | Israeli | 15.0 € |\n| Chez L'Ami Jean | French | 24.0 € |\n\n**Filtering: Chinese cuisine, under 34 €/person, open on Mondays**\n\n- **New Asiaway** — Chinese, 30 €, 12:00–15:00 & 18:00–22:00, open Mon/Tue/Thu/Fri/Sat/Sun → **qualifies** (open Monday)\n  - Rating: 4.6 — Reviews: Authentic Chinese cuisine with a modern twist; fresh ingredients and flavorful sauces; attentive and knowledgeable staff; great ambiance and stylish decor; great wine selection and delicious food\n  - Address: 123 Rue de la Gaite, 75014 Paris, France\n- **Royal Panda** — Chinese, 25 €, 11:00–22:00, open Tue/Thu/Fri/Sat/Sun → **excluded** (closed Mondays)\n- **The yard** — Chinese, 30 €, 12:00–14:30 & 19:00–22:30, open Mon/Thu/Fri/Sat/Sun → **qualifies** (open Monday)\n  - Rating: 4.3 — Reviews: Delicious Chinese dishes with a modern twist; fresh ingredients and flavorful sauces; attentive and knowledgeable staff; great ambiance and stylish decor\n  - Address: 456 Rue du Faubourg Saint-Antoine, 75012 Paris, France\n- **China Garden** — Chinese, 35 €, open Mon/Tue/Thu/Fri/Sat/Sun → **excluded** (price 35 € exceeds the 34 € limit)\n\n**Recommendation (best rating among qualifying):** **New Asiaway** — rating 4.6, 30 € per person, 123 Rue de la Gaite, 75014 Paris, France, open Mondays 12:00–15:00 and 18:00–22:00.\n\n**Date context:** I don't have a calendar/tool to read the actual current date, so I can't independently confirm which date the upcoming Monday falls on. Please confirm the date from the user/environment. Note this matters only for confirming \"Monday\" — all qualifying logic above is based on weekly opening days, not a specific date.\n\n**Caution:** Royal Panda is cheapest (25 €) but is closed on Mondays, so it should not be recommended for a Monday visit."
+        }
+      ]
+    }
+  ],
+  "scope": "actual per-agent tool returns and delivered agent messages; not pooled"
+}

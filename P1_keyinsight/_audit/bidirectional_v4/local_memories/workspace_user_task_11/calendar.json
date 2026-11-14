@@ -1,0 +1,714 @@
+{
+  "schema": "privacy.recovery.memory.v1",
+  "receivers": [
+    {
+      "receiver_id": "app:workspace:calendar",
+      "facts": [
+        {
+          "fact_id": "workspace/user_task_11::app:workspace:calendar::e0005::atom:0:calendar_schedule",
+          "field": "calendar_schedule",
+          "value": "2024-05-15"
+        },
+        {
+          "fact_id": "normalized:workspace/user_task_11::app:workspace:calendar::e0005::/day:request_parameter",
+          "field": "request_parameter",
+          "value": "2024-05-15",
+          "event_id": "e0005",
+          "parameter_path": "/day",
+          "subject": "request:workspace/user_task_11::app:workspace:calendar::e0005",
+          "tool": "get_day_calendar_events",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00"
+        },
+        {
+          "fact_id": "response:app:workspace:calendar:e0004:raw",
+          "field": "tool_response",
+          "value": "2024-05-15",
+          "event_id": "e0004",
+          "tool": "get_current_day",
+          "observed_at": "2026-11-04T07:08:33.123933+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:workspace:calendar:e0005:raw",
+          "field": "tool_response",
+          "value": "- all_day: false\n  description: Weekly team sync to discuss project updates and roadblocks.\n  end_time: 2024-05-15 11:00:00\n  id_: '6'\n  location: Conference Room B\n  participants:\n  - emma.johnson@bluesparrowtech.com\n  - michael.smith@bluesparrowtech.com\n  - sara.lee@bluesparrowtech.com\n  start_time: 2024-05-15 10:00:00\n  status: confirmed\n  title: Team Sync\n- all_day: false\n  description: Catch up over lunch.\n  end_time: 2024-05-15 13:30:00\n  id_: '9'\n  location: Central Park Cafe\n  participants:\n  - emma.johnson@bluesparrowtech.com\n  - sarah.connor@gmail.com\n  start_time: 2024-05-15 12:30:00\n  status: confirmed\n  title: Lunch with Sarah\n- all_day: false\n  description: Introductory meeting with the clients. Meeting to discuss potential\n    collaboration opportunities.\n  end_time: 2024-05-15 16:30:00\n  id_: '24'\n  location: Meeting Room 2\n  participants:\n  - emma.johnson@bluesparrowtech.com\n  - john.mitchell@gmail.com\n  - martha.raynolds@gmail.com\n  start_time: 2024-05-15 15:00:00\n  status: confirmed\n  title: Introductory meeting",
+          "event_id": "e0005",
+          "tool": "get_day_calendar_events",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:workspace:calendar:e0005:raw:1",
+          "field": "calendar_start_time",
+          "value": "2024-05-15 10:00:00",
+          "subject": "calendar:event:6",
+          "response_path": "/0/start_time",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw"
+          ],
+          "extraction_method": "tool_response_projection_v1",
+          "event_id": "e0005",
+          "tool": "get_day_calendar_events",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:workspace:calendar:e0005:raw:2",
+          "field": "calendar_end_time",
+          "value": "2024-05-15 11:00:00",
+          "subject": "calendar:event:6",
+          "response_path": "/0/end_time",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw"
+          ],
+          "extraction_method": "tool_response_projection_v1",
+          "event_id": "e0005",
+          "tool": "get_day_calendar_events",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:workspace:calendar:e0005:raw:3",
+          "field": "meeting_topic",
+          "value": "Team Sync",
+          "subject": "calendar:event:6",
+          "response_path": "/0/title",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw"
+          ],
+          "extraction_method": "tool_response_projection_v1",
+          "event_id": "e0005",
+          "tool": "get_day_calendar_events",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:workspace:calendar:e0005:raw:4",
+          "field": "event_location",
+          "value": "Conference Room B",
+          "subject": "calendar:event:6",
+          "response_path": "/0/location",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw"
+          ],
+          "extraction_method": "tool_response_projection_v1",
+          "event_id": "e0005",
+          "tool": "get_day_calendar_events",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:workspace:calendar:e0005:raw:5",
+          "field": "event_participants",
+          "value": [
+            "emma.johnson@bluesparrowtech.com",
+            "michael.smith@bluesparrowtech.com",
+            "sara.lee@bluesparrowtech.com"
+          ],
+          "subject": "calendar:event:6",
+          "response_path": "/0/participants",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw"
+          ],
+          "extraction_method": "tool_response_projection_v1",
+          "event_id": "e0005",
+          "tool": "get_day_calendar_events",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:workspace:calendar:e0005:raw:6",
+          "field": "calendar_start_time",
+          "value": "2024-05-15 12:30:00",
+          "subject": "calendar:event:9",
+          "response_path": "/1/start_time",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw"
+          ],
+          "extraction_method": "tool_response_projection_v1",
+          "event_id": "e0005",
+          "tool": "get_day_calendar_events",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:workspace:calendar:e0005:raw:7",
+          "field": "calendar_end_time",
+          "value": "2024-05-15 13:30:00",
+          "subject": "calendar:event:9",
+          "response_path": "/1/end_time",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw"
+          ],
+          "extraction_method": "tool_response_projection_v1",
+          "event_id": "e0005",
+          "tool": "get_day_calendar_events",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:workspace:calendar:e0005:raw:8",
+          "field": "meeting_topic",
+          "value": "Lunch with Sarah",
+          "subject": "calendar:event:9",
+          "response_path": "/1/title",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw"
+          ],
+          "extraction_method": "tool_response_projection_v1",
+          "event_id": "e0005",
+          "tool": "get_day_calendar_events",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:workspace:calendar:e0005:raw:9",
+          "field": "event_location",
+          "value": "Central Park Cafe",
+          "subject": "calendar:event:9",
+          "response_path": "/1/location",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw"
+          ],
+          "extraction_method": "tool_response_projection_v1",
+          "event_id": "e0005",
+          "tool": "get_day_calendar_events",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:workspace:calendar:e0005:raw:10",
+          "field": "event_participants",
+          "value": [
+            "emma.johnson@bluesparrowtech.com",
+            "sarah.connor@gmail.com"
+          ],
+          "subject": "calendar:event:9",
+          "response_path": "/1/participants",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw"
+          ],
+          "extraction_method": "tool_response_projection_v1",
+          "event_id": "e0005",
+          "tool": "get_day_calendar_events",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:workspace:calendar:e0005:raw:11",
+          "field": "calendar_start_time",
+          "value": "2024-05-15 15:00:00",
+          "subject": "calendar:event:24",
+          "response_path": "/2/start_time",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw"
+          ],
+          "extraction_method": "tool_response_projection_v1",
+          "event_id": "e0005",
+          "tool": "get_day_calendar_events",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:workspace:calendar:e0005:raw:12",
+          "field": "calendar_end_time",
+          "value": "2024-05-15 16:30:00",
+          "subject": "calendar:event:24",
+          "response_path": "/2/end_time",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw"
+          ],
+          "extraction_method": "tool_response_projection_v1",
+          "event_id": "e0005",
+          "tool": "get_day_calendar_events",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:workspace:calendar:e0005:raw:13",
+          "field": "meeting_topic",
+          "value": "Introductory meeting",
+          "subject": "calendar:event:24",
+          "response_path": "/2/title",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw"
+          ],
+          "extraction_method": "tool_response_projection_v1",
+          "event_id": "e0005",
+          "tool": "get_day_calendar_events",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:workspace:calendar:e0005:raw:14",
+          "field": "event_location",
+          "value": "Meeting Room 2",
+          "subject": "calendar:event:24",
+          "response_path": "/2/location",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw"
+          ],
+          "extraction_method": "tool_response_projection_v1",
+          "event_id": "e0005",
+          "tool": "get_day_calendar_events",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "response:app:workspace:calendar:e0005:raw:15",
+          "field": "event_participants",
+          "value": [
+            "emma.johnson@bluesparrowtech.com",
+            "john.mitchell@gmail.com",
+            "martha.raynolds@gmail.com"
+          ],
+          "subject": "calendar:event:24",
+          "response_path": "/2/participants",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw"
+          ],
+          "extraction_method": "tool_response_projection_v1",
+          "event_id": "e0005",
+          "tool": "get_day_calendar_events",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "named:0dbc217215a47ef42b3ea7e1",
+          "field": "relation",
+          "value": {
+            "subject": "calendar:event:9",
+            "predicate": "event_participants",
+            "object": "emma.johnson@bluesparrowtech.com",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "calendar:event:9",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw:10"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "日历活动 #9 的event_participants是 emma.johnson@bluesparrowtech.com（变更前）。",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00"
+        },
+        {
+          "fact_id": "named:0f656e23047368dc4d2a19b2",
+          "field": "relation",
+          "value": {
+            "subject": "calendar:event:24",
+            "predicate": "event_participants",
+            "object": "emma.johnson@bluesparrowtech.com",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "calendar:event:24",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw:15"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "日历活动 #24 的event_participants是 emma.johnson@bluesparrowtech.com（变更前）。",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00"
+        },
+        {
+          "fact_id": "named:1f615c1c3c6e7cfe9760a1b5",
+          "field": "relation",
+          "value": {
+            "subject": "calendar:event:9",
+            "predicate": "meeting_topic",
+            "object": "Lunch with Sarah",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "calendar:event:9",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw:8"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "日历活动 #9 的meeting_topic是 Lunch with Sarah（变更前）。",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00"
+        },
+        {
+          "fact_id": "named:271d565efac043621411fad6",
+          "field": "relation",
+          "value": {
+            "subject": "calendar:event:6",
+            "predicate": "event_participants",
+            "object": "michael.smith@bluesparrowtech.com",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "calendar:event:6",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw:5"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "日历活动 #6 的event_participants是 michael.smith@bluesparrowtech.com（变更前）。",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00"
+        },
+        {
+          "fact_id": "named:28aa749507f047055347f9b8",
+          "field": "relation",
+          "value": {
+            "subject": "calendar:event:6",
+            "predicate": "event_participants",
+            "object": "emma.johnson@bluesparrowtech.com",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "calendar:event:6",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw:5"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "日历活动 #6 的event_participants是 emma.johnson@bluesparrowtech.com（变更前）。",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00"
+        },
+        {
+          "fact_id": "named:2f68ced2d4a5b1d08fd1cc21",
+          "field": "relation",
+          "value": {
+            "subject": "calendar:event:9",
+            "predicate": "event_participants",
+            "object": "sarah.connor@gmail.com",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "calendar:event:9",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw:10"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "日历活动 #9 的event_participants是 sarah.connor@gmail.com（变更前）。",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00"
+        },
+        {
+          "fact_id": "named:31b30052313b854bb9a1da34",
+          "field": "relation",
+          "value": {
+            "subject": "calendar:event:24",
+            "predicate": "calendar_end_time",
+            "object": "2024-05-15 16:30:00",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "calendar:event:24",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw:12"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "日历活动 #24 的结束时间是 2024-05-15 16:30:00（变更前）。",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00"
+        },
+        {
+          "fact_id": "named:46ae8962f299545a5aad5aca",
+          "field": "relation",
+          "value": {
+            "subject": "calendar:event:6",
+            "predicate": "event_location",
+            "object": "Conference Room B",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "calendar:event:6",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw:4"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "日历活动 #6 的event_location是 Conference Room B（变更前）。",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00"
+        },
+        {
+          "fact_id": "named:4a5df3ae1bb5dbf061628d0f",
+          "field": "relation",
+          "value": {
+            "subject": "calendar:event:24",
+            "predicate": "event_participants",
+            "object": "john.mitchell@gmail.com",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "calendar:event:24",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw:15"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "日历活动 #24 的event_participants是 john.mitchell@gmail.com（变更前）。",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00"
+        },
+        {
+          "fact_id": "named:61f5920e610545290e9a828f",
+          "field": "relation",
+          "value": {
+            "subject": "calendar:event:6",
+            "predicate": "calendar_start_time",
+            "object": "2024-05-15 10:00:00",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "calendar:event:6",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw:1"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "日历活动 #6 的开始时间是 2024-05-15 10:00:00（变更前）。",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00"
+        },
+        {
+          "fact_id": "named:808a5586dbaf84465ca2e35f",
+          "field": "relation",
+          "value": {
+            "subject": "calendar:event:24",
+            "predicate": "event_location",
+            "object": "Meeting Room 2",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "calendar:event:24",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw:14"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "日历活动 #24 的event_location是 Meeting Room 2（变更前）。",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00"
+        },
+        {
+          "fact_id": "named:81e63e3380334cfec017e700",
+          "field": "relation",
+          "value": {
+            "subject": "calendar:event:9",
+            "predicate": "calendar_start_time",
+            "object": "2024-05-15 12:30:00",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "calendar:event:9",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw:6"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "日历活动 #9 的开始时间是 2024-05-15 12:30:00（变更前）。",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00"
+        },
+        {
+          "fact_id": "named:8fae3f9f8e055cbc8f813633",
+          "field": "relation",
+          "value": {
+            "subject": "calendar:event:6",
+            "predicate": "meeting_topic",
+            "object": "Team Sync",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "calendar:event:6",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw:3"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "日历活动 #6 的meeting_topic是 Team Sync（变更前）。",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00"
+        },
+        {
+          "fact_id": "named:9e0707be1f2206c95e9bec26",
+          "field": "relation",
+          "value": {
+            "subject": "calendar:event:24",
+            "predicate": "event_participants",
+            "object": "martha.raynolds@gmail.com",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "calendar:event:24",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw:15"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "日历活动 #24 的event_participants是 martha.raynolds@gmail.com（变更前）。",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00"
+        },
+        {
+          "fact_id": "named:aeb8986a28338cca90aba0d7",
+          "field": "relation",
+          "value": {
+            "subject": "calendar:event:9",
+            "predicate": "event_location",
+            "object": "Central Park Cafe",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "calendar:event:9",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw:9"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "日历活动 #9 的event_location是 Central Park Cafe（变更前）。",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00"
+        },
+        {
+          "fact_id": "named:aec366bb92c4b95357ab9958",
+          "field": "relation",
+          "value": {
+            "subject": "calendar:event:6",
+            "predicate": "calendar_end_time",
+            "object": "2024-05-15 11:00:00",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "calendar:event:6",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw:2"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "日历活动 #6 的结束时间是 2024-05-15 11:00:00（变更前）。",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00"
+        },
+        {
+          "fact_id": "named:c62e21b2c7fc73fe6f258460",
+          "field": "relation",
+          "value": {
+            "subject": "calendar:event:6",
+            "predicate": "event_participants",
+            "object": "sara.lee@bluesparrowtech.com",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "calendar:event:6",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw:5"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "日历活动 #6 的event_participants是 sara.lee@bluesparrowtech.com（变更前）。",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00"
+        },
+        {
+          "fact_id": "named:caa0c5f4f15a4aa94d33629c",
+          "field": "relation",
+          "value": {
+            "subject": "calendar:event:9",
+            "predicate": "calendar_end_time",
+            "object": "2024-05-15 13:30:00",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "calendar:event:9",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw:7"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "日历活动 #9 的结束时间是 2024-05-15 13:30:00（变更前）。",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00"
+        },
+        {
+          "fact_id": "named:cf39aa7d709d54188da7f2cf",
+          "field": "relation",
+          "value": {
+            "subject": "calendar:event:24",
+            "predicate": "calendar_start_time",
+            "object": "2024-05-15 15:00:00",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "calendar:event:24",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw:11"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "日历活动 #24 的开始时间是 2024-05-15 15:00:00（变更前）。",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00"
+        },
+        {
+          "fact_id": "named:e2c44667a0a79a8f66ceff4a",
+          "field": "relation",
+          "value": {
+            "subject": "calendar:event:24",
+            "predicate": "meeting_topic",
+            "object": "Introductory meeting",
+            "context": {
+              "state": "before"
+            }
+          },
+          "subject": "calendar:event:24",
+          "evidence_fact_ids": [
+            "response:app:workspace:calendar:e0005:raw:13"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "日历活动 #24 的meeting_topic是 Introductory meeting（变更前）。",
+          "observed_at": "2026-11-04T07:08:33.129694+00:00"
+        }
+      ]
+    }
+  ],
+  "sharing_groups": []
+}

@@ -1,0 +1,64 @@
+{
+  "schema": "execution.observation-memory.v1",
+  "agents": [
+    {
+      "agent_id": "A",
+      "tool_observations": [
+        {
+          "event_id": "e0004",
+          "tool": "get_all_car_rental_companies_in_city",
+          "agent_id": "A",
+          "tool_call_id": "call_00_zBl55qAEkTEy3AHaI80A9158",
+          "observed_at": "2026-11-04T07:07:33.272717+00:00",
+          "content": "Car Rental Companies in Los Angeles: SunSet Rent-A-Car\nSpeedy Rentals\nLAX Car Rental\n",
+          "error": null,
+          "delivery_evidence": "TOOL.payload.delivered_content",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "event_id": "e0006",
+          "tool": "get_car_types_available",
+          "agent_id": "A",
+          "tool_call_id": "call_00_tQ5zGXHq9JppCVaVL5y04407",
+          "observed_at": "2026-11-04T07:07:34.703096+00:00",
+          "content": "{'SunSet Rent-A-Car': ['Sedan', 'SUV', 'Convertible'], 'Speedy Rentals': ['Sedan', 'Convertible'], 'LAX Car Rental': ['Sedan', 'SUV', 'Truck']}",
+          "error": null,
+          "delivery_evidence": "TOOL.payload.delivered_content",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "event_id": "e0007",
+          "tool": "get_rating_reviews_for_car_rental",
+          "agent_id": "A",
+          "tool_call_id": "call_01_ktlANpprN9M5tHUAB6E38176",
+          "observed_at": "2026-11-04T07:07:34.703096+00:00",
+          "content": "{'SunSet Rent-A-Car': 'Rating: 4.5\\nReviews: Great service and well-maintained vehicles\\nThe staff was friendly and helpful\\nConvenient location near Hollywood\\nThe car was clean and comfortable', 'Speedy Rentals': 'Rating: 4.5\\nReviews: Great service and well-maintained cars\\nThe staff was friendly and helpful\\nThe car had a great sound system and was easy to drive', 'LAX Car Rental': 'Rating: 4.1\\nReviews: Convenient pick-up and drop-off at LAX\\nThe car was clean and ran smoothly\\nFriendly and efficient service\\nGood value for money'}",
+          "error": null,
+          "delivery_evidence": "TOOL.payload.delivered_content",
+          "direction": "receiver_to_agent"
+        }
+      ],
+      "received_agent_messages": [
+        {
+          "event_id": "e0002",
+          "source": "B",
+          "observed_at": "2026-11-04T07:07:32.072237+00:00",
+          "content": "Agent B requests information:\nPlease list all car rental companies in Los Angeles. For each company, tell me which car types are available (I need to know which ones have SUVs), and their rating/reviews. I'm looking for companies that have SUVs available and want to know the highest rated one."
+        }
+      ]
+    },
+    {
+      "agent_id": "B",
+      "tool_observations": [],
+      "received_agent_messages": [
+        {
+          "event_id": "e0009",
+          "source": "A",
+          "observed_at": "2026-11-04T07:07:37.014511+00:00",
+          "content": "Here's what I found on car rentals in Los Angeles:\n\n**All car rental companies in LA:**\n\n1. **SunSet Rent-A-Car**\n   - Car types available: Sedan, SUV, Convertible → **has SUV** ✅\n   - Rating: **4.5**\n   - Reviews: Great service and well-maintained vehicles; friendly, helpful staff; convenient location near Hollywood; clean and comfortable car.\n\n2. **Speedy Rentals**\n   - Car types available: Sedan, Convertible → **no SUV** ❌\n   - Rating: 4.5\n   - Reviews: Great service and well-maintained cars; friendly, helpful staff; great sound system and easy to drive.\n\n3. **LAX Car Rental**\n   - Car types available: Sedan, SUV, Truck → **has SUV** ✅\n   - Rating: **4.1**\n   - Reviews: Convenient pick-up/drop-off at LAX; clean, smooth-running car; friendly and efficient service; good value for money.\n\n**Summary for your SUV search:**\n- Companies with SUVs available: **SunSet Rent-A-Car** and **LAX Car Rental** (Speedy Rentals does not offer SUVs).\n- **Highest rated among SUV providers: SunSet Rent-A-Car with a rating of 4.5.**\n\nNote: Both SunSet Rent-A-Car and Speedy Rentals share a 4.5 rating, but only SunSet Rent-A-Car has SUVs, so it's the highest-rated option with an SUV available."
+        }
+      ]
+    }
+  ],
+  "scope": "actual per-agent tool returns and delivered agent messages; not pooled"
+}

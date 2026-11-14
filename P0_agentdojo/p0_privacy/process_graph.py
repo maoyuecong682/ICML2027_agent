@@ -262,7 +262,8 @@ def build_task_graph(task, categories, source_meta):
                                      for d in disclosures for a in d["atoms"]}),
         "nodes": len(nodes), "edges": len(edges),
         "factor_status": dict(Counter(f["status"] for f in graph["joint_factors"]))}
-    return graph
+    from .response_memory import attach_tool_responses
+    return attach_tool_responses(graph, original)
 
 
 def validate_graph(graph, task):

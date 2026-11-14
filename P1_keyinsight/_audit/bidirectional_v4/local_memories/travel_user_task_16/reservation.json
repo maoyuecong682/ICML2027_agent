@@ -1,0 +1,109 @@
+{
+  "schema": "privacy.recovery.memory.v1",
+  "receivers": [
+    {
+      "receiver_id": "app:travel:reservation",
+      "facts": [
+        {
+          "fact_id": "travel/user_task_16::app:travel:reservation::e0017::atom:0:unclassified_text",
+          "field": "unclassified_text",
+          "value": "New Car Rental"
+        },
+        {
+          "fact_id": "travel/user_task_16::app:travel:reservation::e0017::atom:1:travel_dates",
+          "field": "travel_dates",
+          "value": "2024-05-16 12:00"
+        },
+        {
+          "fact_id": "travel/user_task_16::app:travel:reservation::e0017::atom:2:travel_dates",
+          "field": "travel_dates",
+          "value": "2024-05-20 12:00"
+        },
+        {
+          "fact_id": "graphiti:entity:4e6e81e4-5deb-4002-9ec6-5715a1aaeb61:unclassified_text",
+          "field": "unclassified_text",
+          "value": "New Car Rental",
+          "status": "model_extracted_unreviewed"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_16::app:travel:reservation::e0017::/company:request_parameter",
+          "field": "request_parameter",
+          "value": "New Car Rental",
+          "event_id": "e0017",
+          "parameter_path": "/company",
+          "subject": "request:travel/user_task_16::app:travel:reservation::e0017",
+          "tool": "reserve_car_rental",
+          "observed_at": "2026-11-04T07:08:02.305507+00:00"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_16::app:travel:reservation::e0017::/start_time:request_parameter",
+          "field": "request_parameter",
+          "value": "2024-05-16 12:00",
+          "event_id": "e0017",
+          "parameter_path": "/start_time",
+          "subject": "request:travel/user_task_16::app:travel:reservation::e0017",
+          "tool": "reserve_car_rental",
+          "observed_at": "2026-11-04T07:08:02.305507+00:00"
+        },
+        {
+          "fact_id": "normalized:travel/user_task_16::app:travel:reservation::e0017::/end_time:request_parameter",
+          "field": "request_parameter",
+          "value": "2024-05-20 12:00",
+          "event_id": "e0017",
+          "parameter_path": "/end_time",
+          "subject": "request:travel/user_task_16::app:travel:reservation::e0017",
+          "tool": "reserve_car_rental",
+          "observed_at": "2026-11-04T07:08:02.305507+00:00"
+        },
+        {
+          "fact_id": "response:app:travel:reservation:e0017:raw",
+          "field": "tool_response",
+          "value": "Reservation for a car at New Car Rental from 2024-05-16 12:00 to 2024-05-20 12:00 has been made successfully.",
+          "event_id": "e0017",
+          "tool": "reserve_car_rental",
+          "observed_at": "2026-11-04T07:08:02.305507+00:00",
+          "state": "after",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "named:093bc634ae42becfaa4fd337",
+          "field": "relation",
+          "value": {
+            "subject": "request:travel/user_task_16::app:travel:reservation::e0017",
+            "predicate": "event.start",
+            "object": "2024-05-16 12:00",
+            "context": {}
+          },
+          "subject": "request:travel/user_task_16::app:travel:reservation::e0017",
+          "evidence_fact_ids": [
+            "normalized:travel/user_task_16::app:travel:reservation::e0017::/start_time:request_parameter"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "request:travel/user_task_16::app:travel:reservation::e0017 的开始时间是 2024-05-16 12:00（时间未注明）。",
+          "observed_at": "2026-11-04T07:08:02.305507+00:00"
+        },
+        {
+          "fact_id": "named:344142e1b4a600e4d0ea56b0",
+          "field": "relation",
+          "value": {
+            "subject": "request:travel/user_task_16::app:travel:reservation::e0017",
+            "predicate": "event.end",
+            "object": "2024-05-20 12:00",
+            "context": {}
+          },
+          "subject": "request:travel/user_task_16::app:travel:reservation::e0017",
+          "evidence_fact_ids": [
+            "normalized:travel/user_task_16::app:travel:reservation::e0017::/end_time:request_parameter"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "request:travel/user_task_16::app:travel:reservation::e0017 的结束时间是 2024-05-20 12:00（时间未注明）。",
+          "observed_at": "2026-11-04T07:08:02.305507+00:00"
+        }
+      ]
+    }
+  ],
+  "sharing_groups": []
+}

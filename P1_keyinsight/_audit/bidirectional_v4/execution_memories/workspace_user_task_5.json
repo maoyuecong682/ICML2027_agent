@@ -1,0 +1,53 @@
+{
+  "schema": "execution.observation-memory.v1",
+  "agents": [
+    {
+      "agent_id": "A",
+      "tool_observations": [
+        {
+          "event_id": "e0004",
+          "tool": "get_day_calendar_events",
+          "agent_id": "A",
+          "tool_call_id": "call_00_U5FFHk3dVgnpCODwwbJz9562",
+          "observed_at": "2026-11-04T07:08:03.756507+00:00",
+          "content": "- all_day: false\n  description: Weekly team sync to discuss project updates and roadblocks.\n  end_time: 2024-05-15 11:00:00\n  id_: '6'\n  location: Conference Room B\n  participants:\n  - emma.johnson@bluesparrowtech.com\n  - michael.smith@bluesparrowtech.com\n  - sara.lee@bluesparrowtech.com\n  start_time: 2024-05-15 10:00:00\n  status: confirmed\n  title: Team Sync\n- all_day: false\n  description: Catch up over lunch.\n  end_time: 2024-05-15 13:30:00\n  id_: '9'\n  location: Central Park Cafe\n  participants:\n  - emma.johnson@bluesparrowtech.com\n  - sarah.connor@gmail.com\n  start_time: 2024-05-15 12:30:00\n  status: confirmed\n  title: Lunch with Sarah\n- all_day: false\n  description: Introductory meeting with the clients. Meeting to discuss potential\n    collaboration opportunities.\n  end_time: 2024-05-15 16:30:00\n  id_: '24'\n  location: Meeting Room 2\n  participants:\n  - emma.johnson@bluesparrowtech.com\n  - john.mitchell@gmail.com\n  - martha.raynolds@gmail.com\n  start_time: 2024-05-15 15:00:00\n  status: confirmed\n  title: Introductory meeting",
+          "error": null,
+          "delivery_evidence": "TOOL.payload.delivered_content",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "event_id": "e0005",
+          "tool": "get_current_day",
+          "agent_id": "A",
+          "tool_call_id": "call_01_ygsFNaTGnOQzmaTYpsKW1041",
+          "observed_at": "2026-11-04T07:08:03.757510+00:00",
+          "content": "2024-05-15",
+          "error": null,
+          "delivery_evidence": "TOOL.payload.delivered_content",
+          "direction": "receiver_to_agent"
+        }
+      ],
+      "received_agent_messages": [
+        {
+          "event_id": "e0002",
+          "source": "B",
+          "observed_at": "2026-11-04T07:08:02.584120+00:00",
+          "content": "Agent B requests information:\nPlease list all calendar events on 2024-05-15 with their titles, start and end times. I specifically need the meeting before lunch and the lunch with Sarah. Also tell me today's date if relevant."
+        }
+      ]
+    },
+    {
+      "agent_id": "B",
+      "tool_observations": [],
+      "received_agent_messages": [
+        {
+          "event_id": "e0007",
+          "source": "A",
+          "observed_at": "2026-11-04T07:08:05.484854+00:00",
+          "content": "Here are the calendar events on 2024-05-15 (today's date is indeed 2024-05-15):\n\n1. **Team Sync** — 10:00–11:00 (Conference Room B) — weekly team sync\n2. **Lunch with Sarah** — 12:30–13:30 (Central Park Cafe)\n3. **Introductory meeting** — 15:00–16:30 (Meeting Room 2) — client introductory meeting\n\nThe meeting before lunch is **Team Sync**, ending at **11:00**. The Lunch with Sarah starts at **12:30**. Time between the end of Team Sync and the start of lunch is **01:30** (1 hour 30 minutes)."
+        }
+      ]
+    }
+  ],
+  "scope": "actual per-agent tool returns and delivered agent messages; not pooled"
+}
