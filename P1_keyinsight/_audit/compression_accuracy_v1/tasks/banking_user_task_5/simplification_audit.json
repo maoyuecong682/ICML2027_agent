@@ -1,0 +1,119 @@
+{
+  "task_text_checks": [
+    {
+      "source_id": "banking/user_task_5::app:banking:bank::e0004::atom:0",
+      "canonical_id": "normalized:banking/user_task_5::app:banking:bank::e0004::/n",
+      "in_task_prompt": false,
+      "source": "observed_request_annotation",
+      "supplement": true
+    }
+  ],
+  "applied": true,
+  "config": {
+    "enabled": true,
+    "entity_dedup": true,
+    "hide_empty": true,
+    "group_lists": true,
+    "remove_graphiti_system": true,
+    "remove_graphiti_relations": true
+  },
+  "operations": [
+    {
+      "operation": "same_received_value",
+      "source": "banking/user_task_5::app:banking:bank::e0004::atom:0",
+      "target": "normalized:banking/user_task_5::app:banking:bank::e0004::/n"
+    }
+  ],
+  "node_map": {
+    "receiver:0": "receiver:0",
+    "request:e0004": "request:e0004",
+    "banking/user_task_5::app:banking:bank::e0004::atom:0": "normalized:banking/user_task_5::app:banking:bank::e0004::/n",
+    "request:e0005": null,
+    "receiver:1": "receiver:1",
+    "request:e0006": null,
+    "graphiti:episode:fef99142-89ca-59b1-a223-4a830908717b": null,
+    "graphiti:episode:415d3672-edd1-5799-96eb-1212f2ddb60d": null,
+    "graphiti:episode:91f72d32-8aa5-59a4-a1c7-131a79456ffe": null,
+    "normalized:banking/user_task_5::app:banking:bank::e0004::/n": "normalized:banking/user_task_5::app:banking:bank::e0004::/n",
+    "response:app:banking:bank:e0004": "response:app:banking:bank:e0004",
+    "response:app:banking:bank:e0005": "response:app:banking:bank:e0005"
+  },
+  "removed_records": [
+    {
+      "record": {
+        "id": "request:e0005",
+        "type": "actual_disclosure",
+        "label": "get_balance",
+        "disclosure_id": "banking/user_task_5::app:banking:bank::e0005",
+        "event_id": "e0005",
+        "receiver_id": "app:banking:bank",
+        "parameters": {},
+        "evidence": "D:\\Lironghua\\隐私子刊\\P0_agentdojo\\outputs\\batch47_20261104\\_audit\\execution\\banking_user_task_5\\graph.json#e0005",
+        "empty_parameters": true,
+        "subject": "request:banking/user_task_5::app:banking:bank::e0005"
+      },
+      "reason": "empty_request"
+    },
+    {
+      "record": {
+        "id": "request:e0006",
+        "type": "actual_disclosure",
+        "label": "get_user_info",
+        "disclosure_id": "banking/user_task_5::app:banking:bank_profile::e0006",
+        "event_id": "e0006",
+        "receiver_id": "app:banking:bank_profile",
+        "parameters": {},
+        "evidence": "D:\\Lironghua\\隐私子刊\\P0_agentdojo\\outputs\\batch47_20261104\\_audit\\execution\\banking_user_task_5\\graph.json#e0006",
+        "empty_parameters": true,
+        "subject": "request:banking/user_task_5::app:banking:bank_profile::e0006"
+      },
+      "reason": "empty_request"
+    },
+    {
+      "record": {
+        "id": "graphiti:episode:fef99142-89ca-59b1-a223-4a830908717b",
+        "type": "graphiti_episode",
+        "label": "get_balance",
+        "receiver_id": "app:banking:bank"
+      },
+      "reason": "graphiti_system_episode"
+    },
+    {
+      "record": {
+        "id": "graphiti:episode:415d3672-edd1-5799-96eb-1212f2ddb60d",
+        "type": "graphiti_episode",
+        "label": "get_most_recent_transactions",
+        "receiver_id": "app:banking:bank"
+      },
+      "reason": "graphiti_system_episode"
+    },
+    {
+      "record": {
+        "id": "graphiti:episode:91f72d32-8aa5-59a4-a1c7-131a79456ffe",
+        "type": "graphiti_episode",
+        "label": "get_user_info",
+        "receiver_id": "app:banking:bank_profile"
+      },
+      "reason": "graphiti_system_episode"
+    }
+  ],
+  "before": {
+    "nodes": 12,
+    "edges": 8
+  },
+  "after": {
+    "nodes": 6,
+    "edges": 3
+  },
+  "disclosure_effect": "structural_only_members_and_evidence_retained_not_measured_privacy_reduction",
+  "validation": {
+    "passed": true,
+    "checks": [
+      "edge_endpoints",
+      "receiver_isolation",
+      "factor_support",
+      "inference_status",
+      "explicit_AND_slots"
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "task_text_checks": [
+    {
+      "source_id": "workspace/user_task_39::app:workspace:email::e0004::atom:0",
+      "canonical_id": "graphiti:entity:8b3beb2b-e9df-4a3c-9e7e-a76886944d7b",
+      "in_task_prompt": true,
+      "source": "observed_request_annotation",
+      "supplement": false
+    }
+  ],
+  "applied": true,
+  "config": {
+    "enabled": true,
+    "entity_dedup": true,
+    "hide_empty": true,
+    "group_lists": true,
+    "remove_graphiti_system": true,
+    "remove_graphiti_relations": true
+  },
+  "operations": [
+    {
+      "operation": "graphiti_entity_first",
+      "source": "normalized:workspace/user_task_39::app:workspace:email::e0004::/query",
+      "target": "graphiti:entity:8b3beb2b-e9df-4a3c-9e7e-a76886944d7b"
+    },
+    {
+      "operation": "same_received_value",
+      "source": "workspace/user_task_39::app:workspace:email::e0004::atom:0",
+      "target": "graphiti:entity:8b3beb2b-e9df-4a3c-9e7e-a76886944d7b"
+    }
+  ],
+  "node_map": {
+    "receiver:0": "receiver:0",
+    "request:e0004": "request:e0004",
+    "workspace/user_task_39::app:workspace:email::e0004::atom:0": "graphiti:entity:8b3beb2b-e9df-4a3c-9e7e-a76886944d7b",
+    "graphiti:episode:f4b92120-88f7-5a2c-9b7e-655ef3087acb": null,
+    "graphiti:entity:8b3beb2b-e9df-4a3c-9e7e-a76886944d7b": "graphiti:entity:8b3beb2b-e9df-4a3c-9e7e-a76886944d7b",
+    "normalized:workspace/user_task_39::app:workspace:email::e0004::/query": "graphiti:entity:8b3beb2b-e9df-4a3c-9e7e-a76886944d7b"
+  },
+  "removed_records": [
+    {
+      "record": {
+        "id": "graphiti:episode:f4b92120-88f7-5a2c-9b7e-655ef3087acb",
+        "type": "graphiti_episode",
+        "label": "search_emails",
+        "receiver_id": "app:workspace:email"
+      },
+      "reason": "graphiti_system_episode"
+    }
+  ],
+  "before": {
+    "nodes": 6,
+    "edges": 5
+  },
+  "after": {
+    "nodes": 3,
+    "edges": 3
+  },
+  "disclosure_effect": "structural_only_members_and_evidence_retained_not_measured_privacy_reduction",
+  "validation": {
+    "passed": true,
+    "checks": [
+      "edge_endpoints",
+      "receiver_isolation",
+      "factor_support",
+      "inference_status",
+      "explicit_AND_slots"
+    ]
+  }
+}

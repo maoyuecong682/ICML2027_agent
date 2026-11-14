@@ -1,0 +1,74 @@
+{
+  "task_text_checks": [],
+  "applied": true,
+  "config": {
+    "enabled": true,
+    "entity_dedup": true,
+    "hide_empty": true,
+    "group_lists": true,
+    "remove_graphiti_system": true,
+    "remove_graphiti_relations": true
+  },
+  "operations": [],
+  "node_map": {
+    "receiver:0": "receiver:0",
+    "request:e0004": null,
+    "graphiti:episode:b1c46c4b-102c-5c04-8fa3-14a551175c09": null,
+    "graphiti:entity:fa140830-4261-4076-ae18-6e5ee079571d": "graphiti:entity:fa140830-4261-4076-ae18-6e5ee079571d",
+    "graphiti:entity:f7849607-d487-4759-8fb7-01cb15e5bad2": "graphiti:entity:f7849607-d487-4759-8fb7-01cb15e5bad2",
+    "graphiti:entity:f49af815-425e-48c1-9930-de4eae9bff3d": "graphiti:entity:f49af815-425e-48c1-9930-de4eae9bff3d",
+    "graphiti:entity:e897ef76-35bc-423c-bbbc-f8e23b63fcfb": "graphiti:entity:e897ef76-35bc-423c-bbbc-f8e23b63fcfb",
+    "graphiti:entity:dde367b0-7f9b-4f51-81a9-56b11b8b2733": "graphiti:entity:dde367b0-7f9b-4f51-81a9-56b11b8b2733",
+    "graphiti:entity:c841eb08-cdc1-4d53-a165-d1d668060ce8": "graphiti:entity:c841eb08-cdc1-4d53-a165-d1d668060ce8",
+    "graphiti:entity:c53afb1c-662d-41c8-a09e-aa1790959a86": "graphiti:entity:c53afb1c-662d-41c8-a09e-aa1790959a86",
+    "graphiti:entity:a8e5b084-eb19-46c4-8241-999e002f93e0": "graphiti:entity:a8e5b084-eb19-46c4-8241-999e002f93e0",
+    "graphiti:entity:90f19525-8ec6-4c5e-b5cb-2e3f8bd0ff91": "graphiti:entity:90f19525-8ec6-4c5e-b5cb-2e3f8bd0ff91",
+    "graphiti:entity:573b9797-6a4a-41fc-b236-3c6885cb1b90": "graphiti:entity:573b9797-6a4a-41fc-b236-3c6885cb1b90",
+    "response:app:workspace:drive:e0004": "response:app:workspace:drive:e0004"
+  },
+  "removed_records": [
+    {
+      "record": {
+        "id": "request:e0004",
+        "type": "actual_disclosure",
+        "label": "list_files",
+        "disclosure_id": "workspace/user_task_31::app:workspace:drive::e0004",
+        "event_id": "e0004",
+        "receiver_id": "app:workspace:drive",
+        "parameters": {},
+        "evidence": "runs/p0_20261028_seed20261028/workspace_user_task_31/graph.json#e0004",
+        "empty_parameters": true,
+        "subject": "request:workspace/user_task_31::app:workspace:drive::e0004"
+      },
+      "reason": "empty_request"
+    },
+    {
+      "record": {
+        "id": "graphiti:episode:b1c46c4b-102c-5c04-8fa3-14a551175c09",
+        "type": "graphiti_episode",
+        "label": "list_files",
+        "receiver_id": "app:workspace:drive"
+      },
+      "reason": "graphiti_system_episode"
+    }
+  ],
+  "before": {
+    "nodes": 14,
+    "edges": 2
+  },
+  "after": {
+    "nodes": 12,
+    "edges": 0
+  },
+  "disclosure_effect": "structural_only_members_and_evidence_retained_not_measured_privacy_reduction",
+  "validation": {
+    "passed": true,
+    "checks": [
+      "edge_endpoints",
+      "receiver_isolation",
+      "factor_support",
+      "inference_status",
+      "explicit_AND_slots"
+    ]
+  }
+}

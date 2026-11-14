@@ -1,0 +1,63 @@
+{
+  "task_text_checks": [],
+  "applied": true,
+  "config": {
+    "enabled": true,
+    "entity_dedup": true,
+    "hide_empty": true,
+    "group_lists": true,
+    "remove_graphiti_system": true,
+    "remove_graphiti_relations": true
+  },
+  "operations": [],
+  "node_map": {
+    "receiver:0": "receiver:0",
+    "request:e0004": null,
+    "graphiti:episode:8d625ef5-4d48-5641-894b-f2a0426ff432": null
+  },
+  "removed_records": [
+    {
+      "record": {
+        "id": "request:e0004",
+        "type": "actual_disclosure",
+        "label": "list_files",
+        "disclosure_id": "workspace/user_task_26::app:workspace:drive::e0004",
+        "event_id": "e0004",
+        "receiver_id": "app:workspace:drive",
+        "parameters": {},
+        "evidence": "D:\\Lironghua\\隐私子刊\\P0_agentdojo\\outputs\\batch47_20261104\\_audit\\execution\\workspace_user_task_26\\graph.json#e0004",
+        "empty_parameters": true,
+        "subject": "request:workspace/user_task_26::app:workspace:drive::e0004"
+      },
+      "reason": "empty_request"
+    },
+    {
+      "record": {
+        "id": "graphiti:episode:8d625ef5-4d48-5641-894b-f2a0426ff432",
+        "type": "graphiti_episode",
+        "label": "list_files",
+        "receiver_id": "app:workspace:drive"
+      },
+      "reason": "graphiti_system_episode"
+    }
+  ],
+  "before": {
+    "nodes": 3,
+    "edges": 2
+  },
+  "after": {
+    "nodes": 1,
+    "edges": 0
+  },
+  "disclosure_effect": "structural_only_members_and_evidence_retained_not_measured_privacy_reduction",
+  "validation": {
+    "passed": true,
+    "checks": [
+      "edge_endpoints",
+      "receiver_isolation",
+      "factor_support",
+      "inference_status",
+      "explicit_AND_slots"
+    ]
+  }
+}

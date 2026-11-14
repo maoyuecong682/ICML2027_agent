@@ -1,0 +1,64 @@
+{
+  "task_text_checks": [
+    {
+      "source_id": "slack/user_task_0::app:slack:web::e0004::atom:0",
+      "canonical_id": "normalized:slack/user_task_0::app:slack:web::e0004::/url",
+      "in_task_prompt": true,
+      "source": "observed_request_annotation",
+      "supplement": true
+    }
+  ],
+  "applied": true,
+  "config": {
+    "enabled": true,
+    "entity_dedup": true,
+    "hide_empty": true,
+    "group_lists": true,
+    "remove_graphiti_system": true,
+    "remove_graphiti_relations": true
+  },
+  "operations": [
+    {
+      "operation": "same_received_value",
+      "source": "slack/user_task_0::app:slack:web::e0004::atom:0",
+      "target": "normalized:slack/user_task_0::app:slack:web::e0004::/url"
+    }
+  ],
+  "node_map": {
+    "receiver:0": "receiver:0",
+    "request:e0004": "request:e0004",
+    "slack/user_task_0::app:slack:web::e0004::atom:0": "normalized:slack/user_task_0::app:slack:web::e0004::/url",
+    "graphiti:episode:466b47c4-138a-5455-9e6e-ff2da2ea828b": null,
+    "normalized:slack/user_task_0::app:slack:web::e0004::/url": "normalized:slack/user_task_0::app:slack:web::e0004::/url"
+  },
+  "removed_records": [
+    {
+      "record": {
+        "id": "graphiti:episode:466b47c4-138a-5455-9e6e-ff2da2ea828b",
+        "type": "graphiti_episode",
+        "label": "get_webpage",
+        "receiver_id": "app:slack:web"
+      },
+      "reason": "graphiti_system_episode"
+    }
+  ],
+  "before": {
+    "nodes": 5,
+    "edges": 4
+  },
+  "after": {
+    "nodes": 3,
+    "edges": 3
+  },
+  "disclosure_effect": "structural_only_members_and_evidence_retained_not_measured_privacy_reduction",
+  "validation": {
+    "passed": true,
+    "checks": [
+      "edge_endpoints",
+      "receiver_isolation",
+      "factor_support",
+      "inference_status",
+      "explicit_AND_slots"
+    ]
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "task_text_checks": [
+    {
+      "source_id": "travel/user_task_0::app:travel:hotels::e0004::atom:0",
+      "canonical_id": "graphiti:entity:7d481baf-9547-4840-8d94-c052c87d0502",
+      "in_task_prompt": true,
+      "source": "observed_request_annotation",
+      "supplement": false
+    },
+    {
+      "source_id": "travel/user_task_0::app:travel:hotels::e0006::atom:0",
+      "canonical_id": "graphiti:entity:fe15f034-6b53-4065-ae49-5a44f1b1a474",
+      "in_task_prompt": true,
+      "source": "observed_request_annotation",
+      "supplement": false
+    }
+  ],
+  "applied": true,
+  "config": {
+    "enabled": true,
+    "entity_dedup": true,
+    "hide_empty": true,
+    "group_lists": true,
+    "remove_graphiti_system": true,
+    "remove_graphiti_relations": true
+  },
+  "operations": [
+    {
+      "operation": "graphiti_entity_first",
+      "source": "normalized:travel/user_task_0::app:travel:hotels::e0004::/city",
+      "target": "graphiti:entity:7d481baf-9547-4840-8d94-c052c87d0502"
+    },
+    {
+      "operation": "graphiti_entity_first",
+      "source": "normalized:travel/user_task_0::app:travel:hotels::e0006::/hotel_names/0",
+      "target": "graphiti:entity:fe15f034-6b53-4065-ae49-5a44f1b1a474"
+    },
+    {
+      "operation": "graphiti_entity_first",
+      "source": "normalized:travel/user_task_0::app:travel:hotels::e0007::/hotel_name",
+      "target": "graphiti:entity:fe15f034-6b53-4065-ae49-5a44f1b1a474"
+    },
+    {
+      "operation": "same_received_value",
+      "source": "travel/user_task_0::app:travel:hotels::e0004::atom:0",
+      "target": "graphiti:entity:7d481baf-9547-4840-8d94-c052c87d0502"
+    },
+    {
+      "operation": "same_received_value",
+      "source": "travel/user_task_0::app:travel:hotels::e0006::atom:0",
+      "target": "graphiti:entity:fe15f034-6b53-4065-ae49-5a44f1b1a474"
+    }
+  ],
+  "node_map": {
+    "receiver:0": "receiver:0",
+    "request:e0004": "request:e0004",
+    "travel/user_task_0::app:travel:hotels::e0004::atom:0": "graphiti:entity:7d481baf-9547-4840-8d94-c052c87d0502",
+    "request:e0006": "request:e0006",
+    "travel/user_task_0::app:travel:hotels::e0006::atom:0": "graphiti:entity:fe15f034-6b53-4065-ae49-5a44f1b1a474",
+    "request:e0007": "request:e0007",
+    "receiver:1": "receiver:1",
+    "graphiti:episode:af509a00-2700-553d-ae5f-e41d9a3482f5": null,
+    "graphiti:episode:72aa7a7e-f031-50fa-9820-3e275af976a6": null,
+    "graphiti:episode:44d4dd04-3ae1-5723-8738-fc3cf309c530": null,
+    "graphiti:entity:fe15f034-6b53-4065-ae49-5a44f1b1a474": "graphiti:entity:fe15f034-6b53-4065-ae49-5a44f1b1a474",
+    "graphiti:entity:7d481baf-9547-4840-8d94-c052c87d0502": "graphiti:entity:7d481baf-9547-4840-8d94-c052c87d0502",
+    "normalized:travel/user_task_0::app:travel:hotels::e0004::/city": "graphiti:entity:7d481baf-9547-4840-8d94-c052c87d0502",
+    "normalized:travel/user_task_0::app:travel:hotels::e0006::/hotel_names/0": "graphiti:entity:fe15f034-6b53-4065-ae49-5a44f1b1a474",
+    "normalized:travel/user_task_0::app:travel:hotels::e0007::/hotel_name": "graphiti:entity:fe15f034-6b53-4065-ae49-5a44f1b1a474",
+    "response:app:travel:hotels:e0004": "response:app:travel:hotels:e0004",
+    "response:app:travel:hotels:e0006": "response:app:travel:hotels:e0006",
+    "response:app:travel:hotels:e0007": "response:app:travel:hotels:e0007"
+  },
+  "removed_records": [
+    {
+      "record": {
+        "id": "graphiti:episode:af509a00-2700-553d-ae5f-e41d9a3482f5",
+        "type": "graphiti_episode",
+        "label": "get_rating_reviews_for_hotels",
+        "receiver_id": "app:travel:hotels"
+      },
+      "reason": "graphiti_system_episode"
+    },
+    {
+      "record": {
+        "id": "graphiti:episode:72aa7a7e-f031-50fa-9820-3e275af976a6",
+        "type": "graphiti_episode",
+        "label": "get_all_hotels_in_city",
+        "receiver_id": "app:travel:hotels"
+      },
+      "reason": "graphiti_system_episode"
+    },
+    {
+      "record": {
+        "id": "graphiti:episode:44d4dd04-3ae1-5723-8738-fc3cf309c530",
+        "type": "graphiti_episode",
+        "label": "get_hotels_address",
+        "receiver_id": "app:travel:hotels"
+      },
+      "reason": "graphiti_system_episode"
+    }
+  ],
+  "before": {
+    "nodes": 18,
+    "edges": 15
+  },
+  "after": {
+    "nodes": 10,
+    "edges": 9
+  },
+  "disclosure_effect": "structural_only_members_and_evidence_retained_not_measured_privacy_reduction",
+  "validation": {
+    "passed": true,
+    "checks": [
+      "edge_endpoints",
+      "receiver_isolation",
+      "factor_support",
+      "inference_status",
+      "explicit_AND_slots"
+    ]
+  }
+}

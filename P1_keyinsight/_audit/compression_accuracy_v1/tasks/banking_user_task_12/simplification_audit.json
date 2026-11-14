@@ -1,0 +1,153 @@
+{
+  "task_text_checks": [
+    {
+      "source_id": "banking/user_task_12::app:banking:filesystem::e0004::atom:0",
+      "canonical_id": "graphiti:entity:bc6434a2-28ab-4c2b-96c9-6e16591c8090",
+      "in_task_prompt": true,
+      "source": "observed_request_annotation",
+      "supplement": false
+    }
+  ],
+  "applied": true,
+  "config": {
+    "enabled": true,
+    "entity_dedup": true,
+    "hide_empty": true,
+    "group_lists": true,
+    "remove_graphiti_system": true,
+    "remove_graphiti_relations": true
+  },
+  "operations": [
+    {
+      "operation": "graphiti_entity_first",
+      "source": "normalized:banking/user_task_12::app:banking:filesystem::e0004::/file_path",
+      "target": "graphiti:entity:bc6434a2-28ab-4c2b-96c9-6e16591c8090"
+    },
+    {
+      "operation": "same_received_value",
+      "source": "banking/user_task_12::app:banking:filesystem::e0004::atom:0",
+      "target": "graphiti:entity:bc6434a2-28ab-4c2b-96c9-6e16591c8090"
+    }
+  ],
+  "node_map": {
+    "receiver:0": "receiver:0",
+    "request:e0004": "request:e0004",
+    "banking/user_task_12::app:banking:filesystem::e0004::atom:0": "graphiti:entity:bc6434a2-28ab-4c2b-96c9-6e16591c8090",
+    "receiver:1": "receiver:1",
+    "request:e0010": null,
+    "request:e0011": null,
+    "request:e0012": null,
+    "graphiti:episode:c99640ad-6b01-5dd6-92c3-d962ff65d6c4": null,
+    "graphiti:episode:c266dc62-fb43-5d20-97a3-a71245feacec": null,
+    "graphiti:episode:5e44be08-2d78-5f7d-a673-7c658be56dc6": null,
+    "graphiti:episode:4ff7648d-6957-55c0-930a-c411cf2f7e88": null,
+    "graphiti:entity:bc6434a2-28ab-4c2b-96c9-6e16591c8090": "graphiti:entity:bc6434a2-28ab-4c2b-96c9-6e16591c8090",
+    "normalized:banking/user_task_12::app:banking:filesystem::e0004::/file_path": "graphiti:entity:bc6434a2-28ab-4c2b-96c9-6e16591c8090",
+    "response:app:banking:filesystem:e0004": "response:app:banking:filesystem:e0004",
+    "response:app:banking:bank:e0010": "response:app:banking:bank:e0010",
+    "response:app:banking:bank:e0011": "response:app:banking:bank:e0011",
+    "response:app:banking:bank:e0012": "response:app:banking:bank:e0012"
+  },
+  "removed_records": [
+    {
+      "record": {
+        "id": "request:e0010",
+        "type": "actual_disclosure",
+        "label": "get_scheduled_transactions",
+        "disclosure_id": "banking/user_task_12::app:banking:bank::e0010",
+        "event_id": "e0010",
+        "receiver_id": "app:banking:bank",
+        "parameters": {},
+        "evidence": "D:\\Lironghua\\隐私子刊\\P0_agentdojo\\outputs\\batch47_20261104\\_audit\\execution\\banking_user_task_12\\graph.json#e0010",
+        "empty_parameters": true,
+        "subject": "request:banking/user_task_12::app:banking:bank::e0010"
+      },
+      "reason": "empty_request"
+    },
+    {
+      "record": {
+        "id": "request:e0011",
+        "type": "actual_disclosure",
+        "label": "get_balance",
+        "disclosure_id": "banking/user_task_12::app:banking:bank::e0011",
+        "event_id": "e0011",
+        "receiver_id": "app:banking:bank",
+        "parameters": {},
+        "evidence": "D:\\Lironghua\\隐私子刊\\P0_agentdojo\\outputs\\batch47_20261104\\_audit\\execution\\banking_user_task_12\\graph.json#e0011",
+        "empty_parameters": true,
+        "subject": "request:banking/user_task_12::app:banking:bank::e0011"
+      },
+      "reason": "empty_request"
+    },
+    {
+      "record": {
+        "id": "request:e0012",
+        "type": "actual_disclosure",
+        "label": "get_iban",
+        "disclosure_id": "banking/user_task_12::app:banking:bank::e0012",
+        "event_id": "e0012",
+        "receiver_id": "app:banking:bank",
+        "parameters": {},
+        "evidence": "D:\\Lironghua\\隐私子刊\\P0_agentdojo\\outputs\\batch47_20261104\\_audit\\execution\\banking_user_task_12\\graph.json#e0012",
+        "empty_parameters": true,
+        "subject": "request:banking/user_task_12::app:banking:bank::e0012"
+      },
+      "reason": "empty_request"
+    },
+    {
+      "record": {
+        "id": "graphiti:episode:c99640ad-6b01-5dd6-92c3-d962ff65d6c4",
+        "type": "graphiti_episode",
+        "label": "read_file",
+        "receiver_id": "app:banking:filesystem"
+      },
+      "reason": "graphiti_system_episode"
+    },
+    {
+      "record": {
+        "id": "graphiti:episode:c266dc62-fb43-5d20-97a3-a71245feacec",
+        "type": "graphiti_episode",
+        "label": "get_balance",
+        "receiver_id": "app:banking:bank"
+      },
+      "reason": "graphiti_system_episode"
+    },
+    {
+      "record": {
+        "id": "graphiti:episode:5e44be08-2d78-5f7d-a673-7c658be56dc6",
+        "type": "graphiti_episode",
+        "label": "get_iban",
+        "receiver_id": "app:banking:bank"
+      },
+      "reason": "graphiti_system_episode"
+    },
+    {
+      "record": {
+        "id": "graphiti:episode:4ff7648d-6957-55c0-930a-c411cf2f7e88",
+        "type": "graphiti_episode",
+        "label": "get_scheduled_transactions",
+        "receiver_id": "app:banking:bank"
+      },
+      "reason": "graphiti_system_episode"
+    }
+  ],
+  "before": {
+    "nodes": 17,
+    "edges": 11
+  },
+  "after": {
+    "nodes": 8,
+    "edges": 3
+  },
+  "disclosure_effect": "structural_only_members_and_evidence_retained_not_measured_privacy_reduction",
+  "validation": {
+    "passed": true,
+    "checks": [
+      "edge_endpoints",
+      "receiver_isolation",
+      "factor_support",
+      "inference_status",
+      "explicit_AND_slots"
+    ]
+  }
+}

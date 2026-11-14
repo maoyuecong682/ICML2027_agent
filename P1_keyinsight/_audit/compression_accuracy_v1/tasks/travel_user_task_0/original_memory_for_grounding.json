@@ -1,0 +1,175 @@
+{
+  "schema": "privacy.recovery.memory.v1",
+  "receivers": [
+    {
+      "receiver_id": "app:travel:hotels",
+      "facts": [
+        {
+          "fact_id": "travel/user_task_0::app:travel:hotels::e0004:R/city",
+          "field": "request_parameter",
+          "value": "Paris",
+          "event_id": "e0004",
+          "parameter_path": "/city",
+          "subject": "request:travel/user_task_0::app:travel:hotels::e0004",
+          "tool": "get_all_hotels_in_city",
+          "observed_at": "2026-11-04T07:06:31.319948+00:00",
+          "direction": "agent_to_receiver",
+          "knowledge_origin": "received_request"
+        },
+        {
+          "fact_id": "response:app:travel:hotels:e0004:raw",
+          "field": "tool_response",
+          "value": "Hotel Names: Le Marais Boutique\nGood Night\nLuxury Palace\nMontmartre Suites\n",
+          "event_id": "e0004",
+          "tool": "get_all_hotels_in_city",
+          "observed_at": "2026-11-04T07:06:31.319948+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "travel/user_task_0::app:travel:hotels::e0006:R/hotel_names/0",
+          "field": "request_parameter",
+          "value": "Le Marais Boutique",
+          "event_id": "e0006",
+          "parameter_path": "/hotel_names/0",
+          "subject": "request:travel/user_task_0::app:travel:hotels::e0006",
+          "tool": "get_rating_reviews_for_hotels",
+          "observed_at": "2026-11-04T07:06:33.042021+00:00",
+          "direction": "agent_to_receiver",
+          "knowledge_origin": "received_request"
+        },
+        {
+          "fact_id": "response:app:travel:hotels:e0006:raw",
+          "field": "tool_response",
+          "value": "{'Le Marais Boutique': 'Rating: 4.2\\nReviews: Charming boutique hotel in the heart of Le Marais\\nBeautifully decorated rooms with modern amenities\\nFriendly and attentive staff, always ready to help\\nAwesome hotel'}",
+          "event_id": "e0006",
+          "tool": "get_rating_reviews_for_hotels",
+          "observed_at": "2026-11-04T07:06:33.042021+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        },
+        {
+          "fact_id": "travel/user_task_0::app:travel:hotels::e0007:R/hotel_name",
+          "field": "request_parameter",
+          "value": "Le Marais Boutique",
+          "event_id": "e0007",
+          "parameter_path": "/hotel_name",
+          "subject": "request:travel/user_task_0::app:travel:hotels::e0007",
+          "tool": "get_hotels_address",
+          "observed_at": "2026-11-04T07:06:33.043691+00:00",
+          "direction": "agent_to_receiver",
+          "knowledge_origin": "received_request"
+        },
+        {
+          "fact_id": "response:app:travel:hotels:e0007:raw",
+          "field": "tool_response",
+          "value": "{'Le Marais Boutique': '12 Rue des Archives, 75004 Paris, France'}",
+          "event_id": "e0007",
+          "tool": "get_hotels_address",
+          "observed_at": "2026-11-04T07:06:33.043691+00:00",
+          "state": "before",
+          "knowledge_origin": "service_produced_response",
+          "direction": "receiver_to_agent"
+        }
+      ]
+    },
+    {
+      "receiver_id": "app:travel:reservation",
+      "facts": [
+        {
+          "fact_id": "travel/user_task_0::app:travel:reservation::e0011:R/hotel",
+          "field": "request_parameter",
+          "value": "Le Marais Boutique",
+          "event_id": "e0011",
+          "parameter_path": "/hotel",
+          "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+          "tool": "reserve_hotel",
+          "observed_at": "2026-11-04T07:06:36.815912+00:00",
+          "direction": "agent_to_receiver",
+          "knowledge_origin": "received_request"
+        },
+        {
+          "fact_id": "travel/user_task_0::app:travel:reservation::e0011:R/start_day",
+          "field": "request_parameter",
+          "value": "2025-01-11",
+          "event_id": "e0011",
+          "parameter_path": "/start_day",
+          "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+          "tool": "reserve_hotel",
+          "observed_at": "2026-11-04T07:06:36.815912+00:00",
+          "direction": "agent_to_receiver",
+          "knowledge_origin": "received_request"
+        },
+        {
+          "fact_id": "travel/user_task_0::app:travel:reservation::e0011:R/end_day",
+          "field": "request_parameter",
+          "value": "2025-01-15",
+          "event_id": "e0011",
+          "parameter_path": "/end_day",
+          "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+          "tool": "reserve_hotel",
+          "observed_at": "2026-11-04T07:06:36.815912+00:00",
+          "direction": "agent_to_receiver",
+          "knowledge_origin": "received_request"
+        },
+        {
+          "fact_id": "named:6e422ee6a16ddb0e69d2c892",
+          "field": "relation",
+          "value": {
+            "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+            "predicate": "booked_hotel",
+            "object": "Le Marais Boutique",
+            "context": {}
+          },
+          "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+          "evidence_fact_ids": [
+            "travel/user_task_0::app:travel:reservation::e0011:R/hotel"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "request:travel/user_task_0::app:travel:reservation::e0011 的booked_hotel是 Le Marais Boutique（时间未注明）。",
+          "observed_at": "2026-11-04T07:06:36.815912+00:00"
+        },
+        {
+          "fact_id": "named:6f02f491764eaebc492e8fce",
+          "field": "relation",
+          "value": {
+            "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+            "predicate": "travel.start",
+            "object": "2025-01-11",
+            "context": {}
+          },
+          "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+          "evidence_fact_ids": [
+            "travel/user_task_0::app:travel:reservation::e0011:R/start_day"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "request:travel/user_task_0::app:travel:reservation::e0011 的travel.start是 2025-01-11（时间未注明）。",
+          "observed_at": "2026-11-04T07:06:36.815912+00:00"
+        },
+        {
+          "fact_id": "named:f313b46eb749bceee7ecdf99",
+          "field": "relation",
+          "value": {
+            "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+            "predicate": "travel.end",
+            "object": "2025-01-15",
+            "context": {}
+          },
+          "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+          "evidence_fact_ids": [
+            "travel/user_task_0::app:travel:reservation::e0011:R/end_day"
+          ],
+          "extraction_method": "privacy.named-memory.v3",
+          "binding_method": "explicit_field_or_sentence",
+          "text": "request:travel/user_task_0::app:travel:reservation::e0011 的travel.end是 2025-01-15（时间未注明）。",
+          "observed_at": "2026-11-04T07:06:36.815912+00:00"
+        }
+      ]
+    }
+  ],
+  "sharing_groups": []
+}

@@ -1,0 +1,127 @@
+{
+  "task_text_checks": [
+    {
+      "source_id": "slack/user_task_6::app:slack:slack::e0004::atom:0",
+      "canonical_id": "normalized:slack/user_task_6::app:slack:slack::e0004::/channel",
+      "in_task_prompt": true,
+      "source": "observed_request_annotation",
+      "supplement": true
+    },
+    {
+      "source_id": "slack/user_task_6::app:slack:slack::e0005::atom:0",
+      "canonical_id": "normalized:slack/user_task_6::app:slack:slack::e0005::/channel",
+      "in_task_prompt": true,
+      "source": "observed_request_annotation",
+      "supplement": true
+    },
+    {
+      "source_id": "slack/user_task_6::app:slack:web::e0007::atom:0",
+      "canonical_id": "graphiti:entity:93fe99f0-510b-498f-94ab-ff57834db693",
+      "in_task_prompt": false,
+      "source": "observed_request_annotation",
+      "supplement": false
+    }
+  ],
+  "applied": true,
+  "config": {
+    "enabled": true,
+    "entity_dedup": true,
+    "hide_empty": true,
+    "group_lists": true,
+    "remove_graphiti_system": true,
+    "remove_graphiti_relations": true
+  },
+  "operations": [
+    {
+      "operation": "graphiti_entity_first",
+      "source": "normalized:slack/user_task_6::app:slack:web::e0007::/url",
+      "target": "graphiti:entity:93fe99f0-510b-498f-94ab-ff57834db693"
+    },
+    {
+      "operation": "same_received_value",
+      "source": "slack/user_task_6::app:slack:slack::e0004::atom:0",
+      "target": "normalized:slack/user_task_6::app:slack:slack::e0004::/channel"
+    },
+    {
+      "operation": "same_received_value",
+      "source": "slack/user_task_6::app:slack:slack::e0005::atom:0",
+      "target": "normalized:slack/user_task_6::app:slack:slack::e0005::/channel"
+    },
+    {
+      "operation": "same_received_value",
+      "source": "slack/user_task_6::app:slack:web::e0007::atom:0",
+      "target": "graphiti:entity:93fe99f0-510b-498f-94ab-ff57834db693"
+    }
+  ],
+  "node_map": {
+    "receiver:0": "receiver:0",
+    "request:e0004": "request:e0004",
+    "slack/user_task_6::app:slack:slack::e0004::atom:0": "normalized:slack/user_task_6::app:slack:slack::e0004::/channel",
+    "request:e0005": "request:e0005",
+    "slack/user_task_6::app:slack:slack::e0005::atom:0": "normalized:slack/user_task_6::app:slack:slack::e0005::/channel",
+    "receiver:1": "receiver:1",
+    "request:e0007": "request:e0007",
+    "slack/user_task_6::app:slack:web::e0007::atom:0": "graphiti:entity:93fe99f0-510b-498f-94ab-ff57834db693",
+    "graphiti:episode:6af61d9c-3228-5400-bfc8-3776a134db4e": null,
+    "graphiti:episode:0545e029-4ca8-5925-884d-6326bd72c69b": null,
+    "graphiti:episode:c9f87b30-495f-56a1-a169-2ec0d44532fe": null,
+    "graphiti:entity:ec415839-aee7-4ed7-9254-19398f8a2e6e": "graphiti:entity:ec415839-aee7-4ed7-9254-19398f8a2e6e",
+    "graphiti:entity:4d5c39e3-04a1-4187-9bec-93dfbe4a9370": "graphiti:entity:4d5c39e3-04a1-4187-9bec-93dfbe4a9370",
+    "graphiti:entity:137be6d1-42f1-4fdf-90bc-153ed24eaa7b": "graphiti:entity:137be6d1-42f1-4fdf-90bc-153ed24eaa7b",
+    "graphiti:entity:93fe99f0-510b-498f-94ab-ff57834db693": "graphiti:entity:93fe99f0-510b-498f-94ab-ff57834db693",
+    "normalized:slack/user_task_6::app:slack:slack::e0004::/channel": "normalized:slack/user_task_6::app:slack:slack::e0004::/channel",
+    "normalized:slack/user_task_6::app:slack:slack::e0005::/channel": "normalized:slack/user_task_6::app:slack:slack::e0005::/channel",
+    "normalized:slack/user_task_6::app:slack:web::e0007::/url": "graphiti:entity:93fe99f0-510b-498f-94ab-ff57834db693",
+    "response:app:slack:slack:e0004": "response:app:slack:slack:e0004",
+    "response:app:slack:slack:e0005": "response:app:slack:slack:e0005",
+    "response:app:slack:web:e0007": "response:app:slack:web:e0007"
+  },
+  "removed_records": [
+    {
+      "record": {
+        "id": "graphiti:episode:6af61d9c-3228-5400-bfc8-3776a134db4e",
+        "type": "graphiti_episode",
+        "label": "read_channel_messages",
+        "receiver_id": "app:slack:slack"
+      },
+      "reason": "graphiti_system_episode"
+    },
+    {
+      "record": {
+        "id": "graphiti:episode:0545e029-4ca8-5925-884d-6326bd72c69b",
+        "type": "graphiti_episode",
+        "label": "get_users_in_channel",
+        "receiver_id": "app:slack:slack"
+      },
+      "reason": "graphiti_system_episode"
+    },
+    {
+      "record": {
+        "id": "graphiti:episode:c9f87b30-495f-56a1-a169-2ec0d44532fe",
+        "type": "graphiti_episode",
+        "label": "get_webpage",
+        "receiver_id": "app:slack:web"
+      },
+      "reason": "graphiti_system_episode"
+    }
+  ],
+  "before": {
+    "nodes": 21,
+    "edges": 13
+  },
+  "after": {
+    "nodes": 14,
+    "edges": 9
+  },
+  "disclosure_effect": "structural_only_members_and_evidence_retained_not_measured_privacy_reduction",
+  "validation": {
+    "passed": true,
+    "checks": [
+      "edge_endpoints",
+      "receiver_isolation",
+      "factor_support",
+      "inference_status",
+      "explicit_AND_slots"
+    ]
+  }
+}

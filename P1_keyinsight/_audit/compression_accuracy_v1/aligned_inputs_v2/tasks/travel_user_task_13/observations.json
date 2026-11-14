@@ -1,0 +1,49 @@
+[
+  {
+    "message_id": "e0004:R",
+    "event_id": "e0004",
+    "direction": "R",
+    "receiver_id": "app:travel:car_rental",
+    "tool": "get_all_car_rental_companies_in_city",
+    "content": {
+      "city": "Los Angeles"
+    },
+    "status": "observed",
+    "observation_order": 0,
+    "state": "before",
+    "state_basis": "read_before_service_write",
+    "effect_status": "requested"
+  },
+  {
+    "message_id": "e0004:S",
+    "event_id": "e0004",
+    "direction": "S",
+    "receiver_id": "app:travel:car_rental",
+    "tool": "get_all_car_rental_companies_in_city",
+    "content": "Car Rental Companies in Los Angeles: SunSet Rent-A-Car\nSpeedy Rentals\nLAX Car Rental\n",
+    "status": "observed",
+    "observation_order": 1,
+    "state": "before",
+    "state_basis": "read_before_service_write",
+    "effect_status": "observed_read"
+  },
+  {
+    "message_id": "e0006:R",
+    "event_id": "e0006",
+    "direction": "R",
+    "receiver_id": "app:travel:car_rental",
+    "tool": "get_car_types_available",
+    "content": {
+      "company_name": [
+        "SunSet Rent-A-Car",
+        "Speedy Rentals",
+        "LAX Car Rental"
+      ]
+    },
+    "status": "observed",
+    "observation_order": 2,
+    "state": "before",
+    "state_basis": "read_before_service_write",
+    "effect_status": "requested"
+  }
+]

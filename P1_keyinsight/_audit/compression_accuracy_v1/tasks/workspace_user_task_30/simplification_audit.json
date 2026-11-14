@@ -1,0 +1,119 @@
+{
+  "task_text_checks": [
+    {
+      "source_id": "workspace/user_task_30::app:workspace:drive::e0004::atom:0",
+      "canonical_id": "workspace/user_task_30::app:workspace:drive::e0004::atom:0",
+      "in_task_prompt": true,
+      "source": "observed_request_annotation",
+      "supplement": true
+    },
+    {
+      "source_id": "workspace/user_task_30::app:workspace:drive::e0004::atom:1",
+      "canonical_id": "workspace/user_task_30::app:workspace:drive::e0004::atom:1",
+      "in_task_prompt": true,
+      "source": "observed_request_annotation",
+      "supplement": true
+    }
+  ],
+  "applied": true,
+  "config": {
+    "enabled": true,
+    "entity_dedup": true,
+    "hide_empty": true,
+    "group_lists": true,
+    "remove_graphiti_system": true,
+    "remove_graphiti_relations": true
+  },
+  "operations": [
+    {
+      "operation": "graphiti_entity_first",
+      "source": "normalized:workspace/user_task_30::app:workspace:drive::e0004::/query",
+      "target": "graphiti:entity:17223a30-b121-4243-a073-11bab47fbd7e"
+    },
+    {
+      "operation": "graphiti_entity_first",
+      "source": "normalized:workspace/user_task_30::app:workspace:drive::e0005::/filename",
+      "target": "graphiti:entity:a72fb927-f9bc-4278-b98a-af31fa1ff0d4"
+    }
+  ],
+  "node_map": {
+    "receiver:0": "receiver:0",
+    "request:e0004": "request:e0004",
+    "workspace/user_task_30::app:workspace:drive::e0004::atom:0": "workspace/user_task_30::app:workspace:drive::e0004::atom:0",
+    "workspace/user_task_30::app:workspace:drive::e0004::atom:1": "workspace/user_task_30::app:workspace:drive::e0004::atom:1",
+    "request:e0005": "request:e0005",
+    "request:e0007": null,
+    "graphiti:episode:7f52c9da-a7a5-58e9-ac87-539994199ca5": null,
+    "graphiti:episode:624b3a8d-740f-5b2f-ba76-cff0ae9aaf78": null,
+    "graphiti:episode:103ad2b2-f4a7-5bf1-812b-f90f44c364f6": null,
+    "graphiti:entity:a72fb927-f9bc-4278-b98a-af31fa1ff0d4": "graphiti:entity:a72fb927-f9bc-4278-b98a-af31fa1ff0d4",
+    "graphiti:entity:17223a30-b121-4243-a073-11bab47fbd7e": "graphiti:entity:17223a30-b121-4243-a073-11bab47fbd7e",
+    "normalized:workspace/user_task_30::app:workspace:drive::e0004::/query": "graphiti:entity:17223a30-b121-4243-a073-11bab47fbd7e",
+    "normalized:workspace/user_task_30::app:workspace:drive::e0005::/filename": "graphiti:entity:a72fb927-f9bc-4278-b98a-af31fa1ff0d4",
+    "response:app:workspace:drive:e0004": "response:app:workspace:drive:e0004",
+    "response:app:workspace:drive:e0005": "response:app:workspace:drive:e0005"
+  },
+  "removed_records": [
+    {
+      "record": {
+        "id": "request:e0007",
+        "type": "actual_disclosure",
+        "label": "list_files",
+        "disclosure_id": "workspace/user_task_30::app:workspace:drive::e0007",
+        "event_id": "e0007",
+        "receiver_id": "app:workspace:drive",
+        "parameters": {},
+        "evidence": "D:\\Lironghua\\隐私子刊\\P0_agentdojo\\outputs\\batch47_20261104\\_audit\\execution\\workspace_user_task_30\\graph.json#e0007",
+        "empty_parameters": true,
+        "subject": "request:workspace/user_task_30::app:workspace:drive::e0007"
+      },
+      "reason": "empty_request"
+    },
+    {
+      "record": {
+        "id": "graphiti:episode:7f52c9da-a7a5-58e9-ac87-539994199ca5",
+        "type": "graphiti_episode",
+        "label": "search_files",
+        "receiver_id": "app:workspace:drive"
+      },
+      "reason": "graphiti_system_episode"
+    },
+    {
+      "record": {
+        "id": "graphiti:episode:624b3a8d-740f-5b2f-ba76-cff0ae9aaf78",
+        "type": "graphiti_episode",
+        "label": "list_files",
+        "receiver_id": "app:workspace:drive"
+      },
+      "reason": "graphiti_system_episode"
+    },
+    {
+      "record": {
+        "id": "graphiti:episode:103ad2b2-f4a7-5bf1-812b-f90f44c364f6",
+        "type": "graphiti_episode",
+        "label": "search_files_by_filename",
+        "receiver_id": "app:workspace:drive"
+      },
+      "reason": "graphiti_system_episode"
+    }
+  ],
+  "before": {
+    "nodes": 15,
+    "edges": 13
+  },
+  "after": {
+    "nodes": 9,
+    "edges": 7
+  },
+  "disclosure_effect": "structural_only_members_and_evidence_retained_not_measured_privacy_reduction",
+  "validation": {
+    "passed": true,
+    "checks": [
+      "edge_endpoints",
+      "receiver_isolation",
+      "factor_support",
+      "inference_status",
+      "explicit_AND_slots"
+    ]
+  }
+}

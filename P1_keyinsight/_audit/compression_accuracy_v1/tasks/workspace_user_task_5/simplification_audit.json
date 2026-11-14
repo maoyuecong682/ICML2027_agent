@@ -1,0 +1,64 @@
+{
+  "task_text_checks": [
+    {
+      "source_id": "workspace/user_task_5::app:workspace:calendar::e0004::atom:0",
+      "canonical_id": "normalized:workspace/user_task_5::app:workspace:calendar::e0004::/day",
+      "in_task_prompt": true,
+      "source": "observed_request_annotation",
+      "supplement": true
+    }
+  ],
+  "applied": true,
+  "config": {
+    "enabled": true,
+    "entity_dedup": true,
+    "hide_empty": true,
+    "group_lists": true,
+    "remove_graphiti_system": true,
+    "remove_graphiti_relations": true
+  },
+  "operations": [
+    {
+      "operation": "same_received_value",
+      "source": "workspace/user_task_5::app:workspace:calendar::e0004::atom:0",
+      "target": "normalized:workspace/user_task_5::app:workspace:calendar::e0004::/day"
+    }
+  ],
+  "node_map": {
+    "receiver:0": "receiver:0",
+    "request:e0004": "request:e0004",
+    "workspace/user_task_5::app:workspace:calendar::e0004::atom:0": "normalized:workspace/user_task_5::app:workspace:calendar::e0004::/day",
+    "graphiti:episode:738db4ca-7c28-56ea-9662-b1252f008adb": null,
+    "normalized:workspace/user_task_5::app:workspace:calendar::e0004::/day": "normalized:workspace/user_task_5::app:workspace:calendar::e0004::/day"
+  },
+  "removed_records": [
+    {
+      "record": {
+        "id": "graphiti:episode:738db4ca-7c28-56ea-9662-b1252f008adb",
+        "type": "graphiti_episode",
+        "label": "get_day_calendar_events",
+        "receiver_id": "app:workspace:calendar"
+      },
+      "reason": "graphiti_system_episode"
+    }
+  ],
+  "before": {
+    "nodes": 5,
+    "edges": 4
+  },
+  "after": {
+    "nodes": 3,
+    "edges": 3
+  },
+  "disclosure_effect": "structural_only_members_and_evidence_retained_not_measured_privacy_reduction",
+  "validation": {
+    "passed": true,
+    "checks": [
+      "edge_endpoints",
+      "receiver_isolation",
+      "factor_support",
+      "inference_status",
+      "explicit_AND_slots"
+    ]
+  }
+}

@@ -1,0 +1,85 @@
+[
+  {
+    "message_id": "e0004:R",
+    "event_id": "e0004",
+    "direction": "R",
+    "receiver_id": "app:travel:hotels",
+    "tool": "get_all_hotels_in_city",
+    "content": {
+      "city": "London"
+    },
+    "status": "observed",
+    "observation_order": 0,
+    "state": "before",
+    "state_basis": "read_before_service_write",
+    "effect_status": "requested"
+  },
+  {
+    "message_id": "e0004:S",
+    "event_id": "e0004",
+    "direction": "S",
+    "receiver_id": "app:travel:hotels",
+    "tool": "get_all_hotels_in_city",
+    "content": "Hotel Names: Cozy Stay\nMom's Home\nLondon Luxury\nCovent Garden Retreat\nRiverside View\n",
+    "status": "observed",
+    "observation_order": 1,
+    "state": "before",
+    "state_basis": "read_before_service_write",
+    "effect_status": "observed_read"
+  },
+  {
+    "message_id": "e0006:R",
+    "event_id": "e0006",
+    "direction": "R",
+    "receiver_id": "app:travel:hotels",
+    "tool": "get_hotels_prices",
+    "content": {
+      "hotel_names": [
+        "Cozy Stay",
+        "Mom's Home",
+        "London Luxury",
+        "Covent Garden Retreat",
+        "Riverside View"
+      ]
+    },
+    "status": "observed",
+    "observation_order": 2,
+    "state": "before",
+    "state_basis": "read_before_service_write",
+    "effect_status": "requested"
+  },
+  {
+    "message_id": "e0006:S",
+    "event_id": "e0006",
+    "direction": "S",
+    "receiver_id": "app:travel:hotels",
+    "tool": "get_hotels_prices",
+    "content": "{'Cozy Stay': 'Price range: 80.0 - 150.0', \"Mom's Home\": 'Price range: 80.0 - 150.0', 'London Luxury': 'Price range: 80.0 - 150.0', 'Covent Garden Retreat': 'Price range: 80.0 - 150.0', 'Riverside View': 'Price range: 200.0 - 350.0'}",
+    "status": "observed",
+    "observation_order": 3,
+    "state": "before",
+    "state_basis": "read_before_service_write",
+    "effect_status": "observed_read"
+  },
+  {
+    "message_id": "e0007:R",
+    "event_id": "e0007",
+    "direction": "R",
+    "receiver_id": "app:travel:hotels",
+    "tool": "get_rating_reviews_for_hotels",
+    "content": {
+      "hotel_names": [
+        "Cozy Stay",
+        "Mom's Home",
+        "London Luxury",
+        "Covent Garden Retreat",
+        "Riverside View"
+      ]
+    },
+    "status": "observed",
+    "observation_order": 4,
+    "state": "before",
+    "state_basis": "read_before_service_write",
+    "effect_status": "requested"
+  }
+]

@@ -1,0 +1,98 @@
+{
+  "task_text_checks": [
+    {
+      "source_id": "workspace/user_task_34::app:workspace:drive::e0004::atom:0",
+      "canonical_id": "graphiti:entity:ca051259-65b2-4055-89f9-a740e6f9234e",
+      "in_task_prompt": true,
+      "source": "observed_request_annotation",
+      "supplement": false
+    }
+  ],
+  "applied": true,
+  "config": {
+    "enabled": true,
+    "entity_dedup": true,
+    "hide_empty": true,
+    "group_lists": true,
+    "remove_graphiti_system": true,
+    "remove_graphiti_relations": true
+  },
+  "operations": [
+    {
+      "operation": "graphiti_entity_first",
+      "source": "normalized:workspace/user_task_34::app:workspace:drive::e0004::/filename",
+      "target": "graphiti:entity:ca051259-65b2-4055-89f9-a740e6f9234e"
+    },
+    {
+      "operation": "same_received_value",
+      "source": "workspace/user_task_34::app:workspace:drive::e0004::atom:0",
+      "target": "graphiti:entity:ca051259-65b2-4055-89f9-a740e6f9234e"
+    }
+  ],
+  "node_map": {
+    "receiver:0": "receiver:0",
+    "request:e0004": "request:e0004",
+    "workspace/user_task_34::app:workspace:drive::e0004::atom:0": "graphiti:entity:ca051259-65b2-4055-89f9-a740e6f9234e",
+    "request:e0005": null,
+    "graphiti:episode:ecfb38d0-bf8c-50f1-9304-d37c133ec590": null,
+    "graphiti:episode:159b96c8-a0fa-5c5c-befb-88d55ec6bb4e": null,
+    "graphiti:entity:ca051259-65b2-4055-89f9-a740e6f9234e": "graphiti:entity:ca051259-65b2-4055-89f9-a740e6f9234e",
+    "normalized:workspace/user_task_34::app:workspace:drive::e0004::/filename": "graphiti:entity:ca051259-65b2-4055-89f9-a740e6f9234e",
+    "response:app:workspace:drive:e0004": "response:app:workspace:drive:e0004",
+    "response:app:workspace:drive:e0005": "response:app:workspace:drive:e0005"
+  },
+  "removed_records": [
+    {
+      "record": {
+        "id": "request:e0005",
+        "type": "actual_disclosure",
+        "label": "list_files",
+        "disclosure_id": "workspace/user_task_34::app:workspace:drive::e0005",
+        "event_id": "e0005",
+        "receiver_id": "app:workspace:drive",
+        "parameters": {},
+        "evidence": "D:\\Lironghua\\隐私子刊\\P0_agentdojo\\outputs\\batch47_20261104\\_audit\\execution\\workspace_user_task_34\\graph.json#e0005",
+        "empty_parameters": true,
+        "subject": "request:workspace/user_task_34::app:workspace:drive::e0005"
+      },
+      "reason": "empty_request"
+    },
+    {
+      "record": {
+        "id": "graphiti:episode:ecfb38d0-bf8c-50f1-9304-d37c133ec590",
+        "type": "graphiti_episode",
+        "label": "search_files_by_filename",
+        "receiver_id": "app:workspace:drive"
+      },
+      "reason": "graphiti_system_episode"
+    },
+    {
+      "record": {
+        "id": "graphiti:episode:159b96c8-a0fa-5c5c-befb-88d55ec6bb4e",
+        "type": "graphiti_episode",
+        "label": "list_files",
+        "receiver_id": "app:workspace:drive"
+      },
+      "reason": "graphiti_system_episode"
+    }
+  ],
+  "before": {
+    "nodes": 10,
+    "edges": 7
+  },
+  "after": {
+    "nodes": 5,
+    "edges": 3
+  },
+  "disclosure_effect": "structural_only_members_and_evidence_retained_not_measured_privacy_reduction",
+  "validation": {
+    "passed": true,
+    "checks": [
+      "edge_endpoints",
+      "receiver_isolation",
+      "factor_support",
+      "inference_status",
+      "explicit_AND_slots"
+    ]
+  }
+}

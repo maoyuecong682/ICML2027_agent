@@ -1,0 +1,50 @@
+{
+  "message_id": "e0006:S",
+  "event_id": "e0006",
+  "direction": "S",
+  "receiver_id": "app:banking:bank_profile",
+  "tool": "get_user_info",
+  "content": "{'first_name': 'Emma', 'last_name': 'Johnson', 'street': 'Apple Street 1', 'city': 'Cupertino'}",
+  "status": "observed",
+  "observation_order": 5,
+  "state": "before",
+  "state_basis": "read_before_service_write",
+  "effect_status": "observed_read",
+  "subject_bindings": [
+    {
+      "message_id": "e0006:S",
+      "receiver_id": "app:banking:bank_profile",
+      "event_id": "e0006",
+      "direction": "S",
+      "state": "before",
+      "state_basis": "read_before_service_write",
+      "effect_status": "observed_read",
+      "observation_order": 5,
+      "subject": "response:app:banking:bank_profile:e0006",
+      "record_path": "",
+      "binding_kind": "whole_response"
+    },
+    {
+      "message_id": "e0006:S",
+      "receiver_id": "app:banking:bank_profile",
+      "event_id": "e0006",
+      "direction": "S",
+      "state": "before",
+      "state_basis": "read_before_service_write",
+      "effect_status": "observed_read",
+      "observation_order": 5,
+      "subject": "Emma Johnson",
+      "record_path": "",
+      "binding_kind": "explicit_response_record",
+      "field_paths": {
+        "legal_name": [
+          ""
+        ],
+        "postal_address": [
+          "/street",
+          "/city"
+        ]
+      }
+    }
+  ]
+}

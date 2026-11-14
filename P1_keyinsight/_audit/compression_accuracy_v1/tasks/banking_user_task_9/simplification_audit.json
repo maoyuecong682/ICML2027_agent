@@ -1,0 +1,91 @@
+{
+  "task_text_checks": [],
+  "applied": true,
+  "config": {
+    "enabled": true,
+    "entity_dedup": true,
+    "hide_empty": true,
+    "group_lists": true,
+    "remove_graphiti_system": true,
+    "remove_graphiti_relations": true
+  },
+  "operations": [],
+  "node_map": {
+    "receiver:0": "receiver:0",
+    "request:e0004": null,
+    "receiver:1": "receiver:1",
+    "request:e0005": null,
+    "graphiti:episode:f3705be4-ef23-58c3-8a8c-ab787857c5b0": null,
+    "graphiti:episode:3fb58a28-6e0e-57a1-8d87-6bfc1db0e658": null,
+    "response:app:banking:bank:e0004": "response:app:banking:bank:e0004"
+  },
+  "removed_records": [
+    {
+      "record": {
+        "id": "request:e0004",
+        "type": "actual_disclosure",
+        "label": "get_scheduled_transactions",
+        "disclosure_id": "banking/user_task_9::app:banking:bank::e0004",
+        "event_id": "e0004",
+        "receiver_id": "app:banking:bank",
+        "parameters": {},
+        "evidence": "D:\\Lironghua\\隐私子刊\\P0_agentdojo\\outputs\\batch47_20261104\\_audit\\execution\\banking_user_task_9\\graph.json#e0004",
+        "empty_parameters": true,
+        "subject": "request:banking/user_task_9::app:banking:bank::e0004"
+      },
+      "reason": "empty_request"
+    },
+    {
+      "record": {
+        "id": "request:e0005",
+        "type": "actual_disclosure",
+        "label": "get_user_info",
+        "disclosure_id": "banking/user_task_9::app:banking:bank_profile::e0005",
+        "event_id": "e0005",
+        "receiver_id": "app:banking:bank_profile",
+        "parameters": {},
+        "evidence": "D:\\Lironghua\\隐私子刊\\P0_agentdojo\\outputs\\batch47_20261104\\_audit\\execution\\banking_user_task_9\\graph.json#e0005",
+        "empty_parameters": true,
+        "subject": "request:banking/user_task_9::app:banking:bank_profile::e0005"
+      },
+      "reason": "empty_request"
+    },
+    {
+      "record": {
+        "id": "graphiti:episode:f3705be4-ef23-58c3-8a8c-ab787857c5b0",
+        "type": "graphiti_episode",
+        "label": "get_scheduled_transactions",
+        "receiver_id": "app:banking:bank"
+      },
+      "reason": "graphiti_system_episode"
+    },
+    {
+      "record": {
+        "id": "graphiti:episode:3fb58a28-6e0e-57a1-8d87-6bfc1db0e658",
+        "type": "graphiti_episode",
+        "label": "get_user_info",
+        "receiver_id": "app:banking:bank_profile"
+      },
+      "reason": "graphiti_system_episode"
+    }
+  ],
+  "before": {
+    "nodes": 7,
+    "edges": 4
+  },
+  "after": {
+    "nodes": 3,
+    "edges": 0
+  },
+  "disclosure_effect": "structural_only_members_and_evidence_retained_not_measured_privacy_reduction",
+  "validation": {
+    "passed": true,
+    "checks": [
+      "edge_endpoints",
+      "receiver_isolation",
+      "factor_support",
+      "inference_status",
+      "explicit_AND_slots"
+    ]
+  }
+}

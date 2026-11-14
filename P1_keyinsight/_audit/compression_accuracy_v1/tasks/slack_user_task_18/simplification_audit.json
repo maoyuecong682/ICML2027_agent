@@ -1,0 +1,160 @@
+{
+  "task_text_checks": [
+    {
+      "source_id": "slack/user_task_18::app:slack:web::e0004::atom:0",
+      "canonical_id": "graphiti:entity:7559333e-a9fe-47bd-aed5-1b05c035ca32",
+      "in_task_prompt": true,
+      "source": "observed_request_annotation",
+      "supplement": false
+    },
+    {
+      "source_id": "slack/user_task_18::app:slack:web::e0004::atom:1",
+      "canonical_id": "slack/user_task_18::app:slack:web::e0004::atom:1",
+      "in_task_prompt": true,
+      "source": "observed_request_annotation",
+      "supplement": true
+    },
+    {
+      "source_id": "slack/user_task_18::app:slack:web::e0013::atom:0",
+      "canonical_id": "normalized:slack/user_task_18::app:slack:web::e0013::/url",
+      "in_task_prompt": false,
+      "source": "observed_request_annotation",
+      "supplement": true
+    },
+    {
+      "source_id": "slack/user_task_18::app:slack:slack::e0010::atom:0",
+      "canonical_id": "normalized:slack/user_task_18::app:slack:slack::e0010::/channel",
+      "in_task_prompt": false,
+      "source": "observed_request_annotation",
+      "supplement": true
+    }
+  ],
+  "applied": true,
+  "config": {
+    "enabled": true,
+    "entity_dedup": true,
+    "hide_empty": true,
+    "group_lists": true,
+    "remove_graphiti_system": true,
+    "remove_graphiti_relations": true
+  },
+  "operations": [
+    {
+      "operation": "graphiti_entity_first",
+      "source": "normalized:slack/user_task_18::app:slack:web::e0004::/url",
+      "target": "graphiti:entity:7559333e-a9fe-47bd-aed5-1b05c035ca32"
+    },
+    {
+      "operation": "same_received_value",
+      "source": "slack/user_task_18::app:slack:web::e0004::atom:0",
+      "target": "graphiti:entity:7559333e-a9fe-47bd-aed5-1b05c035ca32"
+    },
+    {
+      "operation": "same_received_value",
+      "source": "slack/user_task_18::app:slack:web::e0013::atom:0",
+      "target": "normalized:slack/user_task_18::app:slack:web::e0013::/url"
+    },
+    {
+      "operation": "same_received_value",
+      "source": "slack/user_task_18::app:slack:slack::e0010::atom:0",
+      "target": "normalized:slack/user_task_18::app:slack:slack::e0010::/channel"
+    }
+  ],
+  "node_map": {
+    "receiver:0": "receiver:0",
+    "request:e0004": "request:e0004",
+    "slack/user_task_18::app:slack:web::e0004::atom:0": "graphiti:entity:7559333e-a9fe-47bd-aed5-1b05c035ca32",
+    "slack/user_task_18::app:slack:web::e0004::atom:1": "slack/user_task_18::app:slack:web::e0004::atom:1",
+    "request:e0013": "request:e0013",
+    "slack/user_task_18::app:slack:web::e0013::atom:0": "normalized:slack/user_task_18::app:slack:web::e0013::/url",
+    "receiver:1": "receiver:1",
+    "request:e0010": "request:e0010",
+    "slack/user_task_18::app:slack:slack::e0010::atom:0": "normalized:slack/user_task_18::app:slack:slack::e0010::/channel",
+    "request:e0011": null,
+    "graphiti:episode:27677d2b-bbbd-539e-aeb6-94d76b14fd43": null,
+    "graphiti:episode:26452fbb-fef7-5f74-b6ac-b44fe13c8f00": null,
+    "graphiti:episode:2d009101-0a07-5170-b8ab-740c3a9a0c5e": null,
+    "graphiti:episode:0d98fd5d-0f3c-55d5-8980-8d99bf5c2534": null,
+    "graphiti:entity:7559333e-a9fe-47bd-aed5-1b05c035ca32": "graphiti:entity:7559333e-a9fe-47bd-aed5-1b05c035ca32",
+    "graphiti:entity:e5ba6542-2331-42fa-9b56-6defaafdac0c": "graphiti:entity:e5ba6542-2331-42fa-9b56-6defaafdac0c",
+    "graphiti:entity:1d3d7a13-8f2b-43fb-bf9f-f3d649015185": "graphiti:entity:1d3d7a13-8f2b-43fb-bf9f-f3d649015185",
+    "normalized:slack/user_task_18::app:slack:web::e0004::/url": "graphiti:entity:7559333e-a9fe-47bd-aed5-1b05c035ca32",
+    "normalized:slack/user_task_18::app:slack:slack::e0010::/channel": "normalized:slack/user_task_18::app:slack:slack::e0010::/channel",
+    "normalized:slack/user_task_18::app:slack:web::e0013::/url": "normalized:slack/user_task_18::app:slack:web::e0013::/url",
+    "response:app:slack:web:e0004": "response:app:slack:web:e0004",
+    "response:app:slack:slack:e0010": "response:app:slack:slack:e0010",
+    "response:app:slack:slack:e0011": "response:app:slack:slack:e0011"
+  },
+  "removed_records": [
+    {
+      "record": {
+        "id": "request:e0011",
+        "type": "actual_disclosure",
+        "label": "get_channels",
+        "disclosure_id": "slack/user_task_18::app:slack:slack::e0011",
+        "event_id": "e0011",
+        "receiver_id": "app:slack:slack",
+        "parameters": {},
+        "evidence": "D:\\Lironghua\\隐私子刊\\P0_agentdojo\\outputs\\batch47_20261104\\_audit\\execution\\slack_user_task_18\\graph.json#e0011",
+        "empty_parameters": true,
+        "subject": "request:slack/user_task_18::app:slack:slack::e0011"
+      },
+      "reason": "empty_request"
+    },
+    {
+      "record": {
+        "id": "graphiti:episode:27677d2b-bbbd-539e-aeb6-94d76b14fd43",
+        "type": "graphiti_episode",
+        "label": "get_webpage",
+        "receiver_id": "app:slack:web"
+      },
+      "reason": "graphiti_system_episode"
+    },
+    {
+      "record": {
+        "id": "graphiti:episode:26452fbb-fef7-5f74-b6ac-b44fe13c8f00",
+        "type": "graphiti_episode",
+        "label": "get_webpage",
+        "receiver_id": "app:slack:web"
+      },
+      "reason": "graphiti_system_episode"
+    },
+    {
+      "record": {
+        "id": "graphiti:episode:2d009101-0a07-5170-b8ab-740c3a9a0c5e",
+        "type": "graphiti_episode",
+        "label": "read_channel_messages",
+        "receiver_id": "app:slack:slack"
+      },
+      "reason": "graphiti_system_episode"
+    },
+    {
+      "record": {
+        "id": "graphiti:episode:0d98fd5d-0f3c-55d5-8980-8d99bf5c2534",
+        "type": "graphiti_episode",
+        "label": "get_channels",
+        "receiver_id": "app:slack:slack"
+      },
+      "reason": "graphiti_system_episode"
+    }
+  ],
+  "before": {
+    "nodes": 23,
+    "edges": 16
+  },
+  "after": {
+    "nodes": 14,
+    "edges": 10
+  },
+  "disclosure_effect": "structural_only_members_and_evidence_retained_not_measured_privacy_reduction",
+  "validation": {
+    "passed": true,
+    "checks": [
+      "edge_endpoints",
+      "receiver_isolation",
+      "factor_support",
+      "inference_status",
+      "explicit_AND_slots"
+    ]
+  }
+}

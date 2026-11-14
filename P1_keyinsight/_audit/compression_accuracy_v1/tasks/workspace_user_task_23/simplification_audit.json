@@ -1,0 +1,100 @@
+{
+  "task_text_checks": [
+    {
+      "source_id": "workspace/user_task_23::app:workspace:calendar::e0004::atom:0",
+      "canonical_id": "normalized:workspace/user_task_23::app:workspace:calendar::e0004::/day",
+      "in_task_prompt": false,
+      "source": "observed_request_annotation",
+      "supplement": true
+    },
+    {
+      "source_id": "workspace/user_task_23::app:workspace:email::e0005::atom:0",
+      "canonical_id": "workspace/user_task_23::app:workspace:email::e0005::atom:0",
+      "in_task_prompt": true,
+      "source": "observed_request_annotation",
+      "supplement": true
+    },
+    {
+      "source_id": "workspace/user_task_23::app:workspace:email::e0005::atom:1",
+      "canonical_id": "workspace/user_task_23::app:workspace:email::e0005::atom:1",
+      "in_task_prompt": false,
+      "source": "observed_request_annotation",
+      "supplement": true
+    }
+  ],
+  "applied": true,
+  "config": {
+    "enabled": true,
+    "entity_dedup": true,
+    "hide_empty": true,
+    "group_lists": true,
+    "remove_graphiti_system": true,
+    "remove_graphiti_relations": true
+  },
+  "operations": [
+    {
+      "operation": "graphiti_entity_first",
+      "source": "normalized:workspace/user_task_23::app:workspace:email::e0005::/query",
+      "target": "graphiti:entity:64a9efa8-258f-4099-9ce1-20f4865f1193"
+    },
+    {
+      "operation": "same_received_value",
+      "source": "workspace/user_task_23::app:workspace:calendar::e0004::atom:0",
+      "target": "normalized:workspace/user_task_23::app:workspace:calendar::e0004::/day"
+    }
+  ],
+  "node_map": {
+    "receiver:0": "receiver:0",
+    "request:e0004": "request:e0004",
+    "workspace/user_task_23::app:workspace:calendar::e0004::atom:0": "normalized:workspace/user_task_23::app:workspace:calendar::e0004::/day",
+    "receiver:1": "receiver:1",
+    "request:e0005": "request:e0005",
+    "workspace/user_task_23::app:workspace:email::e0005::atom:0": "workspace/user_task_23::app:workspace:email::e0005::atom:0",
+    "workspace/user_task_23::app:workspace:email::e0005::atom:1": "workspace/user_task_23::app:workspace:email::e0005::atom:1",
+    "graphiti:episode:690c2452-276d-542c-8a92-4c6d0bf49a49": null,
+    "graphiti:episode:75fcca1a-e442-5377-918e-358799985e51": null,
+    "graphiti:entity:64a9efa8-258f-4099-9ce1-20f4865f1193": "graphiti:entity:64a9efa8-258f-4099-9ce1-20f4865f1193",
+    "normalized:workspace/user_task_23::app:workspace:calendar::e0004::/day": "normalized:workspace/user_task_23::app:workspace:calendar::e0004::/day",
+    "normalized:workspace/user_task_23::app:workspace:email::e0005::/query": "graphiti:entity:64a9efa8-258f-4099-9ce1-20f4865f1193",
+    "response:app:workspace:calendar:e0004": "response:app:workspace:calendar:e0004"
+  },
+  "removed_records": [
+    {
+      "record": {
+        "id": "graphiti:episode:690c2452-276d-542c-8a92-4c6d0bf49a49",
+        "type": "graphiti_episode",
+        "label": "get_day_calendar_events",
+        "receiver_id": "app:workspace:calendar"
+      },
+      "reason": "graphiti_system_episode"
+    },
+    {
+      "record": {
+        "id": "graphiti:episode:75fcca1a-e442-5377-918e-358799985e51",
+        "type": "graphiti_episode",
+        "label": "search_emails",
+        "receiver_id": "app:workspace:email"
+      },
+      "reason": "graphiti_system_episode"
+    }
+  ],
+  "before": {
+    "nodes": 13,
+    "edges": 10
+  },
+  "after": {
+    "nodes": 9,
+    "edges": 7
+  },
+  "disclosure_effect": "structural_only_members_and_evidence_retained_not_measured_privacy_reduction",
+  "validation": {
+    "passed": true,
+    "checks": [
+      "edge_endpoints",
+      "receiver_isolation",
+      "factor_support",
+      "inference_status",
+      "explicit_AND_slots"
+    ]
+  }
+}

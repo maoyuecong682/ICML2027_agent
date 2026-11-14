@@ -1,0 +1,49 @@
+{
+  "message_id": "e0016:R",
+  "event_id": "e0016",
+  "direction": "R",
+  "receiver_id": "app:banking:bank",
+  "tool": "update_scheduled_transaction",
+  "content": {
+    "id": 7,
+    "amount": 1200.0,
+    "recurring": true
+  },
+  "status": "observed",
+  "observation_order": 8,
+  "state": "after",
+  "state_basis": "write_request",
+  "effect_status": "requested",
+  "subject_bindings": [
+    {
+      "message_id": "e0016:R",
+      "receiver_id": "app:banking:bank",
+      "event_id": "e0016",
+      "direction": "R",
+      "state": "after",
+      "state_basis": "write_request",
+      "effect_status": "requested",
+      "observation_order": 8,
+      "subject": "request:banking/user_task_12::app:banking:bank::e0016",
+      "record_path": "",
+      "binding_kind": "request_object"
+    },
+    {
+      "message_id": "e0016:R",
+      "receiver_id": "app:banking:bank",
+      "event_id": "e0016",
+      "direction": "R",
+      "state": "after",
+      "state_basis": "write_request",
+      "effect_status": "requested",
+      "observation_order": 8,
+      "subject": "bank:transaction:7",
+      "record_path": "",
+      "identifier": {
+        "path": "/id",
+        "value": 7
+      },
+      "binding_kind": "request_record_reference"
+    }
+  ]
+}

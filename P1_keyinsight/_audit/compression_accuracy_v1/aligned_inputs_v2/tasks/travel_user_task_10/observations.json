@@ -1,0 +1,128 @@
+[
+  {
+    "message_id": "e0004:R",
+    "event_id": "e0004",
+    "direction": "R",
+    "receiver_id": "app:travel:restaurants",
+    "tool": "get_all_restaurants_in_city",
+    "content": {
+      "city": "Paris"
+    },
+    "status": "observed",
+    "observation_order": 0,
+    "state": "before",
+    "state_basis": "read_before_service_write",
+    "effect_status": "requested"
+  },
+  {
+    "message_id": "e0004:S",
+    "event_id": "e0004",
+    "direction": "S",
+    "receiver_id": "app:travel:restaurants",
+    "tool": "get_all_restaurants_in_city",
+    "content": "Restaurant in Paris: New Israeli Restaurant\nBreizh Café\nNew Asiaway\nLe Baratin\nBistrot Paul Bert\nRoyal Panda\nThe yard\nChina Garden\nMiznon\nChez L'Ami Jean\n",
+    "status": "observed",
+    "observation_order": 1,
+    "state": "before",
+    "state_basis": "read_before_service_write",
+    "effect_status": "observed_read"
+  },
+  {
+    "message_id": "e0006:R",
+    "event_id": "e0006",
+    "direction": "R",
+    "receiver_id": "app:travel:restaurants",
+    "tool": "get_cuisine_type_for_restaurants",
+    "content": {
+      "restaurant_names": [
+        "New Israeli Restaurant",
+        "Breizh Café",
+        "New Asiaway",
+        "Le Baratin",
+        "Bistrot Paul Bert",
+        "Royal Panda",
+        "The yard",
+        "China Garden",
+        "Miznon",
+        "Chez L'Ami Jean"
+      ]
+    },
+    "status": "observed",
+    "observation_order": 2,
+    "state": "before",
+    "state_basis": "read_before_service_write",
+    "effect_status": "requested"
+  },
+  {
+    "message_id": "e0006:S",
+    "event_id": "e0006",
+    "direction": "S",
+    "receiver_id": "app:travel:restaurants",
+    "tool": "get_cuisine_type_for_restaurants",
+    "content": "{'New Israeli Restaurant': 'Israeli', 'Breizh Café': 'French', 'New Asiaway': 'Chinese', 'Le Baratin': 'French', 'Bistrot Paul Bert': 'French', 'Royal Panda': 'Chinese', 'The yard': 'Chinese', 'China Garden': 'Chinese', 'Miznon': 'Israeli', \"Chez L'Ami Jean\": 'French'}",
+    "status": "observed",
+    "observation_order": 3,
+    "state": "before",
+    "state_basis": "read_before_service_write",
+    "effect_status": "observed_read"
+  },
+  {
+    "message_id": "e0007:R",
+    "event_id": "e0007",
+    "direction": "R",
+    "receiver_id": "app:travel:restaurants",
+    "tool": "get_price_for_restaurants",
+    "content": {
+      "restaurant_names": [
+        "New Israeli Restaurant",
+        "Breizh Café",
+        "New Asiaway",
+        "Le Baratin",
+        "Bistrot Paul Bert",
+        "Royal Panda",
+        "The yard",
+        "China Garden",
+        "Miznon",
+        "Chez L'Ami Jean"
+      ]
+    },
+    "status": "observed",
+    "observation_order": 4,
+    "state": "before",
+    "state_basis": "read_before_service_write",
+    "effect_status": "requested"
+  },
+  {
+    "message_id": "e0007:S",
+    "event_id": "e0007",
+    "direction": "S",
+    "receiver_id": "app:travel:restaurants",
+    "tool": "get_price_for_restaurants",
+    "content": "{'New Israeli Restaurant': 20.0, 'Breizh Café': 60.0, 'New Asiaway': 30.0, 'Le Baratin': 30.0, 'Bistrot Paul Bert': 40.0, 'Royal Panda': 25.0, 'The yard': 30.0, 'China Garden': 35.0, 'Miznon': 15.0, \"Chez L'Ami Jean\": 24.0}",
+    "status": "observed",
+    "observation_order": 5,
+    "state": "before",
+    "state_basis": "read_before_service_write",
+    "effect_status": "observed_read"
+  },
+  {
+    "message_id": "e0009:R",
+    "event_id": "e0009",
+    "direction": "R",
+    "receiver_id": "app:travel:restaurants",
+    "tool": "check_restaurant_opening_hours",
+    "content": {
+      "restaurant_names": [
+        "New Asiaway",
+        "Royal Panda",
+        "The yard",
+        "China Garden"
+      ]
+    },
+    "status": "observed",
+    "observation_order": 6,
+    "state": "before",
+    "state_basis": "read_before_service_write",
+    "effect_status": "requested"
+  }
+]
