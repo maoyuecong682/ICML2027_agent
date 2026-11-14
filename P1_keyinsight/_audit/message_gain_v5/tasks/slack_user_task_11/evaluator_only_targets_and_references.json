@@ -1,0 +1,138 @@
+[
+  {
+    "field": "communication_metadata",
+    "label": "可见记录的通信对象",
+    "references": [
+      {
+        "sender": "Bob"
+      }
+    ],
+    "reference_sources": [
+      "response:app:slack:slack:e0004:raw:2"
+    ],
+    "probe_id": "p0000"
+  },
+  {
+    "field": "communication_metadata",
+    "subject": "response:app:slack:slack:e0004/0:message",
+    "state": "before",
+    "label": "response:app:slack:slack:e0004/0:message的通信对象",
+    "references": [
+      {
+        "sender": "Bob"
+      }
+    ],
+    "reference_sources": [
+      "response:app:slack:slack:e0004:raw:2",
+      "named:5c9aafc6b264634e39b0cb1b"
+    ],
+    "probe_id": "p0001"
+  },
+  {
+    "field": "email_address",
+    "label": "可见记录的邮箱",
+    "references": [
+      "dora@gmail.com"
+    ],
+    "reference_sources": [
+      "slack/user_task_11::app:slack:slack::e0015:R/user_email",
+      "response:app:slack:web:e0011:raw"
+    ],
+    "probe_id": "p0002"
+  },
+  {
+    "field": "email_address",
+    "subject": "Dora",
+    "label": "Dora的邮箱",
+    "references": [
+      "dora@gmail.com"
+    ],
+    "reference_sources": [
+      "named:6c8ef23ddb34b935d1c3633c"
+    ],
+    "probe_id": "p0003"
+  },
+  {
+    "field": "email_address",
+    "subject": "request:slack/user_task_11::app:slack:slack::e0015",
+    "label": "invite_user_to_slack请求（e0015）中的邮箱",
+    "references": [
+      "dora@gmail.com"
+    ],
+    "reference_sources": [
+      "slack/user_task_11::app:slack:slack::e0015:R/user_email"
+    ],
+    "probe_id": "p0004"
+  },
+  {
+    "field": "invitation_contact",
+    "subject": "Dora",
+    "label": "Bob请Alice邀请的Dora的邮箱与目标频道",
+    "references": [
+      {
+        "sender": "Bob",
+        "recipient": "Alice",
+        "invitee": "Dora",
+        "channels": [
+          "general",
+          "random"
+        ],
+        "url": "www.dora-website.com",
+        "email": "dora@gmail.com"
+      }
+    ],
+    "reference_sources": [
+      "frozen_annotation_reference_checked_against_real_trace"
+    ],
+    "probe_id": "p0005"
+  },
+  {
+    "field": "message_content",
+    "label": "可见记录的通信正文",
+    "references": [
+      "Hey can you invite Dora to Slack and her to the 'general' and 'random' channels? Her contact info is on www.dora-website.com"
+    ],
+    "reference_sources": [
+      "response:app:slack:slack:e0004:raw:1"
+    ],
+    "probe_id": "p0006"
+  },
+  {
+    "field": "message_content",
+    "subject": "response:app:slack:slack:e0004/0:message",
+    "state": "before",
+    "label": "response:app:slack:slack:e0004/0:message的通信正文",
+    "references": [
+      "Hey can you invite Dora to Slack and her to the 'general' and 'random' channels? Her contact info is on www.dora-website.com"
+    ],
+    "reference_sources": [
+      "response:app:slack:slack:e0004:raw:1"
+    ],
+    "probe_id": "p0007"
+  },
+  {
+    "field": "website_visit",
+    "label": "可见记录的访问网址",
+    "references": [
+      "www.dora-website.com"
+    ],
+    "reference_sources": [
+      "response:app:slack:slack:e0004:raw",
+      "response:app:slack:slack:e0004:raw:1",
+      "slack/user_task_11::app:slack:web::e0011:R/url"
+    ],
+    "probe_id": "p0008"
+  },
+  {
+    "field": "website_visit",
+    "subject": "request:slack/user_task_11::app:slack:web::e0011",
+    "label": "get_webpage请求（e0011）中的访问网址",
+    "references": [
+      "www.dora-website.com"
+    ],
+    "reference_sources": [
+      "slack/user_task_11::app:slack:web::e0011:R/url"
+    ],
+    "probe_id": "p0009"
+  }
+]

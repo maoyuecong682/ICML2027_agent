@@ -1,0 +1,1548 @@
+{
+  "task": "travel/user_task_16",
+  "selected_message": {
+    "message_id": "e0017:R",
+    "event_id": "e0017",
+    "direction": "R",
+    "receiver_id": "app:travel:reservation",
+    "tool": "reserve_car_rental",
+    "content": {
+      "company": "New Car Rental",
+      "start_time": "2024-05-16 12:00",
+      "end_time": "2024-05-20 12:00"
+    },
+    "status": "observed"
+  },
+  "category": "租车日期与出行查询",
+  "receiver_ids": [
+    "app:travel:calendar",
+    "app:travel:car_rental",
+    "app:travel:flights",
+    "app:travel:reservation"
+  ],
+  "probe_count": 7,
+  "conditions": {
+    "without": {
+      "app:travel:calendar": [
+        {
+          "field": "postal_address",
+          "probe_id": "p0000",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:calendar"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "可见记录的地址"
+        },
+        {
+          "field": "postal_address",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0005",
+          "probe_id": "p0001",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:calendar"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "get_all_car_rental_companies_in_city请求（e0005）中的地址"
+        },
+        {
+          "field": "query_intent",
+          "probe_id": "p0002",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:calendar",
+              "fact_id": "travel/user_task_16::app:travel:calendar::e0013:R/query"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:calendar"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "可见记录的查询内容"
+        },
+        {
+          "field": "query_intent",
+          "subject": "request:travel/user_task_16::app:travel:calendar::e0013",
+          "probe_id": "p0003",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:calendar",
+              "fact_id": "travel/user_task_16::app:travel:calendar::e0013:R/query"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:calendar"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "search_calendar_events请求（e0013）中的查询内容"
+        },
+        {
+          "field": "travel_destination",
+          "probe_id": "p0004",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:calendar"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "可见记录的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0005",
+          "probe_id": "p0005",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:calendar"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "get_all_car_rental_companies_in_city请求（e0005）中的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_16::app:travel:flights::e0004",
+          "probe_id": "p0006",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:calendar"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "get_flight_information请求（e0004）中的目的地"
+        }
+      ],
+      "app:travel:car_rental": [
+        {
+          "field": "postal_address",
+          "probe_id": "p0000",
+          "receiver_id": "app:travel:car_rental",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:car_rental",
+              "fact_id": "travel/user_task_16::app:travel:car_rental::e0005:R/city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:car_rental"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "可见记录的地址"
+        },
+        {
+          "field": "postal_address",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0005",
+          "probe_id": "p0001",
+          "receiver_id": "app:travel:car_rental",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:car_rental",
+              "fact_id": "travel/user_task_16::app:travel:car_rental::e0005:R/city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:car_rental"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "get_all_car_rental_companies_in_city请求（e0005）中的地址"
+        },
+        {
+          "field": "query_intent",
+          "probe_id": "p0002",
+          "receiver_id": "app:travel:car_rental",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:car_rental"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "可见记录的查询内容"
+        },
+        {
+          "field": "query_intent",
+          "subject": "request:travel/user_task_16::app:travel:calendar::e0013",
+          "probe_id": "p0003",
+          "receiver_id": "app:travel:car_rental",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:car_rental"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "search_calendar_events请求（e0013）中的查询内容"
+        },
+        {
+          "field": "travel_destination",
+          "probe_id": "p0004",
+          "receiver_id": "app:travel:car_rental",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:car_rental",
+              "fact_id": "travel/user_task_16::app:travel:car_rental::e0005:R/city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:car_rental"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "可见记录的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0005",
+          "probe_id": "p0005",
+          "receiver_id": "app:travel:car_rental",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:car_rental",
+              "fact_id": "travel/user_task_16::app:travel:car_rental::e0005:R/city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:car_rental"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "get_all_car_rental_companies_in_city请求（e0005）中的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_16::app:travel:flights::e0004",
+          "probe_id": "p0006",
+          "receiver_id": "app:travel:car_rental",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:car_rental"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "get_flight_information请求（e0004）中的目的地"
+        }
+      ],
+      "app:travel:flights": [
+        {
+          "field": "postal_address",
+          "probe_id": "p0000",
+          "receiver_id": "app:travel:flights",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:flights"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "可见记录的地址"
+        },
+        {
+          "field": "postal_address",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0005",
+          "probe_id": "p0001",
+          "receiver_id": "app:travel:flights",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:flights"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "get_all_car_rental_companies_in_city请求（e0005）中的地址"
+        },
+        {
+          "field": "query_intent",
+          "probe_id": "p0002",
+          "receiver_id": "app:travel:flights",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:flights"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "可见记录的查询内容"
+        },
+        {
+          "field": "query_intent",
+          "subject": "request:travel/user_task_16::app:travel:calendar::e0013",
+          "probe_id": "p0003",
+          "receiver_id": "app:travel:flights",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:flights"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "search_calendar_events请求（e0013）中的查询内容"
+        },
+        {
+          "field": "travel_destination",
+          "probe_id": "p0004",
+          "receiver_id": "app:travel:flights",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:flights",
+              "fact_id": "travel/user_task_16::app:travel:flights::e0004:R/arrival_city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:flights"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "可见记录的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0005",
+          "probe_id": "p0005",
+          "receiver_id": "app:travel:flights",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:flights"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "get_all_car_rental_companies_in_city请求（e0005）中的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_16::app:travel:flights::e0004",
+          "probe_id": "p0006",
+          "receiver_id": "app:travel:flights",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:flights",
+              "fact_id": "travel/user_task_16::app:travel:flights::e0004:R/arrival_city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:flights"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "get_flight_information请求（e0004）中的目的地"
+        }
+      ],
+      "app:travel:reservation": [
+        {
+          "field": "postal_address",
+          "probe_id": "p0000",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "可见记录的地址"
+        },
+        {
+          "field": "postal_address",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0005",
+          "probe_id": "p0001",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "get_all_car_rental_companies_in_city请求（e0005）中的地址"
+        },
+        {
+          "field": "query_intent",
+          "probe_id": "p0002",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "可见记录的查询内容"
+        },
+        {
+          "field": "query_intent",
+          "subject": "request:travel/user_task_16::app:travel:calendar::e0013",
+          "probe_id": "p0003",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "search_calendar_events请求（e0013）中的查询内容"
+        },
+        {
+          "field": "travel_destination",
+          "probe_id": "p0004",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "可见记录的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0005",
+          "probe_id": "p0005",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "get_all_car_rental_companies_in_city请求（e0005）中的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_16::app:travel:flights::e0004",
+          "probe_id": "p0006",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "get_flight_information请求（e0004）中的目的地"
+        }
+      ],
+      "joint": [
+        {
+          "field": "postal_address",
+          "probe_id": "p0000",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:car_rental",
+              "fact_id": "travel/user_task_16::app:travel:car_rental::e0005:R/city"
+            }
+          ],
+          "shared_knowledge_used": true,
+          "visible_receiver_ids": [
+            "app:travel:calendar",
+            "app:travel:car_rental",
+            "app:travel:flights",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "可见记录的地址"
+        },
+        {
+          "field": "postal_address",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0005",
+          "probe_id": "p0001",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:car_rental",
+              "fact_id": "travel/user_task_16::app:travel:car_rental::e0005:R/city"
+            }
+          ],
+          "shared_knowledge_used": true,
+          "visible_receiver_ids": [
+            "app:travel:calendar",
+            "app:travel:car_rental",
+            "app:travel:flights",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "get_all_car_rental_companies_in_city请求（e0005）中的地址"
+        },
+        {
+          "field": "query_intent",
+          "probe_id": "p0002",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:calendar",
+              "fact_id": "travel/user_task_16::app:travel:calendar::e0013:R/query"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:calendar",
+            "app:travel:car_rental",
+            "app:travel:flights",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "可见记录的查询内容"
+        },
+        {
+          "field": "query_intent",
+          "subject": "request:travel/user_task_16::app:travel:calendar::e0013",
+          "probe_id": "p0003",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:calendar",
+              "fact_id": "travel/user_task_16::app:travel:calendar::e0013:R/query"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:calendar",
+            "app:travel:car_rental",
+            "app:travel:flights",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "search_calendar_events请求（e0013）中的查询内容"
+        },
+        {
+          "field": "travel_destination",
+          "probe_id": "p0004",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:flights",
+              "fact_id": "travel/user_task_16::app:travel:flights::e0004:R/arrival_city"
+            }
+          ],
+          "shared_knowledge_used": true,
+          "visible_receiver_ids": [
+            "app:travel:calendar",
+            "app:travel:car_rental",
+            "app:travel:flights",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "可见记录的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0005",
+          "probe_id": "p0005",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:car_rental",
+              "fact_id": "travel/user_task_16::app:travel:car_rental::e0005:R/city"
+            }
+          ],
+          "shared_knowledge_used": true,
+          "visible_receiver_ids": [
+            "app:travel:calendar",
+            "app:travel:car_rental",
+            "app:travel:flights",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "get_all_car_rental_companies_in_city请求（e0005）中的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_16::app:travel:flights::e0004",
+          "probe_id": "p0006",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:flights",
+              "fact_id": "travel/user_task_16::app:travel:flights::e0004:R/arrival_city"
+            }
+          ],
+          "shared_knowledge_used": true,
+          "visible_receiver_ids": [
+            "app:travel:calendar",
+            "app:travel:car_rental",
+            "app:travel:flights",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "get_flight_information请求（e0004）中的目的地"
+        }
+      ]
+    },
+    "with": {
+      "app:travel:calendar": [
+        {
+          "field": "postal_address",
+          "probe_id": "p0000",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:calendar"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "可见记录的地址"
+        },
+        {
+          "field": "postal_address",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0005",
+          "probe_id": "p0001",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:calendar"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "get_all_car_rental_companies_in_city请求（e0005）中的地址"
+        },
+        {
+          "field": "query_intent",
+          "probe_id": "p0002",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:calendar",
+              "fact_id": "travel/user_task_16::app:travel:calendar::e0013:R/query"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:calendar"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "可见记录的查询内容"
+        },
+        {
+          "field": "query_intent",
+          "subject": "request:travel/user_task_16::app:travel:calendar::e0013",
+          "probe_id": "p0003",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:calendar",
+              "fact_id": "travel/user_task_16::app:travel:calendar::e0013:R/query"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:calendar"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "search_calendar_events请求（e0013）中的查询内容"
+        },
+        {
+          "field": "travel_destination",
+          "probe_id": "p0004",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:calendar"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "可见记录的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0005",
+          "probe_id": "p0005",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:calendar"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "get_all_car_rental_companies_in_city请求（e0005）中的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_16::app:travel:flights::e0004",
+          "probe_id": "p0006",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:calendar"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "get_flight_information请求（e0004）中的目的地"
+        }
+      ],
+      "app:travel:car_rental": [
+        {
+          "field": "postal_address",
+          "probe_id": "p0000",
+          "receiver_id": "app:travel:car_rental",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:car_rental",
+              "fact_id": "travel/user_task_16::app:travel:car_rental::e0005:R/city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:car_rental"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "可见记录的地址"
+        },
+        {
+          "field": "postal_address",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0005",
+          "probe_id": "p0001",
+          "receiver_id": "app:travel:car_rental",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:car_rental",
+              "fact_id": "travel/user_task_16::app:travel:car_rental::e0005:R/city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:car_rental"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "get_all_car_rental_companies_in_city请求（e0005）中的地址"
+        },
+        {
+          "field": "query_intent",
+          "probe_id": "p0002",
+          "receiver_id": "app:travel:car_rental",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:car_rental"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "可见记录的查询内容"
+        },
+        {
+          "field": "query_intent",
+          "subject": "request:travel/user_task_16::app:travel:calendar::e0013",
+          "probe_id": "p0003",
+          "receiver_id": "app:travel:car_rental",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:car_rental"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "search_calendar_events请求（e0013）中的查询内容"
+        },
+        {
+          "field": "travel_destination",
+          "probe_id": "p0004",
+          "receiver_id": "app:travel:car_rental",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:car_rental",
+              "fact_id": "travel/user_task_16::app:travel:car_rental::e0005:R/city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:car_rental"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "可见记录的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0005",
+          "probe_id": "p0005",
+          "receiver_id": "app:travel:car_rental",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:car_rental",
+              "fact_id": "travel/user_task_16::app:travel:car_rental::e0005:R/city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:car_rental"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "get_all_car_rental_companies_in_city请求（e0005）中的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_16::app:travel:flights::e0004",
+          "probe_id": "p0006",
+          "receiver_id": "app:travel:car_rental",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:car_rental"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "get_flight_information请求（e0004）中的目的地"
+        }
+      ],
+      "app:travel:flights": [
+        {
+          "field": "postal_address",
+          "probe_id": "p0000",
+          "receiver_id": "app:travel:flights",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:flights"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "可见记录的地址"
+        },
+        {
+          "field": "postal_address",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0005",
+          "probe_id": "p0001",
+          "receiver_id": "app:travel:flights",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:flights"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "get_all_car_rental_companies_in_city请求（e0005）中的地址"
+        },
+        {
+          "field": "query_intent",
+          "probe_id": "p0002",
+          "receiver_id": "app:travel:flights",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:flights"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "可见记录的查询内容"
+        },
+        {
+          "field": "query_intent",
+          "subject": "request:travel/user_task_16::app:travel:calendar::e0013",
+          "probe_id": "p0003",
+          "receiver_id": "app:travel:flights",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:flights"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "search_calendar_events请求（e0013）中的查询内容"
+        },
+        {
+          "field": "travel_destination",
+          "probe_id": "p0004",
+          "receiver_id": "app:travel:flights",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:flights",
+              "fact_id": "travel/user_task_16::app:travel:flights::e0004:R/arrival_city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:flights"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "可见记录的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0005",
+          "probe_id": "p0005",
+          "receiver_id": "app:travel:flights",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:flights"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "get_all_car_rental_companies_in_city请求（e0005）中的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_16::app:travel:flights::e0004",
+          "probe_id": "p0006",
+          "receiver_id": "app:travel:flights",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:flights",
+              "fact_id": "travel/user_task_16::app:travel:flights::e0004:R/arrival_city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:flights"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "get_flight_information请求（e0004）中的目的地"
+        }
+      ],
+      "app:travel:reservation": [
+        {
+          "field": "postal_address",
+          "probe_id": "p0000",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "可见记录的地址"
+        },
+        {
+          "field": "postal_address",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0005",
+          "probe_id": "p0001",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "get_all_car_rental_companies_in_city请求（e0005）中的地址"
+        },
+        {
+          "field": "query_intent",
+          "probe_id": "p0002",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "可见记录的查询内容"
+        },
+        {
+          "field": "query_intent",
+          "subject": "request:travel/user_task_16::app:travel:calendar::e0013",
+          "probe_id": "p0003",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "search_calendar_events请求（e0013）中的查询内容"
+        },
+        {
+          "field": "travel_destination",
+          "probe_id": "p0004",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "可见记录的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0005",
+          "probe_id": "p0005",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "get_all_car_rental_companies_in_city请求（e0005）中的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_16::app:travel:flights::e0004",
+          "probe_id": "p0006",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "get_flight_information请求（e0004）中的目的地"
+        }
+      ],
+      "joint": [
+        {
+          "field": "postal_address",
+          "probe_id": "p0000",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:car_rental",
+              "fact_id": "travel/user_task_16::app:travel:car_rental::e0005:R/city"
+            }
+          ],
+          "shared_knowledge_used": true,
+          "visible_receiver_ids": [
+            "app:travel:calendar",
+            "app:travel:car_rental",
+            "app:travel:flights",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "可见记录的地址"
+        },
+        {
+          "field": "postal_address",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0005",
+          "probe_id": "p0001",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:car_rental",
+              "fact_id": "travel/user_task_16::app:travel:car_rental::e0005:R/city"
+            }
+          ],
+          "shared_knowledge_used": true,
+          "visible_receiver_ids": [
+            "app:travel:calendar",
+            "app:travel:car_rental",
+            "app:travel:flights",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "get_all_car_rental_companies_in_city请求（e0005）中的地址"
+        },
+        {
+          "field": "query_intent",
+          "probe_id": "p0002",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:calendar",
+              "fact_id": "travel/user_task_16::app:travel:calendar::e0013:R/query"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:calendar",
+            "app:travel:car_rental",
+            "app:travel:flights",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "可见记录的查询内容"
+        },
+        {
+          "field": "query_intent",
+          "subject": "request:travel/user_task_16::app:travel:calendar::e0013",
+          "probe_id": "p0003",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:calendar",
+              "fact_id": "travel/user_task_16::app:travel:calendar::e0013:R/query"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:calendar",
+            "app:travel:car_rental",
+            "app:travel:flights",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "search_calendar_events请求（e0013）中的查询内容"
+        },
+        {
+          "field": "travel_destination",
+          "probe_id": "p0004",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:flights",
+              "fact_id": "travel/user_task_16::app:travel:flights::e0004:R/arrival_city"
+            }
+          ],
+          "shared_knowledge_used": true,
+          "visible_receiver_ids": [
+            "app:travel:calendar",
+            "app:travel:car_rental",
+            "app:travel:flights",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "可见记录的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_16::app:travel:car_rental::e0005",
+          "probe_id": "p0005",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:car_rental",
+              "fact_id": "travel/user_task_16::app:travel:car_rental::e0005:R/city"
+            }
+          ],
+          "shared_knowledge_used": true,
+          "visible_receiver_ids": [
+            "app:travel:calendar",
+            "app:travel:car_rental",
+            "app:travel:flights",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "get_all_car_rental_companies_in_city请求（e0005）中的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_16::app:travel:flights::e0004",
+          "probe_id": "p0006",
+          "receiver_id": "app:travel:calendar",
+          "top1_guess": "London",
+          "possible_disclosed_privacy": "London",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:flights",
+              "fact_id": "travel/user_task_16::app:travel:flights::e0004:R/arrival_city"
+            }
+          ],
+          "shared_knowledge_used": true,
+          "visible_receiver_ids": [
+            "app:travel:calendar",
+            "app:travel:car_rental",
+            "app:travel:flights",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "get_flight_information请求（e0004）中的目的地"
+        }
+      ]
+    }
+  },
+  "joint_new_count": 0,
+  "independent_new_count": 0,
+  "strict_new_joint_count": 0,
+  "strict_new_joint": [],
+  "existing_joint_only_count": 0,
+  "joint_only_after_count": 0
+}

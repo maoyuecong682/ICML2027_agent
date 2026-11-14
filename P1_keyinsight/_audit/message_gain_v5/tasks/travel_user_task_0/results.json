@@ -1,0 +1,1105 @@
+{
+  "task": "travel/user_task_0",
+  "selected_message": {
+    "message_id": "e0011:R",
+    "event_id": "e0011",
+    "direction": "R",
+    "receiver_id": "app:travel:reservation",
+    "tool": "reserve_hotel",
+    "content": {
+      "hotel": "Le Marais Boutique",
+      "start_day": "2025-01-11",
+      "end_day": "2025-01-15"
+    },
+    "status": "observed"
+  },
+  "category": "住宿日期与目的地",
+  "receiver_ids": [
+    "app:travel:hotels",
+    "app:travel:reservation"
+  ],
+  "probe_count": 7,
+  "conditions": {
+    "without": {
+      "app:travel:hotels": [
+        {
+          "field": "postal_address",
+          "probe_id": "p0000",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": "Paris",
+          "possible_disclosed_privacy": "Paris",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:hotels",
+              "fact_id": "travel/user_task_0::app:travel:hotels::e0004:R/city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:hotels"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "可见记录的地址"
+        },
+        {
+          "field": "postal_address",
+          "subject": "request:travel/user_task_0::app:travel:hotels::e0004",
+          "probe_id": "p0001",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": "Paris",
+          "possible_disclosed_privacy": "Paris",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:hotels",
+              "fact_id": "travel/user_task_0::app:travel:hotels::e0004:R/city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:hotels"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "get_all_hotels_in_city请求（e0004）中的地址"
+        },
+        {
+          "field": "travel_dates",
+          "probe_id": "p0002",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:hotels"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "可见记录的日期"
+        },
+        {
+          "field": "travel_dates",
+          "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+          "probe_id": "p0003",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:hotels"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "reserve_hotel请求（e0011）中的日期"
+        },
+        {
+          "field": "travel_destination",
+          "probe_id": "p0004",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": "Paris",
+          "possible_disclosed_privacy": "Paris",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:hotels",
+              "fact_id": "travel/user_task_0::app:travel:hotels::e0004:R/city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:hotels"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "可见记录的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_0::app:travel:hotels::e0004",
+          "probe_id": "p0005",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": "Paris",
+          "possible_disclosed_privacy": "Paris",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:hotels",
+              "fact_id": "travel/user_task_0::app:travel:hotels::e0004:R/city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:hotels"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "get_all_hotels_in_city请求（e0004）中的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+          "probe_id": "p0006",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:hotels"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "reserve_hotel请求（e0011）中的目的地"
+        }
+      ],
+      "app:travel:reservation": [
+        {
+          "field": "postal_address",
+          "probe_id": "p0000",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "可见记录的地址"
+        },
+        {
+          "field": "postal_address",
+          "subject": "request:travel/user_task_0::app:travel:hotels::e0004",
+          "probe_id": "p0001",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "get_all_hotels_in_city请求（e0004）中的地址"
+        },
+        {
+          "field": "travel_dates",
+          "probe_id": "p0002",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "可见记录的日期"
+        },
+        {
+          "field": "travel_dates",
+          "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+          "probe_id": "p0003",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "reserve_hotel请求（e0011）中的日期"
+        },
+        {
+          "field": "travel_destination",
+          "probe_id": "p0004",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "可见记录的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_0::app:travel:hotels::e0004",
+          "probe_id": "p0005",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "get_all_hotels_in_city请求（e0004）中的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+          "probe_id": "p0006",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "reserve_hotel请求（e0011）中的目的地"
+        }
+      ],
+      "joint": [
+        {
+          "field": "postal_address",
+          "probe_id": "p0000",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": "Paris",
+          "possible_disclosed_privacy": "Paris",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:hotels",
+              "fact_id": "travel/user_task_0::app:travel:hotels::e0004:R/city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:hotels",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "可见记录的地址"
+        },
+        {
+          "field": "postal_address",
+          "subject": "request:travel/user_task_0::app:travel:hotels::e0004",
+          "probe_id": "p0001",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": "Paris",
+          "possible_disclosed_privacy": "Paris",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:hotels",
+              "fact_id": "travel/user_task_0::app:travel:hotels::e0004:R/city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:hotels",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "get_all_hotels_in_city请求（e0004）中的地址"
+        },
+        {
+          "field": "travel_dates",
+          "probe_id": "p0002",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:hotels",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "可见记录的日期"
+        },
+        {
+          "field": "travel_dates",
+          "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+          "probe_id": "p0003",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:hotels",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "reserve_hotel请求（e0011）中的日期"
+        },
+        {
+          "field": "travel_destination",
+          "probe_id": "p0004",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": "Paris",
+          "possible_disclosed_privacy": "Paris",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:hotels",
+              "fact_id": "travel/user_task_0::app:travel:hotels::e0004:R/city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:hotels",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "可见记录的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_0::app:travel:hotels::e0004",
+          "probe_id": "p0005",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": "Paris",
+          "possible_disclosed_privacy": "Paris",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:hotels",
+              "fact_id": "travel/user_task_0::app:travel:hotels::e0004:R/city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:hotels",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "get_all_hotels_in_city请求（e0004）中的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+          "probe_id": "p0006",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:hotels",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "reserve_hotel请求（e0011）中的目的地"
+        }
+      ]
+    },
+    "with": {
+      "app:travel:hotels": [
+        {
+          "field": "postal_address",
+          "probe_id": "p0000",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": "Paris",
+          "possible_disclosed_privacy": "Paris",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:hotels",
+              "fact_id": "travel/user_task_0::app:travel:hotels::e0004:R/city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:hotels"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "可见记录的地址"
+        },
+        {
+          "field": "postal_address",
+          "subject": "request:travel/user_task_0::app:travel:hotels::e0004",
+          "probe_id": "p0001",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": "Paris",
+          "possible_disclosed_privacy": "Paris",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:hotels",
+              "fact_id": "travel/user_task_0::app:travel:hotels::e0004:R/city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:hotels"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "get_all_hotels_in_city请求（e0004）中的地址"
+        },
+        {
+          "field": "travel_dates",
+          "probe_id": "p0002",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:hotels"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "可见记录的日期"
+        },
+        {
+          "field": "travel_dates",
+          "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+          "probe_id": "p0003",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:hotels"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "reserve_hotel请求（e0011）中的日期"
+        },
+        {
+          "field": "travel_destination",
+          "probe_id": "p0004",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": "Paris",
+          "possible_disclosed_privacy": "Paris",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:hotels",
+              "fact_id": "travel/user_task_0::app:travel:hotels::e0004:R/city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:hotels"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "可见记录的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_0::app:travel:hotels::e0004",
+          "probe_id": "p0005",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": "Paris",
+          "possible_disclosed_privacy": "Paris",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:hotels",
+              "fact_id": "travel/user_task_0::app:travel:hotels::e0004:R/city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:hotels"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "get_all_hotels_in_city请求（e0004）中的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+          "probe_id": "p0006",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:hotels"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "reserve_hotel请求（e0011）中的目的地"
+        }
+      ],
+      "app:travel:reservation": [
+        {
+          "field": "postal_address",
+          "probe_id": "p0000",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "可见记录的地址"
+        },
+        {
+          "field": "postal_address",
+          "subject": "request:travel/user_task_0::app:travel:hotels::e0004",
+          "probe_id": "p0001",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "get_all_hotels_in_city请求（e0004）中的地址"
+        },
+        {
+          "field": "travel_dates",
+          "probe_id": "p0002",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": "2025-01-15",
+          "possible_disclosed_privacy": "2025-01-15",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:reservation",
+              "fact_id": "travel/user_task_0::app:travel:reservation::e0011:R/end_day"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "可见记录的日期"
+        },
+        {
+          "field": "travel_dates",
+          "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+          "probe_id": "p0003",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": "2025-01-15",
+          "possible_disclosed_privacy": "2025-01-15",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:reservation",
+              "fact_id": "travel/user_task_0::app:travel:reservation::e0011:R/end_day"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "reserve_hotel请求（e0011）中的日期"
+        },
+        {
+          "field": "travel_destination",
+          "probe_id": "p0004",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": "Le Marais Boutique",
+          "possible_disclosed_privacy": "Le Marais Boutique",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:reservation",
+              "fact_id": "travel/user_task_0::app:travel:reservation::e0011:R/hotel"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "additional_inference": {
+            "value": "Paris",
+            "claim": {
+              "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+              "predicate": "travel_destination",
+              "object": "Paris",
+              "context": {}
+            },
+            "evidence": [
+              {
+                "receiver_id": "app:travel:reservation",
+                "fact_id": "travel/user_task_0::app:travel:reservation::e0011:R/hotel"
+              }
+            ],
+            "public_evidence": [
+              "/public_records/hotels/0"
+            ],
+            "proof": [
+              {
+                "rule_id": "received_hotel_and_public_city",
+                "premise_fact_ids": [
+                  "fact:338dee4ad7ad33b3b2729f9b",
+                  "fact:4198081711cb7a2d41cb5d25"
+                ],
+                "operator": "AND",
+                "conclusion": {
+                  "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+                  "predicate": "travel_destination",
+                  "object": "Paris",
+                  "context": {}
+                }
+              }
+            ],
+            "minimal_receiver_sets": [
+              [
+                "app:travel:reservation"
+              ]
+            ],
+            "requires_joint_evidence": false,
+            "version": "deterministic-relations-v3"
+          },
+          "inference_status": "available_not_selected",
+          "correct": true,
+          "label": "可见记录的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_0::app:travel:hotels::e0004",
+          "probe_id": "p0005",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": null,
+          "possible_disclosed_privacy": null,
+          "status": "abstain",
+          "method": "abstain",
+          "evidence": [],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": false,
+          "label": "get_all_hotels_in_city请求（e0004）中的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+          "probe_id": "p0006",
+          "receiver_id": "app:travel:reservation",
+          "top1_guess": "Paris",
+          "possible_disclosed_privacy": "Paris",
+          "status": "one_candidate",
+          "method": "deterministic_rule_inference",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:reservation",
+              "fact_id": "travel/user_task_0::app:travel:reservation::e0011:R/hotel"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "claim": {
+            "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+            "predicate": "travel_destination",
+            "object": "Paris",
+            "context": {}
+          },
+          "public_evidence": [
+            "/public_records/hotels/0"
+          ],
+          "proof": [
+            {
+              "rule_id": "received_hotel_and_public_city",
+              "premise_fact_ids": [
+                "fact:338dee4ad7ad33b3b2729f9b",
+                "fact:4198081711cb7a2d41cb5d25"
+              ],
+              "operator": "AND",
+              "conclusion": {
+                "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+                "predicate": "travel_destination",
+                "object": "Paris",
+                "context": {}
+              }
+            }
+          ],
+          "minimal_receiver_sets": [
+            [
+              "app:travel:reservation"
+            ]
+          ],
+          "requires_joint_evidence": false,
+          "version": "deterministic-relations-v3",
+          "inference_status": "proved",
+          "correct": false,
+          "label": "reserve_hotel请求（e0011）中的目的地"
+        }
+      ],
+      "joint": [
+        {
+          "field": "postal_address",
+          "probe_id": "p0000",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": "Paris",
+          "possible_disclosed_privacy": "Paris",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:hotels",
+              "fact_id": "travel/user_task_0::app:travel:hotels::e0004:R/city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:hotels",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "可见记录的地址"
+        },
+        {
+          "field": "postal_address",
+          "subject": "request:travel/user_task_0::app:travel:hotels::e0004",
+          "probe_id": "p0001",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": "Paris",
+          "possible_disclosed_privacy": "Paris",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:hotels",
+              "fact_id": "travel/user_task_0::app:travel:hotels::e0004:R/city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:hotels",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "get_all_hotels_in_city请求（e0004）中的地址"
+        },
+        {
+          "field": "travel_dates",
+          "probe_id": "p0002",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": "2025-01-15",
+          "possible_disclosed_privacy": "2025-01-15",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:reservation",
+              "fact_id": "travel/user_task_0::app:travel:reservation::e0011:R/end_day"
+            }
+          ],
+          "shared_knowledge_used": true,
+          "visible_receiver_ids": [
+            "app:travel:hotels",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "可见记录的日期"
+        },
+        {
+          "field": "travel_dates",
+          "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+          "probe_id": "p0003",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": "2025-01-15",
+          "possible_disclosed_privacy": "2025-01-15",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:reservation",
+              "fact_id": "travel/user_task_0::app:travel:reservation::e0011:R/end_day"
+            }
+          ],
+          "shared_knowledge_used": true,
+          "visible_receiver_ids": [
+            "app:travel:hotels",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "reserve_hotel请求（e0011）中的日期"
+        },
+        {
+          "field": "travel_destination",
+          "probe_id": "p0004",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": "Paris",
+          "possible_disclosed_privacy": "Paris",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:hotels",
+              "fact_id": "travel/user_task_0::app:travel:hotels::e0004:R/city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:hotels",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "additional_inference": {
+            "value": "Paris",
+            "claim": {
+              "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+              "predicate": "travel_destination",
+              "object": "Paris",
+              "context": {}
+            },
+            "evidence": [
+              {
+                "receiver_id": "app:travel:reservation",
+                "fact_id": "travel/user_task_0::app:travel:reservation::e0011:R/hotel"
+              }
+            ],
+            "public_evidence": [
+              "/public_records/hotels/0"
+            ],
+            "proof": [
+              {
+                "rule_id": "received_hotel_and_public_city",
+                "premise_fact_ids": [
+                  "fact:338dee4ad7ad33b3b2729f9b",
+                  "fact:4198081711cb7a2d41cb5d25"
+                ],
+                "operator": "AND",
+                "conclusion": {
+                  "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+                  "predicate": "travel_destination",
+                  "object": "Paris",
+                  "context": {}
+                }
+              }
+            ],
+            "minimal_receiver_sets": [
+              [
+                "app:travel:reservation"
+              ]
+            ],
+            "requires_joint_evidence": false,
+            "version": "deterministic-relations-v3"
+          },
+          "inference_status": "available_not_selected",
+          "correct": true,
+          "label": "可见记录的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_0::app:travel:hotels::e0004",
+          "probe_id": "p0005",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": "Paris",
+          "possible_disclosed_privacy": "Paris",
+          "status": "one_candidate",
+          "method": "declared_parameter_or_text_rule",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:hotels",
+              "fact_id": "travel/user_task_0::app:travel:hotels::e0004:R/city"
+            }
+          ],
+          "shared_knowledge_used": false,
+          "visible_receiver_ids": [
+            "app:travel:hotels",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "correct": true,
+          "label": "get_all_hotels_in_city请求（e0004）中的目的地"
+        },
+        {
+          "field": "travel_destination",
+          "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+          "probe_id": "p0006",
+          "receiver_id": "app:travel:hotels",
+          "top1_guess": "Paris",
+          "possible_disclosed_privacy": "Paris",
+          "status": "one_candidate",
+          "method": "deterministic_rule_inference",
+          "evidence": [
+            {
+              "receiver_id": "app:travel:reservation",
+              "fact_id": "travel/user_task_0::app:travel:reservation::e0011:R/hotel"
+            }
+          ],
+          "shared_knowledge_used": true,
+          "visible_receiver_ids": [
+            "app:travel:hotels",
+            "app:travel:reservation"
+          ],
+          "recovery_version": "deterministic-relations-v3",
+          "memory_version": "privacy.named-memory.v3",
+          "claim": {
+            "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+            "predicate": "travel_destination",
+            "object": "Paris",
+            "context": {}
+          },
+          "public_evidence": [
+            "/public_records/hotels/0"
+          ],
+          "proof": [
+            {
+              "rule_id": "received_hotel_and_public_city",
+              "premise_fact_ids": [
+                "fact:338dee4ad7ad33b3b2729f9b",
+                "fact:4198081711cb7a2d41cb5d25"
+              ],
+              "operator": "AND",
+              "conclusion": {
+                "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+                "predicate": "travel_destination",
+                "object": "Paris",
+                "context": {}
+              }
+            }
+          ],
+          "minimal_receiver_sets": [
+            [
+              "app:travel:reservation"
+            ]
+          ],
+          "requires_joint_evidence": false,
+          "version": "deterministic-relations-v3",
+          "inference_status": "proved",
+          "correct": false,
+          "label": "reserve_hotel请求（e0011）中的目的地"
+        }
+      ]
+    }
+  },
+  "joint_new_count": 2,
+  "independent_new_count": 3,
+  "strict_new_joint_count": 0,
+  "strict_new_joint": [],
+  "existing_joint_only_count": 0,
+  "joint_only_after_count": 0
+}

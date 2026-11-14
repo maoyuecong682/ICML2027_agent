@@ -1,0 +1,213 @@
+[
+  {
+    "field": "postal_address",
+    "probe_id": "p0000",
+    "receiver_id": "app:travel:reservation",
+    "top1_guess": null,
+    "possible_disclosed_privacy": null,
+    "status": "abstain",
+    "method": "abstain",
+    "evidence": [],
+    "shared_knowledge_used": false,
+    "visible_receiver_ids": [
+      "app:travel:reservation"
+    ],
+    "recovery_version": "deterministic-relations-v3",
+    "memory_version": "privacy.named-memory.v3"
+  },
+  {
+    "field": "postal_address",
+    "subject": "request:travel/user_task_0::app:travel:hotels::e0004",
+    "probe_id": "p0001",
+    "receiver_id": "app:travel:reservation",
+    "top1_guess": null,
+    "possible_disclosed_privacy": null,
+    "status": "abstain",
+    "method": "abstain",
+    "evidence": [],
+    "shared_knowledge_used": false,
+    "visible_receiver_ids": [
+      "app:travel:reservation"
+    ],
+    "recovery_version": "deterministic-relations-v3",
+    "memory_version": "privacy.named-memory.v3"
+  },
+  {
+    "field": "travel_dates",
+    "probe_id": "p0002",
+    "receiver_id": "app:travel:reservation",
+    "top1_guess": "2025-01-15",
+    "possible_disclosed_privacy": "2025-01-15",
+    "status": "one_candidate",
+    "method": "declared_parameter_or_text_rule",
+    "evidence": [
+      {
+        "receiver_id": "app:travel:reservation",
+        "fact_id": "travel/user_task_0::app:travel:reservation::e0011:R/end_day"
+      }
+    ],
+    "shared_knowledge_used": false,
+    "visible_receiver_ids": [
+      "app:travel:reservation"
+    ],
+    "recovery_version": "deterministic-relations-v3",
+    "memory_version": "privacy.named-memory.v3"
+  },
+  {
+    "field": "travel_dates",
+    "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+    "probe_id": "p0003",
+    "receiver_id": "app:travel:reservation",
+    "top1_guess": "2025-01-15",
+    "possible_disclosed_privacy": "2025-01-15",
+    "status": "one_candidate",
+    "method": "declared_parameter_or_text_rule",
+    "evidence": [
+      {
+        "receiver_id": "app:travel:reservation",
+        "fact_id": "travel/user_task_0::app:travel:reservation::e0011:R/end_day"
+      }
+    ],
+    "shared_knowledge_used": false,
+    "visible_receiver_ids": [
+      "app:travel:reservation"
+    ],
+    "recovery_version": "deterministic-relations-v3",
+    "memory_version": "privacy.named-memory.v3"
+  },
+  {
+    "field": "travel_destination",
+    "probe_id": "p0004",
+    "receiver_id": "app:travel:reservation",
+    "top1_guess": "Le Marais Boutique",
+    "possible_disclosed_privacy": "Le Marais Boutique",
+    "status": "one_candidate",
+    "method": "declared_parameter_or_text_rule",
+    "evidence": [
+      {
+        "receiver_id": "app:travel:reservation",
+        "fact_id": "travel/user_task_0::app:travel:reservation::e0011:R/hotel"
+      }
+    ],
+    "shared_knowledge_used": false,
+    "visible_receiver_ids": [
+      "app:travel:reservation"
+    ],
+    "recovery_version": "deterministic-relations-v3",
+    "memory_version": "privacy.named-memory.v3",
+    "additional_inference": {
+      "value": "Paris",
+      "claim": {
+        "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+        "predicate": "travel_destination",
+        "object": "Paris",
+        "context": {}
+      },
+      "evidence": [
+        {
+          "receiver_id": "app:travel:reservation",
+          "fact_id": "travel/user_task_0::app:travel:reservation::e0011:R/hotel"
+        }
+      ],
+      "public_evidence": [
+        "/public_records/hotels/0"
+      ],
+      "proof": [
+        {
+          "rule_id": "received_hotel_and_public_city",
+          "premise_fact_ids": [
+            "fact:338dee4ad7ad33b3b2729f9b",
+            "fact:4198081711cb7a2d41cb5d25"
+          ],
+          "operator": "AND",
+          "conclusion": {
+            "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+            "predicate": "travel_destination",
+            "object": "Paris",
+            "context": {}
+          }
+        }
+      ],
+      "minimal_receiver_sets": [
+        [
+          "app:travel:reservation"
+        ]
+      ],
+      "requires_joint_evidence": false,
+      "version": "deterministic-relations-v3"
+    },
+    "inference_status": "available_not_selected"
+  },
+  {
+    "field": "travel_destination",
+    "subject": "request:travel/user_task_0::app:travel:hotels::e0004",
+    "probe_id": "p0005",
+    "receiver_id": "app:travel:reservation",
+    "top1_guess": null,
+    "possible_disclosed_privacy": null,
+    "status": "abstain",
+    "method": "abstain",
+    "evidence": [],
+    "shared_knowledge_used": false,
+    "visible_receiver_ids": [
+      "app:travel:reservation"
+    ],
+    "recovery_version": "deterministic-relations-v3",
+    "memory_version": "privacy.named-memory.v3"
+  },
+  {
+    "field": "travel_destination",
+    "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+    "probe_id": "p0006",
+    "receiver_id": "app:travel:reservation",
+    "top1_guess": "Paris",
+    "possible_disclosed_privacy": "Paris",
+    "status": "one_candidate",
+    "method": "deterministic_rule_inference",
+    "evidence": [
+      {
+        "receiver_id": "app:travel:reservation",
+        "fact_id": "travel/user_task_0::app:travel:reservation::e0011:R/hotel"
+      }
+    ],
+    "shared_knowledge_used": false,
+    "visible_receiver_ids": [
+      "app:travel:reservation"
+    ],
+    "recovery_version": "deterministic-relations-v3",
+    "memory_version": "privacy.named-memory.v3",
+    "claim": {
+      "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+      "predicate": "travel_destination",
+      "object": "Paris",
+      "context": {}
+    },
+    "public_evidence": [
+      "/public_records/hotels/0"
+    ],
+    "proof": [
+      {
+        "rule_id": "received_hotel_and_public_city",
+        "premise_fact_ids": [
+          "fact:338dee4ad7ad33b3b2729f9b",
+          "fact:4198081711cb7a2d41cb5d25"
+        ],
+        "operator": "AND",
+        "conclusion": {
+          "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+          "predicate": "travel_destination",
+          "object": "Paris",
+          "context": {}
+        }
+      }
+    ],
+    "minimal_receiver_sets": [
+      [
+        "app:travel:reservation"
+      ]
+    ],
+    "requires_joint_evidence": false,
+    "version": "deterministic-relations-v3",
+    "inference_status": "proved"
+  }
+]

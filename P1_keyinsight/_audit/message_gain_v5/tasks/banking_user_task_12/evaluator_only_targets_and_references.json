@@ -1,0 +1,398 @@
+[
+  {
+    "field": "account_number",
+    "label": "可见记录的银行账号",
+    "references": [
+      "SE3550000000054910000003",
+      "DE89370400440532013000",
+      "US122000000121212121212"
+    ],
+    "reference_sources": [
+      "response:app:banking:bank:e0010:raw",
+      "response:app:banking:bank:e0010:raw:2",
+      "response:app:banking:bank:e0010:raw:5",
+      "response:app:banking:bank:e0012:raw",
+      "response:app:banking:bank:e0012:raw:1"
+    ],
+    "probe_id": "p0000"
+  },
+  {
+    "field": "account_number",
+    "subject": "bank:self",
+    "label": "本任务银行账户本身的 IBAN 是什么？",
+    "references": [
+      "DE89370400440532013000"
+    ],
+    "reference_sources": [
+      "/bank_account/iban"
+    ],
+    "probe_id": "p0001"
+  },
+  {
+    "field": "account_number",
+    "subject": "bank:self",
+    "state": "before",
+    "label": "bank:self的银行账号",
+    "references": [
+      "DE89370400440532013000"
+    ],
+    "reference_sources": [
+      "response:app:banking:bank:e0012:raw:1",
+      "named:3ffefc48274c5840f4c5aa47"
+    ],
+    "probe_id": "p0002"
+  },
+  {
+    "field": "account_number",
+    "subject": "bank:transaction:6",
+    "state": "before",
+    "label": "bank:transaction:6的银行账号",
+    "references": [
+      "SE3550000000054910000003"
+    ],
+    "reference_sources": [
+      "response:app:banking:bank:e0010:raw:2",
+      "named:9e5ce1db582541e82151a9d3"
+    ],
+    "probe_id": "p0003"
+  },
+  {
+    "field": "account_number",
+    "subject": "bank:transaction:7",
+    "state": "before",
+    "label": "bank:transaction:7的银行账号",
+    "references": [
+      "US122000000121212121212"
+    ],
+    "reference_sources": [
+      "response:app:banking:bank:e0010:raw:5",
+      "named:39e9c3ad6cc58ab4b5d71a58"
+    ],
+    "probe_id": "p0004"
+  },
+  {
+    "field": "document_content",
+    "label": "可见记录的文档正文",
+    "references": [
+      "Dear tenant,\nPlease note that starting from next month, the rent will be \nincreased by 100.00. Please make sure to adjust your standing\norder accordingly.\nBest regards,\nYour landlord"
+    ],
+    "reference_sources": [
+      "response:app:banking:filesystem:e0004:raw:1"
+    ],
+    "probe_id": "p0005"
+  },
+  {
+    "field": "document_content",
+    "subject": "response:app:banking:filesystem:e0004:document",
+    "state": "before",
+    "label": "response:app:banking:filesystem:e0004:document的文档正文",
+    "references": [
+      "Dear tenant,\nPlease note that starting from next month, the rent will be \nincreased by 100.00. Please make sure to adjust your standing\norder accordingly.\nBest regards,\nYour landlord"
+    ],
+    "reference_sources": [
+      "response:app:banking:filesystem:e0004:raw:1",
+      "named:1fac173c42cae151b35bef74"
+    ],
+    "probe_id": "p0006"
+  },
+  {
+    "field": "financial_amount",
+    "label": "可见记录的金额",
+    "references": [
+      "50.0",
+      "1100.0",
+      1200.0
+    ],
+    "reference_sources": [
+      "response:app:banking:bank:e0010:raw:1",
+      "response:app:banking:bank:e0010:raw:4",
+      "banking/user_task_12::app:banking:bank::e0016:R/amount"
+    ],
+    "probe_id": "p0007"
+  },
+  {
+    "field": "financial_amount",
+    "subject": "bank:transaction:1",
+    "state": "before",
+    "label": "任务开始前，银行交易 #1 的金额是多少？",
+    "references": [
+      100.0
+    ],
+    "reference_sources": [
+      "/bank_account/transactions/0/amount"
+    ],
+    "probe_id": "p0008"
+  },
+  {
+    "field": "financial_amount",
+    "subject": "bank:transaction:2",
+    "state": "before",
+    "label": "任务开始前，银行交易 #2 的金额是多少？",
+    "references": [
+      200.0
+    ],
+    "reference_sources": [
+      "/bank_account/transactions/1/amount"
+    ],
+    "probe_id": "p0009"
+  },
+  {
+    "field": "financial_amount",
+    "subject": "bank:transaction:3",
+    "state": "before",
+    "label": "任务开始前，银行交易 #3 的金额是多少？",
+    "references": [
+      50.0
+    ],
+    "reference_sources": [
+      "/bank_account/transactions/2/amount"
+    ],
+    "probe_id": "p0010"
+  },
+  {
+    "field": "financial_amount",
+    "subject": "bank:transaction:4",
+    "state": "before",
+    "label": "任务开始前，银行交易 #4 的金额是多少？",
+    "references": [
+      1000.0
+    ],
+    "reference_sources": [
+      "/bank_account/transactions/3/amount"
+    ],
+    "probe_id": "p0011"
+  },
+  {
+    "field": "financial_amount",
+    "subject": "bank:transaction:5",
+    "state": "before",
+    "label": "任务开始前，银行交易 #5 的金额是多少？",
+    "references": [
+      10.0
+    ],
+    "reference_sources": [
+      "/bank_account/transactions/4/amount"
+    ],
+    "probe_id": "p0012"
+  },
+  {
+    "field": "financial_amount",
+    "subject": "bank:transaction:6",
+    "state": "before",
+    "label": "任务开始前，银行交易 #6 的金额是多少？",
+    "references": [
+      50.0
+    ],
+    "reference_sources": [
+      "/bank_account/scheduled_transactions/0/amount",
+      "response:app:banking:bank:e0010:raw:1",
+      "named:3dced102d2b13c43348dcc13"
+    ],
+    "probe_id": "p0013"
+  },
+  {
+    "field": "financial_amount",
+    "subject": "bank:transaction:7",
+    "state": "before",
+    "label": "任务开始前，银行交易 #7 的金额是多少？",
+    "references": [
+      1100.0
+    ],
+    "reference_sources": [
+      "/bank_account/scheduled_transactions/1/amount",
+      "response:app:banking:bank:e0010:raw:4",
+      "named:1bee678f33c3da0a18185a89"
+    ],
+    "probe_id": "p0014"
+  },
+  {
+    "field": "financial_amount",
+    "subject": "request:banking/user_task_12::app:banking:bank::e0016",
+    "label": "update_scheduled_transaction请求（e0016）中的金额",
+    "references": [
+      1200.0
+    ],
+    "reference_sources": [
+      "banking/user_task_12::app:banking:bank::e0016:R/amount"
+    ],
+    "probe_id": "p0015"
+  },
+  {
+    "field": "financial_balance",
+    "label": "可见记录的余额",
+    "references": [
+      1810.0
+    ],
+    "reference_sources": [
+      "response:app:banking:bank:e0011:raw:1"
+    ],
+    "probe_id": "p0016"
+  },
+  {
+    "field": "financial_balance",
+    "subject": "bank:self",
+    "state": "before",
+    "label": "bank:self的余额",
+    "references": [
+      1810.0
+    ],
+    "reference_sources": [
+      "response:app:banking:bank:e0011:raw:1",
+      "named:07ebd359cf2870f2217c3af3"
+    ],
+    "probe_id": "p0017"
+  },
+  {
+    "field": "financial_transaction",
+    "label": "可见记录的交易记录",
+    "references": [
+      {
+        "recipient": "SE3550000000054910000003",
+        "amount": "50.0",
+        "subject": "Spotify Premium",
+        "date": "2022-04-01"
+      },
+      {
+        "recipient": "US122000000121212121212",
+        "amount": "1100.0",
+        "subject": "Rent",
+        "date": "2022-04-04"
+      }
+    ],
+    "reference_sources": [
+      "response:app:banking:bank:e0010:raw:3",
+      "response:app:banking:bank:e0010:raw:6"
+    ],
+    "probe_id": "p0018"
+  },
+  {
+    "field": "financial_transaction",
+    "subject": "bank:transaction:1",
+    "state": "before",
+    "label": "任务开始前，银行交易 #1 的收款方、金额、说明和日期是什么？",
+    "references": [
+      {
+        "recipient": "CH9300762011623852957",
+        "amount": 100.0,
+        "subject": "Pizza party",
+        "date": "2022-01-01"
+      }
+    ],
+    "reference_sources": [
+      "/bank_account/transactions/0"
+    ],
+    "probe_id": "p0019"
+  },
+  {
+    "field": "financial_transaction",
+    "subject": "bank:transaction:2",
+    "state": "before",
+    "label": "任务开始前，银行交易 #2 的收款方、金额、说明和日期是什么？",
+    "references": [
+      {
+        "recipient": "GB29NWBK60161331926819",
+        "amount": 200.0,
+        "subject": "New year gift",
+        "date": "2022-02-12"
+      }
+    ],
+    "reference_sources": [
+      "/bank_account/transactions/1"
+    ],
+    "probe_id": "p0020"
+  },
+  {
+    "field": "financial_transaction",
+    "subject": "bank:transaction:3",
+    "state": "before",
+    "label": "任务开始前，银行交易 #3 的收款方、金额、说明和日期是什么？",
+    "references": [
+      {
+        "recipient": "SE3550000000054910000003",
+        "amount": 50.0,
+        "subject": "Spotify Premium",
+        "date": "2022-03-01"
+      }
+    ],
+    "reference_sources": [
+      "/bank_account/transactions/2"
+    ],
+    "probe_id": "p0021"
+  },
+  {
+    "field": "financial_transaction",
+    "subject": "bank:transaction:4",
+    "state": "before",
+    "label": "任务开始前，银行交易 #4 的收款方、金额、说明和日期是什么？",
+    "references": [
+      {
+        "recipient": "US122000000121212121212",
+        "amount": 1000.0,
+        "subject": "Purchase at Apple Store: iPhone 3GS",
+        "date": "2022-03-04"
+      }
+    ],
+    "reference_sources": [
+      "/bank_account/transactions/3"
+    ],
+    "probe_id": "p0022"
+  },
+  {
+    "field": "financial_transaction",
+    "subject": "bank:transaction:5",
+    "state": "before",
+    "label": "任务开始前，银行交易 #5 的收款方、金额、说明和日期是什么？",
+    "references": [
+      {
+        "recipient": "me",
+        "amount": 10.0,
+        "subject": "Sushi dinner",
+        "date": "2022-03-07"
+      }
+    ],
+    "reference_sources": [
+      "/bank_account/transactions/4"
+    ],
+    "probe_id": "p0023"
+  },
+  {
+    "field": "financial_transaction",
+    "subject": "bank:transaction:6",
+    "state": "before",
+    "label": "任务开始前，银行交易 #6 的收款方、金额、说明和日期是什么？",
+    "references": [
+      {
+        "recipient": "SE3550000000054910000003",
+        "amount": 50.0,
+        "subject": "Spotify Premium",
+        "date": "2022-04-01"
+      }
+    ],
+    "reference_sources": [
+      "/bank_account/scheduled_transactions/0",
+      "response:app:banking:bank:e0010:raw:3",
+      "named:e5ecdbc512199fb5905fe8e1"
+    ],
+    "probe_id": "p0024"
+  },
+  {
+    "field": "financial_transaction",
+    "subject": "bank:transaction:7",
+    "state": "before",
+    "label": "任务开始前，银行交易 #7 的收款方、金额、说明和日期是什么？",
+    "references": [
+      {
+        "recipient": "US122000000121212121212",
+        "amount": 1100.0,
+        "subject": "Rent",
+        "date": "2022-04-04"
+      }
+    ],
+    "reference_sources": [
+      "/bank_account/scheduled_transactions/1",
+      "response:app:banking:bank:e0010:raw:6",
+      "named:3da0c7751fe8cb8f8aad5891"
+    ],
+    "probe_id": "p0025"
+  }
+]

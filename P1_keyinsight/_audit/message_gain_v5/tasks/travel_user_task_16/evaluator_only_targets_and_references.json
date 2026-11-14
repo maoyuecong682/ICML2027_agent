@@ -1,0 +1,88 @@
+[
+  {
+    "field": "postal_address",
+    "label": "可见记录的地址",
+    "references": [
+      "London"
+    ],
+    "reference_sources": [
+      "travel/user_task_16::app:travel:car_rental::e0005:R/city"
+    ],
+    "probe_id": "p0000"
+  },
+  {
+    "field": "postal_address",
+    "subject": "request:travel/user_task_16::app:travel:car_rental::e0005",
+    "label": "get_all_car_rental_companies_in_city请求（e0005）中的地址",
+    "references": [
+      "London"
+    ],
+    "reference_sources": [
+      "travel/user_task_16::app:travel:car_rental::e0005:R/city"
+    ],
+    "probe_id": "p0001"
+  },
+  {
+    "field": "query_intent",
+    "label": "可见记录的查询内容",
+    "references": [
+      "London"
+    ],
+    "reference_sources": [
+      "travel/user_task_16::app:travel:calendar::e0013:R/query"
+    ],
+    "probe_id": "p0002"
+  },
+  {
+    "field": "query_intent",
+    "subject": "request:travel/user_task_16::app:travel:calendar::e0013",
+    "label": "search_calendar_events请求（e0013）中的查询内容",
+    "references": [
+      "London"
+    ],
+    "reference_sources": [
+      "travel/user_task_16::app:travel:calendar::e0013:R/query"
+    ],
+    "probe_id": "p0003"
+  },
+  {
+    "field": "travel_destination",
+    "label": "可见记录的目的地",
+    "references": [
+      "London",
+      "Paris"
+    ],
+    "reference_sources": [
+      "travel/user_task_16::app:travel:car_rental::e0005:R/city",
+      "travel/user_task_16::app:travel:flights::e0004:R/departure_city",
+      "travel/user_task_16::app:travel:flights::e0004:R/arrival_city"
+    ],
+    "probe_id": "p0004"
+  },
+  {
+    "field": "travel_destination",
+    "subject": "request:travel/user_task_16::app:travel:car_rental::e0005",
+    "label": "get_all_car_rental_companies_in_city请求（e0005）中的目的地",
+    "references": [
+      "London"
+    ],
+    "reference_sources": [
+      "travel/user_task_16::app:travel:car_rental::e0005:R/city"
+    ],
+    "probe_id": "p0005"
+  },
+  {
+    "field": "travel_destination",
+    "subject": "request:travel/user_task_16::app:travel:flights::e0004",
+    "label": "get_flight_information请求（e0004）中的目的地",
+    "references": [
+      "Paris",
+      "London"
+    ],
+    "reference_sources": [
+      "travel/user_task_16::app:travel:flights::e0004:R/departure_city",
+      "travel/user_task_16::app:travel:flights::e0004:R/arrival_city"
+    ],
+    "probe_id": "p0006"
+  }
+]

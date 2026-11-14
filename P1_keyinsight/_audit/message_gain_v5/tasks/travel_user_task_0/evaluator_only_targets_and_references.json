@@ -1,0 +1,89 @@
+[
+  {
+    "field": "postal_address",
+    "label": "可见记录的地址",
+    "references": [
+      "Paris"
+    ],
+    "reference_sources": [
+      "travel/user_task_0::app:travel:hotels::e0004:R/city"
+    ],
+    "probe_id": "p0000"
+  },
+  {
+    "field": "postal_address",
+    "subject": "request:travel/user_task_0::app:travel:hotels::e0004",
+    "label": "get_all_hotels_in_city请求（e0004）中的地址",
+    "references": [
+      "Paris"
+    ],
+    "reference_sources": [
+      "travel/user_task_0::app:travel:hotels::e0004:R/city"
+    ],
+    "probe_id": "p0001"
+  },
+  {
+    "field": "travel_dates",
+    "label": "可见记录的日期",
+    "references": [
+      "2025-01-11",
+      "2025-01-15"
+    ],
+    "reference_sources": [
+      "travel/user_task_0::app:travel:reservation::e0011:R/start_day",
+      "travel/user_task_0::app:travel:reservation::e0011:R/end_day"
+    ],
+    "probe_id": "p0002"
+  },
+  {
+    "field": "travel_dates",
+    "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+    "label": "reserve_hotel请求（e0011）中的日期",
+    "references": [
+      "2025-01-11",
+      "2025-01-15"
+    ],
+    "reference_sources": [
+      "travel/user_task_0::app:travel:reservation::e0011:R/start_day",
+      "travel/user_task_0::app:travel:reservation::e0011:R/end_day"
+    ],
+    "probe_id": "p0003"
+  },
+  {
+    "field": "travel_destination",
+    "label": "可见记录的目的地",
+    "references": [
+      "Paris",
+      "Le Marais Boutique"
+    ],
+    "reference_sources": [
+      "travel/user_task_0::app:travel:hotels::e0004:R/city",
+      "travel/user_task_0::app:travel:reservation::e0011:R/hotel"
+    ],
+    "probe_id": "p0004"
+  },
+  {
+    "field": "travel_destination",
+    "subject": "request:travel/user_task_0::app:travel:hotels::e0004",
+    "label": "get_all_hotels_in_city请求（e0004）中的目的地",
+    "references": [
+      "Paris"
+    ],
+    "reference_sources": [
+      "travel/user_task_0::app:travel:hotels::e0004:R/city"
+    ],
+    "probe_id": "p0005"
+  },
+  {
+    "field": "travel_destination",
+    "subject": "request:travel/user_task_0::app:travel:reservation::e0011",
+    "label": "reserve_hotel请求（e0011）中的目的地",
+    "references": [
+      "Le Marais Boutique"
+    ],
+    "reference_sources": [
+      "travel/user_task_0::app:travel:reservation::e0011:R/hotel"
+    ],
+    "probe_id": "p0006"
+  }
+]
